@@ -70,8 +70,7 @@
     ExampleTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
     cell.lbTitle.text = self.arrayAnimationTypes[indexPath.row];
     cell.lbTitle.heroID = self.arrayAnimationTypes[indexPath.row];
-    cell.lbTitle.heroModifierString = [SDOSHeroModifierString heroModifierStringWithHeroModifiers:@[HeroModifierArc(1)]];
-    
+    [cell.lbTitle setHeroModifierStringWithHeroModifiers:@[HeroModifierArc(1)]];
     return cell;
 }
 

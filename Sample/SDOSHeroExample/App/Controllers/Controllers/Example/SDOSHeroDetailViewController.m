@@ -33,7 +33,7 @@
     
     self.lbAnimationType.text = self.textAnimationType;
     self.lbAnimationType.heroID = self.textAnimationType;
-    self.lbAnimationType.heroModifierString = [SDOSHeroModifierString heroModifierStringWithHeroModifiers:@[HeroModifierArc(1)]];
+    [self.lbAnimationType setHeroModifierStringWithHeroModifiers:@[HeroModifierArc(1)]];
     [self.lbAnimationType loadStyleLabelExample];
     [self.lbAnimationType loadStyleViewClear];
 }
