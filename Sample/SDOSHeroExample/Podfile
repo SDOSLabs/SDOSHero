@@ -1,0 +1,27 @@
+source 'http://git.sdos.es/ios/cocoapods-specs.git'
+source 'https://github.com/CocoaPods/Specs.git'
+
+platform :ios, '8.0'
+inhibit_all_warnings!
+use_frameworks!
+
+#=================================================
+#=====================Project=====================
+#Poner aquí todas las librerías propias del proyecto
+
+
+
+#=================================================
+#=================================================
+
+#=====================Core=====================
+
+def shared_pods
+    pod 'SDOS/Default'
+	# pod 'SDOS/Hero', '~> 1.0'
+	pod 'SDOSHero', :path => '../../'
+end
+
+target :SDOSHeroExample do
+	shared_pods
+end

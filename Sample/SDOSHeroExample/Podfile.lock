@@ -1,0 +1,27 @@
+PODS:
+  - Hero (1.0.0)
+  - SDOS/Default (1.2.4):
+    - SDOS/Default/Manager (= 1.2.4)
+  - SDOS/Default/Manager (1.2.4)
+  - SDOSHero (1.0.0):
+    - Hero
+    - SDOSHero/Hero (= 1.0.0)
+  - SDOSHero/Hero (1.0.0):
+    - Hero
+
+DEPENDENCIES:
+  - SDOS/Default
+  - SDOSHero (from `../../`)
+
+EXTERNAL SOURCES:
+  SDOSHero:
+    :path: ../../
+
+SPEC CHECKSUMS:
+  Hero: 18e7cf8af41c04c8532d1430ac174004a9365c87
+  SDOS: 1684c40d335393e6e774ead637f05a7377d5d304
+  SDOSHero: fc828c0f0c6152948cf58a211a87a3c5a627ecac
+
+PODFILE CHECKSUM: b4ec9c6221a2f42d4e662a8c9cda02988532e8d4
+
+COCOAPODS: 1.1.1

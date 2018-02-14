@@ -1,0 +1,25 @@
+//
+// Prefix header for all source files of the 'BaseProject' target in the 'BaseProject' project
+//
+
+#import <Availability.h>
+
+#ifdef __OBJC__
+    #import <UIKit/UIKit.h>
+    #import <Foundation/Foundation.h>
+
+//Import de las dependencias
+#import <SDOS/SDOS.h>
+#import <SDOSHero/SDOSHero-Swift.h>
+#import <Hero/Hero-Swift.h>
+#import "Design+Extensions.h"
+#import "Constants.h"
+#import "ConstantsWS.h"
+
+//AutoGenerate
+#import "KZBootstrapConstants.h"
+#import "ImagesConstants.h"
+#import "StoryboardConstants.h"
+#import "LocalizableConstants.h"
+
+#endif
