@@ -17,11 +17,11 @@
 
 #define HeroModifierScale(float_scale) [NSString stringWithFormat:@"scale(" #float_scale ")"]
 
-#define HeroModifierScale(float_x, float_y, float_z) [NSString stringWithFormat:@"scale(" #float_x ", " #float_y ", " #float_z ")"]
+#define HeroModifierScaleXYZ(float_x, float_y, float_z) [NSString stringWithFormat:@"scale(" #float_x ", " #float_y ", " #float_z ")"]
 
 #define HeroModifierRotate(float_z) [NSString stringWithFormat:@"rotate(" #float_z ")"]
 
-#define HeroModifierRotate(float_x, float_y, float_z) [NSString stringWithFormat:@"rotate(" #float_x ", " #float_y ", " #float_z ")"]
+#define HeroModifierRotateXYZ(float_x, float_y, float_z) [NSString stringWithFormat:@"rotate(" #float_x ", " #float_y ", " #float_z ")"]
 
 #define HeroModifierTranslate(float_x, float_y, float_z) [NSString stringWithFormat:@"translate(" #float_x ", " #float_y ", " #float_z ")"]
 
@@ -35,7 +35,7 @@
 
 #define HeroModifierSpring @"spring"
 
-#define HeroModifierSpring(float_stiffness, float_damping) [NSString stringWithFormat:@"spring(" #float_stiffness ", " #float_damping ")"]
+#define HeroModifierSpringWith(float_stiffness, float_damping) [NSString stringWithFormat:@"spring(" #float_stiffness ", " #float_damping ")"]
 
 #define HeroModifierTimingFunction(float_cp1, float_cp2, float_cp3, float_cp4) [NSString stringWithFormat:@"timingFunction(" #float_cp1 ", " #float_cp2 ", " #float_cp3 ", " #float_cp4 ")"]
 
@@ -43,13 +43,13 @@
 
 #define HeroModifierArc(float_intensity) [NSString stringWithFormat:@"arc(" #float_intensity ")"]
 
-#define HeroModifierCascadeBottomToTop @"cascade(bottomToTop)"
+#define HeroModifierCascadeBottomToTop(float_delay, bool_forceMatchedToWait) [NSString stringWithFormat:@"cascade(" #float_delay ", bottomToTop, " #bool_forceMatchedToWait ")"]
 
-#define HeroModifierCascadeLeftToRight @"cascade(leftToRight)"
+#define HeroModifierCascadeLeftToRight(float_delay, bool_forceMatchedToWait) [NSString stringWithFormat:@"cascade(" #float_delay ", leftToRight, " #bool_forceMatchedToWait ")"]
 
-#define HeroModifierCascadeRightToLeft @"cascade(rightToLeft)"
+#define HeroModifierCascadeRightToLeft(float_delay, bool_forceMatchedToWait) [NSString stringWithFormat:@"cascade(" #float_delay ", rightToLeft, " #bool_forceMatchedToWait ")"]
 
-#define HeroModifierCascadeTopToBottom @"cascade(topToBottom)"
+#define HeroModifierCascadeTopToBottom(float_delay, bool_forceMatchedToWait) [NSString stringWithFormat:@"cascade(" #float_delay ", topToBottom, " #bool_forceMatchedToWait ")"]
 
 #define HeroModifierSource(source_heroID) [NSString stringWithFormat:@"source(" #source_heroID ")"]
 
@@ -68,3 +68,10 @@
 #define HeroModifierUseNoSnapshot @"useNoSnapshot"
 
 #define HeroModifierForceAnimate @"forceAnimate"
+
+
+// Booleans
+
+#define HeroModifierBoolTrue @"true"
+#define HeroModifierBoolFalse @"false"
+

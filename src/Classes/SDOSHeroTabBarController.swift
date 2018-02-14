@@ -1,6 +1,6 @@
 //
 //  SDOSHeroTabBarController.swift
-//  FLEX
+//  SDOSHero
 //
 //  Created by Antonio Jesús Pallares on 24/7/17.
 //

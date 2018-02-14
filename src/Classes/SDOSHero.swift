@@ -1,6 +1,6 @@
 //
 //  SDOSHero.swift
-//  Template-ListDetail
+//  SDOSHero
 //
 //  Created by Antonio Jesús Pallares on 6/6/17.
 //  Copyright © 2017 SDOS. All rights reserved.

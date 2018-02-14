@@ -1,6 +1,6 @@
 //
 //  SDOSHeroNavigationController.swift
-//  Pods
+//  SDOSHero
 //
 //  Created by Antonio Jesús Pallares on 12/6/17.
 //

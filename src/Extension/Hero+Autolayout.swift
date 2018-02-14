@@ -1,6 +1,6 @@
 //
 //  Hero+Autolayout.swift
-//  AppAvistaADIF
+//  SDOSHero
 //
 //  Created by Antonio Jesús Pallares on 30/11/17.
 //  Copyright © 2017 SDOS. All rights reserved.
