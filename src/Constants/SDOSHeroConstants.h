@@ -39,7 +39,7 @@
 
 #define HeroModifierTimingFunction(float_cp1, float_cp2, float_cp3, float_cp4) [NSString stringWithFormat:@"timingFunction(" #float_cp1 ", " #float_cp2 ", " #float_cp3 ", " #float_cp4 ")"]
 
-#define HeroModifierTimingFunction(name) [NSString stringWithFormat:@"timingFunction(" #name ")"]
+#define HeroModifierTimingFunctionWithName(name) [NSString stringWithFormat:@"timingFunction(" #name ")"]
 
 #define HeroModifierArc(float_intensity) [NSString stringWithFormat:@"arc(" #float_intensity ")"]
 
