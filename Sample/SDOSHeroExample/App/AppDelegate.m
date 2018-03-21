@@ -24,7 +24,7 @@
     [self.window makeKeyAndVisible];
     
     if ([vc isKindOfClass:[SDOSHeroTabBarController class]]) {
-        [((SDOSHeroTabBarController *)vc) setSDOSHeroTabBarDefaultAnimationType:SDOSHeroDefaultAnimationTypeZoomSlideLeft];
+        [((SDOSHeroTabBarController *)vc) setTabBarSDOSHeroAnimationType:SDOSHeroAnimationTypeZoomSlideLeft];
     }
     
     return YES;

@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 import Hero
 
-@objc public enum SDOSHeroDefaultAnimationType: Int {
+@objc public enum SDOSHeroAnimationType: Int {
     case auto = 0
     case pushLeft
     case pushRight
@@ -51,7 +51,7 @@ import Hero
 }
 
 
-internal extension SDOSHeroDefaultAnimationType {
+internal extension SDOSHeroAnimationType {
     var heroDefaultAnimationType: HeroDefaultAnimationType {
         let animationType: HeroDefaultAnimationType
         switch self {

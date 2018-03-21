@@ -30,6 +30,14 @@ public class SDOSHeroNavigationController: UINavigationController, UIGestureReco
     }
     
     
+    @objc public init(rootViewController: UIViewController, withSDOSHeroAnimationTypeForNavigationTransitions navigationType: SDOSHeroAnimationType, withSDOSHeroAnimationTypeForModalTransitions modalType: SDOSHeroAnimationType) {
+        super.init(rootViewController: rootViewController)
+        heroNavigationAnimationType = navigationType.heroDefaultAnimationType
+        heroModalAnimationType = HeroDefaultAnimationType.autoReverse(presenting:modalType.heroDefaultAnimationType)
+        isHeroEnabled = true
+    }
+    
+    
     public override init(navigationBarClass: AnyClass?, toolbarClass: AnyClass?) {
         super.init(navigationBarClass: navigationBarClass, toolbarClass: toolbarClass)
         isHeroEnabled = true
@@ -38,17 +46,9 @@ public class SDOSHeroNavigationController: UINavigationController, UIGestureReco
     }
     
     
-    public init(rootViewController: UIViewController, defaultPushSDOSHeroAnimationType pushType: SDOSHeroDefaultAnimationType, defaultModalSDOSHeroAnimationType modalType: SDOSHeroDefaultAnimationType) {
-        super.init(rootViewController: rootViewController)
-        heroNavigationAnimationType = pushType.heroDefaultAnimationType
-        heroModalAnimationType = HeroDefaultAnimationType.autoReverse(presenting:modalType.heroDefaultAnimationType)
-        isHeroEnabled = true
-    }
-    
-    
-    public init(navigationBarClass: AnyClass?, toolbarClass: AnyClass?, defaultPushSDOSHeroAnimationType pushType: SDOSHeroDefaultAnimationType, defaultModalSDOSHeroAnimationType modalType: SDOSHeroDefaultAnimationType) {
+    @objc public init(navigationBarClass: AnyClass?, toolbarClass: AnyClass?, withSDOSHeroAnimationTypeForNavigationTransitions navigationType: SDOSHeroAnimationType, withSDOSHeroAnimationTypeForModalTransitions modalType: SDOSHeroAnimationType) {
         super.init(navigationBarClass: navigationBarClass, toolbarClass: toolbarClass)
-        heroNavigationAnimationType = pushType.heroDefaultAnimationType
+        heroNavigationAnimationType = navigationType.heroDefaultAnimationType
         heroModalAnimationType = HeroDefaultAnimationType.autoReverse(presenting:modalType.heroDefaultAnimationType)
         isHeroEnabled = true
     }
@@ -67,7 +67,7 @@ public class SDOSHeroNavigationController: UINavigationController, UIGestureReco
     /// Method used to set the default animation type for push and pop transitions.
     ///
     /// - Parameter type: The type of the animation for the navigation transitions.
-    @objc public func setSDOSHeroNavigationDefaultAnimationType(_ type: SDOSHeroDefaultAnimationType) {
+    @objc public func setSDOSHeroAnimationTypeForNavigationTransitions(_ type: SDOSHeroAnimationType) {
         heroNavigationAnimationType = type.heroDefaultAnimationType
     }
     
@@ -76,7 +76,7 @@ public class SDOSHeroNavigationController: UINavigationController, UIGestureReco
     /// Method used to set the animation type for the next navigation transition.
     ///
     /// - Parameter type: The type of the animation for the next navigation.
-    @objc public func setDefaultAnimationForNextNavigationTransition(_ type: SDOSHeroDefaultAnimationType) {
+    @objc public func setSDOSHeroAnimationTypeForNextNavigationTransition(_ type: SDOSHeroAnimationType) {
         heroAnimationForNextNavigationTransition = type.heroDefaultAnimationType
     }
     

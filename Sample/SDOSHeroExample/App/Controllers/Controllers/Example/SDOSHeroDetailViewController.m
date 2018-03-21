@@ -54,7 +54,7 @@
     if (self.navigationController.viewControllers.firstObject == self) {
         UIViewController *vc = [self.storyboard instantiateViewControllerWithIdentifier:SDOSHeroDetailNavigationViewControllerIdentifier];
         vc.isHeroEnabled = YES;
-        [vc copySDOSHeroModalPresentationDefaultAnimationTypeFromViewController:self.navigationController];
+        [vc copyModalSDOSHeroAnimationTypeFromViewController:self.navigationController];
         [self.navigationController presentViewController:vc animated:YES completion:nil];
     } else {
         UIViewController *vc = [self.storyboard instantiateViewControllerWithIdentifier:SDOSHeroDetailViewControllerIdentifier];

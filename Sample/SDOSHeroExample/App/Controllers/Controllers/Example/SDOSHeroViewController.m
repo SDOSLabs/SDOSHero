@@ -42,7 +42,7 @@
 
 
 - (void)loadData {
-    self.arrayAnimationTypes = [SDOSHeroDefaultAnimationTypeUtil getAllAnimationTypesIdentifiers];
+    self.arrayAnimationTypes = [SDOSHeroAnimationTypeUtil getAllAnimationTypesIdentifiers];
 }
 
 
@@ -81,16 +81,16 @@
     
     ExampleTableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
     NSString *strIdentifier = cell.lbTitle.text;
-    SDOSHeroDefaultAnimationType type = [SDOSHeroDefaultAnimationTypeUtil typeForIdentifier:strIdentifier];
+    SDOSHeroAnimationType type = [SDOSHeroAnimationTypeUtil typeForIdentifier:strIdentifier];
     
     if ([self.navigationController isKindOfClass:[SDOSHeroNavigationController class]]) {
-        [((SDOSHeroNavigationController *) self.navigationController) setSDOSHeroNavigationDefaultAnimationType:type];
+        [((SDOSHeroNavigationController *) self.navigationController) setSDOSHeroAnimationTypeForNavigationTransitions:type];
         [self performSegueWithIdentifier:ShowDetailStoryboardSegue sender:indexPath];
     } else {
         SDOSHeroNavigationController *detailNavigationController = [self.storyboard instantiateViewControllerWithIdentifier:SDOSHeroDetailNavigationViewControllerIdentifier];
         if (detailNavigationController != nil) {
             detailNavigationController.isHeroEnabled = YES;
-            [detailNavigationController setSDOSHeroModalPresentationDefaultAnimationType:type];
+            [detailNavigationController setModalSDOSHeroAnimationType:type];
             
             if (detailNavigationController.viewControllers.firstObject != nil && [detailNavigationController.viewControllers.firstObject isKindOfClass:[SDOSHeroDetailViewController class]]) {
                 ((SDOSHeroDetailViewController *) detailNavigationController.viewControllers.firstObject).textAnimationType = self.arrayAnimationTypes[indexPath.row];

@@ -16,7 +16,7 @@ extension UIViewController {
     /// - Important: The receiver must be the view controller that is going to be presented (do not confuse with the presenting view controller).
     ///
     /// - Parameter type: The type of the modal animation.
-    @objc public func setSDOSHeroModalPresentationDefaultAnimationType(_ type: SDOSHeroDefaultAnimationType) {
+    @objc public func setModalSDOSHeroAnimationType(_ type: SDOSHeroAnimationType) {
         let heroAnimationType = type.heroDefaultAnimationType
         heroModalAnimationType = HeroDefaultAnimationType.autoReverse(presenting:heroAnimationType)
     }
@@ -25,7 +25,7 @@ extension UIViewController {
     /// This method copies the type of the modal presentation of `viewController` and sets it on the receiver.
     ///
     /// - Parameter viewController: The `UIViewController` instance from which to copy the hero modal animation type
-    @objc public func copySDOSHeroModalPresentationDefaultAnimationTypeFrom(viewController: UIViewController) {
+    @objc public func copyModalSDOSHeroAnimationTypeFrom(viewController: UIViewController) {
         heroModalAnimationType = viewController.heroModalAnimationType
     }
     
@@ -38,7 +38,7 @@ extension UIViewController {
         
         let (firstPresentingViewController, lastPresentedViewController) = firstPresentingAndLastPresentedViewControllers()
         if firstPresentingViewController != nil && lastPresentedViewController != nil {
-            lastPresentedViewController!.copySDOSHeroModalPresentationDefaultAnimationTypeFrom(viewController: firstPresentingViewController!.presentedViewController!)
+            lastPresentedViewController!.copyModalSDOSHeroAnimationTypeFrom(viewController: firstPresentingViewController!.presentedViewController!)
             lastPresentedViewController!.hero_unwindToRootViewController()
         } else {
             print("There is no presented View Controller to dismiss")
@@ -51,7 +51,7 @@ extension UIViewController {
     /// - Parameter type: The animation used to dismiss all the presented view controllers
     ///
     /// - Discussion: This method can be called on any of the view controllers in the modal stack
-    @objc public func dismissAllPresentedViewControllersUsing(animationType type: SDOSHeroDefaultAnimationType) {
+    @objc public func dismissAllPresentedViewControllersUsing(animationType type: SDOSHeroAnimationType) {
         
         let (firstPresentingViewController, lastPresentedViewController) = firstPresentingAndLastPresentedViewControllers()
         if firstPresentingViewController != nil && lastPresentedViewController != nil {

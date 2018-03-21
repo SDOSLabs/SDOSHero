@@ -10,19 +10,19 @@ import Foundation
 import SDOSHero
 
 
-@objc public class SDOSHeroDefaultAnimationTypeUtil: NSObject {
-    @objc class func identifierFor(type: SDOSHeroDefaultAnimationType) -> String {
+@objc public class SDOSHeroAnimationTypeUtil: NSObject {
+    @objc class func identifierFor(type: SDOSHeroAnimationType) -> String {
         return type.identifier
     }
     
     @objc class func getAllAnimationTypesIdentifiers() -> [String] {
-        return SDOSHeroDefaultAnimationType.arrayAllTypes.map({ type in
+        return SDOSHeroAnimationType.arrayAllTypes.map({ type in
             type.identifier
         })
     }
     
-    @objc class func typeFor(identifier: String) -> SDOSHeroDefaultAnimationType {
-        for type in SDOSHeroDefaultAnimationType.arrayAllTypes where type.identifier == identifier {
+    @objc class func typeFor(identifier: String) -> SDOSHeroAnimationType {
+        for type in SDOSHeroAnimationType.arrayAllTypes where type.identifier == identifier {
             return type
         }
         return .auto
@@ -30,7 +30,7 @@ import SDOSHero
 }
 
 
-fileprivate extension SDOSHeroDefaultAnimationType {
+fileprivate extension SDOSHeroAnimationType {
     
     var identifier: String {
         switch self {
@@ -112,12 +112,12 @@ fileprivate extension SDOSHeroDefaultAnimationType {
     }
     
     
-    static var arrayAllTypes: [SDOSHeroDefaultAnimationType] {
+    static var arrayAllTypes: [SDOSHeroAnimationType] {
         return [.auto, .pushLeft, .pushRight, .pushUp, .pushDown, .pullLeft, .pullRight, .pullUp, .pullDown, .coverLeft, .coverRight, .coverUp, .coverDown, .uncoverLeft, .uncoverRight, .uncoverUp, .uncoverDown, .slideLeft, .slideRight, .slideUp, .slideDown, .zoomSlideLeft, .zoomSlideRight, .zoomSlideUp, .zoomSlideDown, .pageInLeft, .pageInRight, .pageInUp, .pageInDown, .pageOutLeft, .pageOutRight, .pageOutUp, .pageOutDown, .fade, .zoom, .zoomOut, .none]
     }
     
     
-    static func typeFor(identifier: String) -> SDOSHeroDefaultAnimationType? {
+    static func typeFor(identifier: String) -> SDOSHeroAnimationType? {
         for type in arrayAllTypes where type.identifier == identifier {
             return type
         }

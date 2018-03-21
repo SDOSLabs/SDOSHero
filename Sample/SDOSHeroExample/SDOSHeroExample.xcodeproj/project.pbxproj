@@ -58,7 +58,7 @@
 		5C57D9991FB9D7CE00357C0B /* ExampleTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C57D9971FB9D7CE00357C0B /* ExampleTableViewCell.m */; };
 		5C57D99A1FB9D7CE00357C0B /* ExampleTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5C57D9981FB9D7CE00357C0B /* ExampleTableViewCell.xib */; };
 		5C57D9A01FB9DA6B00357C0B /* SDOSHeroDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C57D99F1FB9DA6B00357C0B /* SDOSHeroDetailViewController.m */; };
-		5C6406FB1FBACF54005A14CB /* SDOSHeroDefaultAnimationTypeUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C6406FA1FBACF54005A14CB /* SDOSHeroDefaultAnimationTypeUtil.swift */; };
+		5C6406FB1FBACF54005A14CB /* SDOSHeroAnimationTypeUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C6406FA1FBACF54005A14CB /* SDOSHeroAnimationTypeUtil.swift */; };
 		5C64070A1FBAEC5C005A14CB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5C6407091FBAEC5C005A14CB /* Assets.xcassets */; };
 /* End PBXBuildFile section */
 
@@ -124,7 +124,7 @@
 		5C57D99B1FB9D9C900357C0B /* SDOSHeroExample-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SDOSHeroExample-Bridging-Header.h"; sourceTree = "<group>"; };
 		5C57D99E1FB9DA6B00357C0B /* SDOSHeroDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SDOSHeroDetailViewController.h; sourceTree = "<group>"; };
 		5C57D99F1FB9DA6B00357C0B /* SDOSHeroDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SDOSHeroDetailViewController.m; sourceTree = "<group>"; };
-		5C6406FA1FBACF54005A14CB /* SDOSHeroDefaultAnimationTypeUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDOSHeroDefaultAnimationTypeUtil.swift; sourceTree = "<group>"; };
+		5C6406FA1FBACF54005A14CB /* SDOSHeroAnimationTypeUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDOSHeroAnimationTypeUtil.swift; sourceTree = "<group>"; };
 		5C6407091FBAEC5C005A14CB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6126E7F9EC2B6E869AD83F08 /* Pods-SDOSHeroExample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SDOSHeroExample.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SDOSHeroExample/Pods-SDOSHeroExample.debug.xcconfig"; sourceTree = "<group>"; };
 		75ECF5502F9AAE1E2E2683B4 /* Pods-SDOSHeroExample.production.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SDOSHeroExample.production.xcconfig"; path = "Pods/Target Support Files/Pods-SDOSHeroExample/Pods-SDOSHeroExample.production.xcconfig"; sourceTree = "<group>"; };
@@ -487,7 +487,7 @@
 				5C57D9911FB9D71E00357C0B /* SDOSHeroViewController.m */,
 				5C57D99E1FB9DA6B00357C0B /* SDOSHeroDetailViewController.h */,
 				5C57D99F1FB9DA6B00357C0B /* SDOSHeroDetailViewController.m */,
-				5C6406FA1FBACF54005A14CB /* SDOSHeroDefaultAnimationTypeUtil.swift */,
+				5C6406FA1FBACF54005A14CB /* SDOSHeroAnimationTypeUtil.swift */,
 			);
 			path = Example;
 			sourceTree = "<group>";
@@ -754,9 +754,14 @@
 			files = (
 			);
 			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-SDOSHeroExample/Pods-SDOSHeroExample-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Hero/Hero.framework",
+				"${BUILT_PRODUCTS_DIR}/SDOSHero/SDOSHero.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Hero.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDOSHero.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -811,13 +816,16 @@
 			files = (
 			);
 			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SDOSHeroExample-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 		5C8037D91E51C05F009289F3 /* Xcode Version */ = {
@@ -846,7 +854,7 @@
 				290A16DC1BFB3146002361EF /* AppDelegate.m in Sources */,
 				5C57D9A01FB9DA6B00357C0B /* SDOSHeroDetailViewController.m in Sources */,
 				298FD6701C0701E500BA707E /* StoryboardConstants.m in Sources */,
-				5C6406FB1FBACF54005A14CB /* SDOSHeroDefaultAnimationTypeUtil.swift in Sources */,
+				5C6406FB1FBACF54005A14CB /* SDOSHeroAnimationTypeUtil.swift in Sources */,
 				5C57D98E1FB9D69600357C0B /* InitialViewController.m in Sources */,
 				298FD64A1C0701E500BA707E /* main.m in Sources */,
 				5C57D9991FB9D7CE00357C0B /* ExampleTableViewCell.m in Sources */,
