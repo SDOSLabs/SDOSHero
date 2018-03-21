@@ -12,13 +12,34 @@ import Hero
 extension UIViewController {
     
     
+    
     /// Method used to set the Hero animation type for modal presentation of the receiver.
     /// - Important: The receiver must be the view controller that is going to be presented (do not confuse with the presenting view controller).
     ///
-    /// - Parameter type: The type of the modal animation.
+    /// - Parameter type: The type of the animation for the modal presentation. The modal presentation will be performed using this animation and the dismissal using the reverse animation.
     @objc public func setModalSDOSHeroAnimationType(_ type: SDOSHeroAnimationType) {
-        let heroAnimationType = type.heroDefaultAnimationType
-        heroModalAnimationType = HeroDefaultAnimationType.autoReverse(presenting:heroAnimationType)
+        setModalSDOSHeroAnimationType(presentationType: type, dismissType: nil)
+    }
+    
+    
+    /// Method used to set the Hero animation type for modal presentation of the receiver.
+    /// - Important: The receiver must be the view controller that is going to be presented (do not confuse with the presenting view controller).
+    ///
+    /// - Parameter type: The type of the animation for the modal presentation.
+    /// - Parameter dismissType: The type of the animation for the modal dismissal.
+    @objc public func setModalSDOSHeroAnimationType(_ type: SDOSHeroAnimationType, dismissType: SDOSHeroAnimationType) {
+        setModalSDOSHeroAnimationType(presentationType: type, dismissType: nil)
+    }
+    
+    
+    fileprivate func setModalSDOSHeroAnimationType(presentationType: SDOSHeroAnimationType, dismissType: SDOSHeroAnimationType? = nil) {
+        let heroAnimationType = presentationType.heroDefaultAnimationType
+        if let dismissType = dismissType {
+            let heroDismissType = dismissType.heroDefaultAnimationType
+            heroModalAnimationType = HeroDefaultAnimationType.selectBy(presenting: heroAnimationType, dismissing: heroDismissType)
+        } else {
+            heroModalAnimationType = HeroDefaultAnimationType.autoReverse(presenting:heroAnimationType)
+        }
     }
     
     
