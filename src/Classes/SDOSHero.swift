@@ -57,117 +57,186 @@ internal extension SDOSHeroAnimationType {
         switch self {
         case .auto:
             animationType = .auto
-            break;
         case .pushLeft:
             animationType = .push(direction: .left)
-            break;
         case .pushRight:
             animationType = .push(direction: .right)
-            break;
         case .pushUp:
             animationType = .push(direction: .up)
-            break;
         case .pushDown:
             animationType = .push(direction: .down)
-            break;
         case .pullLeft:
             animationType = .pull(direction: .left)
-            break;
         case .pullRight:
             animationType = .pull(direction: .right)
-            break;
         case .pullUp:
             animationType = .pull(direction: .up)
-            break;
         case .pullDown:
             animationType = .pull(direction: .down)
-            break;
         case .coverLeft:
             animationType = .cover(direction: .left)
-            break;
         case .coverRight:
             animationType = .cover(direction: .right)
-            break;
         case .coverUp:
             animationType = .cover(direction: .up)
-            break;
         case .coverDown:
             animationType = .cover(direction: .down)
-            break;
         case .uncoverLeft:
             animationType = .uncover(direction: .left)
-            break;
         case .uncoverRight:
             animationType = .uncover(direction: .right)
-            break;
         case .uncoverUp:
             animationType = .uncover(direction: .up)
-            break;
         case .uncoverDown:
             animationType = .uncover(direction: .down)
-            break;
         case .slideLeft:
             animationType = .slide(direction: .left)
-            break;
         case .slideRight:
             animationType = .slide(direction: .right)
-            break;
         case .slideUp:
             animationType = .slide(direction: .up)
-            break;
         case .slideDown:
             animationType = .slide(direction: .down)
-            break;
         case .zoomSlideLeft:
             animationType = .zoomSlide(direction: .left)
-            break;
         case .zoomSlideRight:
             animationType = .zoomSlide(direction: .right)
-            break;
         case .zoomSlideUp:
             animationType = .zoomSlide(direction: .up)
-            break;
         case .zoomSlideDown:
             animationType = .zoomSlide(direction: .down)
-            break;
         case .pageInLeft:
             animationType = .pageIn(direction: .left)
-            break;
         case .pageInRight:
             animationType = .pageIn(direction: .right)
-            break;
         case .pageInUp:
             animationType = .pageIn(direction: .up)
-            break;
         case .pageInDown:
             animationType = .pageIn(direction: .down)
-            break;
         case .pageOutLeft:
             animationType = .pageOut(direction: .left)
-            break;
         case .pageOutRight:
             animationType = .pageOut(direction: .right)
-            break;
         case .pageOutUp:
             animationType = .pageOut(direction: .up)
-            break;
         case .pageOutDown:
             animationType = .pageOut(direction: .down)
-            break;
         case .fade:
             animationType = .fade
-            break;
         case .zoom:
             animationType = .zoom
-            break;
         case .zoomOut:
             animationType = .zoomOut
-            break;
         case .none:
             animationType = .none
-            break;
         }
         return animationType
+    }
+}
+
+
+internal extension HeroDefaultAnimationType {
+    
+    var sdosHeroAnimationTypeForPresenting: SDOSHeroAnimationType {
+        
+        let sdosHeroAnimationType: SDOSHeroAnimationType
+        if case HeroDefaultAnimationType.selectBy(presenting: let presenting, dismissing: _) == self {
+            return HeroDefaultAnimationType.sdosHeroAnimationTypeFrom(basicHeroDefaultAnimationType: presenting)
+        } else {
+            return HeroDefaultAnimationType.sdosHeroAnimationTypeFrom(basicHeroDefaultAnimationType: self)
+        }
+    }
+    
+    var sdosHeroAnimationTypeForDismissing: SDOSHeroAnimationType {
+        let sdosHeroAnimationType: SDOSHeroAnimationType
+        if case HeroDefaultAnimationType.selectBy(presenting: _, dismissing: let dismissing) == self {
+            return HeroDefaultAnimationType.sdosHeroAnimationTypeFrom(basicHeroDefaultAnimationType: dismissing)
+        } else {
+            return HeroDefaultAnimationType.sdosHeroAnimationTypeFrom(basicHeroDefaultAnimationType: self)
+        }
+    }
+    
+    // This method only works for the HeroDefaultAnimationType that is not of the case .selectBy. If type is of case .selectBy, it returns SDOSHeroAnimationType.auto
+    private static func sdosHeroAnimationTypeFrom(basicHeroDefaultAnimationType type: HeroDefaultAnimationType) -> SDOSHeroAnimationType {
+        let animationType: SDOSHeroAnimationType
+        switch type {
+        case .push(direction: .left)
+            animationType = .pushLeft:
+        case .push(direction: .right):
+            animationType = .pushRight
+        case .push(direction: .up):
+            animationType = .pushUp
+        case .push(direction: .down):
+            animationType = .pushDown
+        case .pull(direction: .left):
+            animationType = .pullLeft
+        case .pull(direction: .right):
+            animationType = .pullRight
+        case .pull(direction: .up):
+            animationType = .pullUp
+        case .pull(direction: .down):
+            animationType = .pullDown
+        case .cover(direction: .left):
+            animationType = .coverLeft
+        case .cover(direction: .right):
+            animationType = .coverRight
+        case .cover(direction: .up):
+            animationType = .coverUp
+        case .cover(direction: .down):
+            animationType = .coverDown
+        case .uncover(direction: .left):
+            animationType = .uncoverLeft
+        case .uncover(direction: .right):
+            animationType = .uncoverRight
+        case .uncover(direction: .up):
+            animationType = .uncoverUp
+        case .uncover(direction: .down):
+            animationType = .uncoverDown
+        case .slide(direction: .left)
+            animationType = .slideLeft:
+        case .slide(direction: .right):
+            animationType = .slideRight
+        case .slide(direction: .up):
+            animationType = .slideUp
+        case .slide(direction: .down):
+            animationType = .slideDown
+        case .zoomSlide(direction: .left):
+            animationType = .zoomSlideLeft
+        case .zoomSlide(direction: .right):
+            animationType = .zoomSlideRight
+        case .zoomSlide(direction: .up):
+            animationType = .zoomSlideUp
+        case .zoomSlide(direction: .down):
+            animationType = .zoomSlideDown
+        case .pageIn(direction: .left):
+            animationType = .pageInLeft
+        case .pageIn(direction: .right):
+            animationType = .pageInRight
+        case .pageIn(direction: .up):
+            animationType = .pageInUp
+        case .pageIn(direction: .down):
+            animationType = .pageInDown
+        case .pageOut(direction: .left):
+            animationType = .pageOutLeft
+        case .pageOut(direction: .right):
+            animationType = .pageOutRight
+        case .pageOut(direction: .up):
+            animationType = .pageOutUp
+        case .pageOut(direction: .down):
+            animationType = .pageOutDown
+        case .fade:
+            animationType = .fade
+        case .zoom:
+            animationType = .zoom
+        case .zoomOut:
+            animationType = .zoomOut
+        case .none:
+            animationType = .none
+        default:
+            animationType = .auto
+        }
+        return animationType
+        }
     }
 }
 
