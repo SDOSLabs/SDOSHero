@@ -140,7 +140,7 @@ internal extension HeroDefaultAnimationType {
     var sdosHeroAnimationTypeForPresenting: SDOSHeroAnimationType {
         
         let sdosHeroAnimationType: SDOSHeroAnimationType
-        if case HeroDefaultAnimationType.selectBy(presenting: let presenting, dismissing: _) == self {
+        if case HeroDefaultAnimationType.selectBy(presenting: let presenting, dismissing: let _) = self {
             return HeroDefaultAnimationType.sdosHeroAnimationTypeFrom(basicHeroDefaultAnimationType: presenting)
         } else {
             return HeroDefaultAnimationType.sdosHeroAnimationTypeFrom(basicHeroDefaultAnimationType: self)
@@ -149,7 +149,7 @@ internal extension HeroDefaultAnimationType {
     
     var sdosHeroAnimationTypeForDismissing: SDOSHeroAnimationType {
         let sdosHeroAnimationType: SDOSHeroAnimationType
-        if case HeroDefaultAnimationType.selectBy(presenting: _, dismissing: let dismissing) == self {
+        if case HeroDefaultAnimationType.selectBy(presenting: let _, dismissing: let dismissing) = self {
             return HeroDefaultAnimationType.sdosHeroAnimationTypeFrom(basicHeroDefaultAnimationType: dismissing)
         } else {
             return HeroDefaultAnimationType.sdosHeroAnimationTypeFrom(basicHeroDefaultAnimationType: self)
@@ -160,8 +160,8 @@ internal extension HeroDefaultAnimationType {
     private static func sdosHeroAnimationTypeFrom(basicHeroDefaultAnimationType type: HeroDefaultAnimationType) -> SDOSHeroAnimationType {
         let animationType: SDOSHeroAnimationType
         switch type {
-        case .push(direction: .left)
-            animationType = .pushLeft:
+        case .push(direction: .left):
+            animationType = .pushLeft
         case .push(direction: .right):
             animationType = .pushRight
         case .push(direction: .up):
@@ -192,8 +192,8 @@ internal extension HeroDefaultAnimationType {
             animationType = .uncoverUp
         case .uncover(direction: .down):
             animationType = .uncoverDown
-        case .slide(direction: .left)
-            animationType = .slideLeft:
+        case .slide(direction: .left):
+            animationType = .slideLeft
         case .slide(direction: .right):
             animationType = .slideRight
         case .slide(direction: .up):
@@ -236,7 +236,6 @@ internal extension HeroDefaultAnimationType {
             animationType = .auto
         }
         return animationType
-        }
     }
 }
 
