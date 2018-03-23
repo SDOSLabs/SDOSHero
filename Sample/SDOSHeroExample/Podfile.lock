@@ -1,13 +1,13 @@
 PODS:
-  - Hero (1.0.0)
+  - Hero (1.1.0)
   - SDOS/Default (1.2.4):
     - SDOS/Default/Manager (= 1.2.4)
   - SDOS/Default/Manager (1.2.4)
   - SDOSHero (1.0.0):
-    - Hero
+    - Hero (~> 1.1.0)
     - SDOSHero/Hero (= 1.0.0)
   - SDOSHero/Hero (1.0.0):
-    - Hero
+    - Hero (~> 1.1.0)
 
 DEPENDENCIES:
   - SDOS/Default
@@ -18,9 +18,9 @@ EXTERNAL SOURCES:
     :path: ../../
 
 SPEC CHECKSUMS:
-  Hero: 18e7cf8af41c04c8532d1430ac174004a9365c87
+  Hero: ce59e81c79390613d97b43da7179e2c5e1017e04
   SDOS: 1684c40d335393e6e774ead637f05a7377d5d304
-  SDOSHero: 2045de338efee71ef84373ea17d902af00d8f738
+  SDOSHero: cab17ea4e7a7be4e6d902a304062e10fbf06eda1
 
 PODFILE CHECKSUM: b4ec9c6221a2f42d4e662a8c9cda02988532e8d4
 

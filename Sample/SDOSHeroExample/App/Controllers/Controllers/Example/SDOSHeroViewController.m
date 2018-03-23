@@ -69,7 +69,7 @@
     
     ExampleTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
     cell.lbTitle.text = self.arrayAnimationTypes[indexPath.row];
-    cell.lbTitle.heroID = self.arrayAnimationTypes[indexPath.row];
+    cell.lbTitle.sdosHeroID = self.arrayAnimationTypes[indexPath.row];
     [cell.lbTitle setHeroModifierStringWithHeroModifiers:@[HeroModifierArc(1)]];
     return cell;
 }
@@ -89,8 +89,7 @@
     } else {
         SDOSHeroNavigationController *detailNavigationController = [self.storyboard instantiateViewControllerWithIdentifier:SDOSHeroDetailNavigationViewControllerIdentifier];
         if (detailNavigationController != nil) {
-            detailNavigationController.isHeroEnabled = YES;
-            [detailNavigationController setModalSDOSHeroAnimationType:type];
+//            [detailNavigationController setModalSDOSHeroAnimationType:type];
             
             if (detailNavigationController.viewControllers.firstObject != nil && [detailNavigationController.viewControllers.firstObject isKindOfClass:[SDOSHeroDetailViewController class]]) {
                 ((SDOSHeroDetailViewController *) detailNavigationController.viewControllers.firstObject).textAnimationType = self.arrayAnimationTypes[indexPath.row];

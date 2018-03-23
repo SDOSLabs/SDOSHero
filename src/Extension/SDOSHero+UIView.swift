@@ -13,6 +13,37 @@ import Hero
 
 extension UIView {
     
+    //MARK: - Getters and setters for Objective-C.
+
+    @objc public var sdosHeroID: String? {
+        get {
+            return hero.id
+        }
+        set {
+            hero.id = newValue
+        }
+    }
+    
+    
+    @objc public var sdosHeroIsEnabled: Bool {
+        get {
+            return hero.isEnabled
+        }
+        set {
+            hero.isEnabled = newValue
+        }
+    }
+    
+    
+    @objc public var sdosHeroIsEnabledForSubviews: Bool {
+        get {
+            return hero.isEnabledForSubviews
+        }
+        set {
+            hero.isEnabledForSubviews = newValue
+        }
+    }
+    
     /// Convinience method that sets the heroModifierString of the receiver from the items of an `NSArray` of Hero Modifier Strings.
     /// - Important: Please, create each element of the `heroModifiers` array by using the constants declared in SDOSHeroConstants.h
     /// - Parameter heroModifiers: An `NSArray` containing every Hero Modifier String that will be used to create the returned object
@@ -25,12 +56,12 @@ extension UIView {
     /// - Parameter heroModifiers: An `NSArray` containing every Hero Modifier String that will be used to create the returned object
     /// - Parameter autolayoutEnabled: If set to YES, Hero will be forced to respect the receiver's autolayout constraints. This is needed due to a bug in Hero in cases where the receiver might be misplaced because it is animating since the view controller is created.
     @objc public func setHeroModifierStringWith(heroModifiers: [String], withAutolayoutEnabled autolayoutEnabled: Bool) {
-        heroModifierString = SDOSHeroModifierString.heroModifierStringWith(heroModifiers: heroModifiers)
+        hero.modifierString = SDOSHeroModifierString.heroModifierStringWith(heroModifiers: heroModifiers)
         if (autolayoutEnabled) {
-            if (self.heroModifiers != nil) {
-                self.heroModifiers?.append(HeroModifier.autolayout)
+            if (self.hero.modifiers != nil) {
+                self.hero.modifiers?.append(HeroModifier.autolayout)
             } else {
-                self.heroModifiers = [HeroModifier.autolayout]
+                self.hero.modifiers = [HeroModifier.autolayout]
             }
         }
     }

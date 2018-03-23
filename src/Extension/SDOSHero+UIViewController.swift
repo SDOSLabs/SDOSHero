@@ -15,11 +15,15 @@ extension UIViewController {
     
     
     /// In this property we store the animation type set using the 3 functions setSDOSHeroAnimationTypeForModalPresentation:, setSDOSHeroAnimationTypeForModalDismissal and setSDOSHeroAnimationTypeForModalPresentation:forModalDismissal:
+    ///
     /// By default, the animation types for presentations and dismissals are .auto.
+    ///
     /// Setting only the animation type for presentation (with setSDOSHeroAnimationTypeForModalPresentation:) sets the desired animation type only for that animation type (and viceversa with setSDOSHeroAnimationTypeForModalDismissal:). In this case, the desired animation type for dismissal would remain unchanged (and viceversa).
+    ///
     /// However, the actual heroDefaultAnimationType (the one that takes effect) may not coincide with the desired animation type.
+    ///
     /// The reason is that SDOSHero translates .auto as the opposite animation of the contrary action (presentation or dismissal). Therefore, if the desired animation type for presentation is, e.g., zoom in and the desired animation type for dismissal is auto, then the actual heroDefaultAnimationType is set to zoom in for presentation and zoom out for dismissal.
-    internal var desiredHeroDefaultAnimationType: HeroDefaultAnimationType {
+    private var desiredHeroDefaultAnimationType: HeroDefaultAnimationType {
         get {
             if let type = objc_getAssociatedObject(self, &UIViewController.AssociatedKeyDesiredHeroDefaultAnimationType) as? HeroDefaultAnimationType {
                 return type
@@ -34,16 +38,20 @@ extension UIViewController {
     //MARK: - Getting the animation types
     
     /// Returns the current animation type of the receiver for modal presentations.
+    ///
     /// If the returned animation type is `.auto`, then the animation for the modal presentation will be the opposite animation to that returned by `animationTypeForDismissing`.
     /// If `animationTypeForDismissing` is also `.auto`, then the animation for the modal presentation will be the default system animation.
-    var animationTypeForPresenting: SDOSHeroAnimationType {
+    @objc public var animationTypeForPresenting: SDOSHeroAnimationType {
         get {
             return desiredHeroDefaultAnimationType.sdosHeroAnimationTypeForPresenting
         }
     }
     
-    /// Returns the current animation type of the receiver for modal dismissals. If the returned animation type is `.auto`, then the animation for the modal dismissal will be the opposite animation to that returned by `animationTypeForDismissing`. If `animationTypeForPresenting` is also `.auto`, then the animation for modal dismissals will be the default system animation.
-    var animationTypeForDismissing: SDOSHeroAnimationType {
+    /// Returns the current animation type of the receiver for modal dismissals.
+    ///
+    /// If the returned animation type is `.auto`, then the animation for the modal dismissal will be the opposite animation to that returned by `animationTypeForPresenting`.
+    /// If `animationTypeForPresenting` is also `.auto`, then the animation for modal dismissals will be the default system animation.
+    @objc public var animationTypeForDismissing: SDOSHeroAnimationType {
         get {
             return desiredHeroDefaultAnimationType.sdosHeroAnimationTypeForDismissing
         }
@@ -77,7 +85,7 @@ extension UIViewController {
     /// - Parameter type: The type of the animation for the modal dismissal
     @objc public func setSDOSHeroAnimationTypeForModalDismissing(_ type: SDOSHeroAnimationType) {
         
-        isHeroEnabled = true
+        hero.isEnabled = true
         
         let heroDismissalType = type.heroDefaultAnimationType
         switch desiredHeroDefaultAnimationType {
@@ -122,13 +130,13 @@ extension UIViewController {
     private func updateHeroModalAnimationType() {
         switch desiredHeroDefaultAnimationType {
         case .selectBy(presenting: .auto, dismissing: .auto):
-            heroModalAnimationType = .auto
+            hero.modalAnimationType = .auto
         case .selectBy(presenting: let presenting, dismissing: .auto):
-            heroModalAnimationType = .selectBy(presenting: presenting, dismissing: presenting.oppositeAnimationType)
+            hero.modalAnimationType = .selectBy(presenting: presenting, dismissing: presenting.oppositeAnimationType)
         case .selectBy(presenting: .auto, dismissing: let dismissing):
-            heroModalAnimationType = .selectBy(presenting: dismissing.oppositeAnimationType, dismissing: dismissing)
+            hero.modalAnimationType = .selectBy(presenting: dismissing.oppositeAnimationType, dismissing: dismissing)
         default:
-            heroModalAnimationType = desiredHeroDefaultAnimationType
+            hero.modalAnimationType = desiredHeroDefaultAnimationType
         }
     }
     
@@ -141,10 +149,10 @@ extension UIViewController {
     
     
     @objc public func present(viewController: UIViewController, usingAnimation animationType: SDOSHeroAnimationType, completion: (() -> Void)?) {
-        let currentAnimationType = viewController.heroModalAnimationType
-        viewController.heroModalAnimationType = animationType.heroDefaultAnimationType
+        let currentAnimationType = viewController.hero.modalAnimationType
+        viewController.hero.modalAnimationType = animationType.heroDefaultAnimationType
         present(viewController, animated: true, completion: completion)
-        viewController.heroModalAnimationType = currentAnimationType
+        viewController.hero.modalAnimationType = currentAnimationType
     }
     
     
@@ -157,12 +165,12 @@ extension UIViewController {
     
     @objc public func dismissViewController(usingAnimation animationType: SDOSHeroAnimationType, completion: (() -> Void)?) {
         
-        // Only change the heroModalAnimationType for the controller that is going to be dismissed
+        // Only change the hero.modalAnimationType for the controller that is going to be dismissed
         let lastPresentedViewController = self.lastPresentedViewController()
-        let currentAnimationType = lastPresentedViewController.heroModalAnimationType
-        lastPresentedViewController.heroModalAnimationType = animationType.heroDefaultAnimationType
+        let currentAnimationType = lastPresentedViewController.hero.modalAnimationType
+        lastPresentedViewController.hero.modalAnimationType = animationType.heroDefaultAnimationType
         dismiss(animated: true, completion: completion)
-        lastPresentedViewController.heroModalAnimationType = currentAnimationType
+        lastPresentedViewController.hero.modalAnimationType = currentAnimationType
     }
     
     
@@ -176,13 +184,13 @@ extension UIViewController {
         let heroAnimationType = type.heroDefaultAnimationType
         
         // The animation type of lastPresentedViewController is only changed for this transition
-        let currentAnimationType = lastPresentedViewController.heroModalAnimationType
+        let currentAnimationType = lastPresentedViewController.hero.modalAnimationType
         
-        lastPresentedViewController.heroModalAnimationType = HeroDefaultAnimationType.autoReverse(presenting: heroAnimationType.oppositeAnimationType)
+        lastPresentedViewController.hero.modalAnimationType = HeroDefaultAnimationType.autoReverse(presenting: heroAnimationType.oppositeAnimationType)
         lastPresentedViewController.hero_unwindToRootViewController()
         
         // After the transition, the animation type of lastPresentedViewController is set to its original value
-        lastPresentedViewController.heroModalAnimationType = currentAnimationType
+        lastPresentedViewController.hero.modalAnimationType = currentAnimationType
     }
 
     

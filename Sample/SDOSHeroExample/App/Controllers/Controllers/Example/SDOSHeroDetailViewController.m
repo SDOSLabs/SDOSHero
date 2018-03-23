@@ -32,7 +32,7 @@
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(actionNext:)];
     
     self.lbAnimationType.text = self.textAnimationType;
-    self.lbAnimationType.heroID = self.textAnimationType;
+    self.lbAnimationType.sdosHeroID = self.textAnimationType;
     [self.lbAnimationType setHeroModifierStringWithHeroModifiers:@[HeroModifierArc(1)]];
     [self.lbAnimationType loadStyleLabelExample];
     [self.lbAnimationType loadStyleViewClear];
