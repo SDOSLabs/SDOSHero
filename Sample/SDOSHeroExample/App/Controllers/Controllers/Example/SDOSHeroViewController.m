@@ -84,12 +84,13 @@
     SDOSHeroAnimationType type = [SDOSHeroAnimationTypeUtil typeForIdentifier:strIdentifier];
     
     if ([self.navigationController isKindOfClass:[SDOSHeroNavigationController class]]) {
-        [((SDOSHeroNavigationController *) self.navigationController) setSDOSHeroAnimationTypeForNavigationTransitions:type];
+        [((SDOSHeroNavigationController *) self.navigationController) setSDOSHeroAnimationTypeForPushNavigations:type];
         [self performSegueWithIdentifier:ShowDetailStoryboardSegue sender:indexPath];
     } else {
         SDOSHeroNavigationController *detailNavigationController = [self.storyboard instantiateViewControllerWithIdentifier:SDOSHeroDetailNavigationViewControllerIdentifier];
         if (detailNavigationController != nil) {
 //            [detailNavigationController setModalSDOSHeroAnimationType:type];
+            [detailNavigationController setSDOSHeroAnimationTypeForModalPresenting:type];
             
             if (detailNavigationController.viewControllers.firstObject != nil && [detailNavigationController.viewControllers.firstObject isKindOfClass:[SDOSHeroDetailViewController class]]) {
                 ((SDOSHeroDetailViewController *) detailNavigationController.viewControllers.firstObject).textAnimationType = self.arrayAnimationTypes[indexPath.row];

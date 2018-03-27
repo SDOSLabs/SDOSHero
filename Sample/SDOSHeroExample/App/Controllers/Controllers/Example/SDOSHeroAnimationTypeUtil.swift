@@ -27,6 +27,11 @@ import SDOSHero
         }
         return .auto
     }
+    
+    @objc class func randomAnimation() -> SDOSHeroAnimationType {
+        let array = SDOSHeroAnimationType.arrayAllTypes
+        return array[Int(arc4random()) % array.count]
+    }
 }
 
 
