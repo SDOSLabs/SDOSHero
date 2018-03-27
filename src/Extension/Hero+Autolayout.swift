@@ -19,7 +19,7 @@ extension HeroModifier {
     }
 }
 
-class HeroAutolayoutFixPlugin: HeroPlugin {
+fileprivate class HeroAutolayoutFixPlugin: HeroPlugin {
     static let modifier = "turnOnTranslatedAutoresizingMaskWhileAnimation"
     
     override func process(fromViews: [UIView], toViews: [UIView]) {

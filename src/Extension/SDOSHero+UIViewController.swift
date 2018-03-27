@@ -5,7 +5,6 @@
 //  Created by Antonio Jesús Pallares on 13/7/17.
 //
 
-import UIKit
 import Hero
 
 
@@ -40,7 +39,7 @@ extension UIViewController {
     /// Returns the current animation type of the receiver for modal presentations.
     ///
     /// If the returned animation type is `.auto`, then the animation for the modal presentation will be the opposite animation to that returned by `animationTypeForDismissing`.
-    /// If `animationTypeForDismissing` is also `.auto`, then the animation for the modal presentation will be the default system animation.
+    /// If `animationTypeForDismissing` is also `.auto`, then the animation for the modal presentation will be the default animation for Hero, that is, fade.
     @objc public var animationTypeForPresenting: SDOSHeroAnimationType {
         get {
             return desiredHeroDefaultAnimationType.sdosHeroAnimationTypeForPresenting
@@ -50,7 +49,7 @@ extension UIViewController {
     /// Returns the current animation type of the receiver for modal dismissals.
     ///
     /// If the returned animation type is `.auto`, then the animation for the modal dismissal will be the opposite animation to that returned by `animationTypeForPresenting`.
-    /// If `animationTypeForPresenting` is also `.auto`, then the animation for modal dismissals will be the default system animation.
+    /// If `animationTypeForPresenting` is also `.auto`, then the animation for modal dismissals will be the default animation for Hero, that is, fade.
     @objc public var animationTypeForDismissing: SDOSHeroAnimationType {
         get {
             return desiredHeroDefaultAnimationType.sdosHeroAnimationTypeForDismissing
@@ -174,12 +173,17 @@ extension UIViewController {
     }
     
     
+    @objc public func sdoshero_unwindToRootViewController() {
+        hero.unwindToRootViewController()
+    }
+    
+    
     /// Dismisses all the presented view controllers at once using the passed animation. This method can be called on any of the view controllers in the modal stack
     ///
     /// - Parameter type: The animation used to dismiss all the presented view controllers
     @objc public func sdoshero_unwindToRootViewControllerUsing(animation type: SDOSHeroAnimationType) {
         let lastPresentedViewController = self.lastPresentedViewController()
-        lastPresentedViewController.isHeroEnabled = true
+        lastPresentedViewController.hero.isEnabled = true
         
         let heroAnimationType = type.heroDefaultAnimationType
         
@@ -187,7 +191,7 @@ extension UIViewController {
         let currentAnimationType = lastPresentedViewController.hero.modalAnimationType
         
         lastPresentedViewController.hero.modalAnimationType = HeroDefaultAnimationType.autoReverse(presenting: heroAnimationType.oppositeAnimationType)
-        lastPresentedViewController.hero_unwindToRootViewController()
+        lastPresentedViewController.hero.unwindToRootViewController()
         
         // After the transition, the animation type of lastPresentedViewController is set to its original value
         lastPresentedViewController.hero.modalAnimationType = currentAnimationType

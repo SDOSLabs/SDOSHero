@@ -11,7 +11,7 @@ import Hero
 
 public class SDOSHeroNavigationController: UINavigationController, UIGestureRecognizerDelegate {
     
-    private var arrayHeroAnimationPushHistory = [HeroDefaultAnimationType]()
+    private var arrayHeroAnimationNavigationHistory = [HeroDefaultAnimationType]()
     private lazy var heroTransition: HeroTransition = {
         let heroTransition = HeroTransition.init()
 //        self.transitioningDelegate = heroTransition // This must not be done because it would override the modal presentation animation types
@@ -19,85 +19,126 @@ public class SDOSHeroNavigationController: UINavigationController, UIGestureReco
         return heroTransition
     }()
     
+    private var desiredNavigationHeroDefaultAnimationType: HeroDefaultAnimationType = .auto
+    
+    //MARK: - Getting the animation types
+    
+    /// Returns the current animation type of the receiver for push transitions.
+    ///
+    /// If the returned animation type is `.auto`, then the animation for push transitions will be the opposite animation to that returned by `animationTypeForPop`.
+    /// If `animationTypeForPop` is also `.auto`, then the animation for navigation transitions will be the default system animation.
+    @objc public var animationTypeForPush: SDOSHeroAnimationType {
+        get {
+            return desiredNavigationHeroDefaultAnimationType.sdosHeroAnimationTypeForPresenting
+        }
+    }
+    
+    /// Returns the current animation type of the receiver for pop transitions.
+    ///
+    /// If the returned animation type is `.auto`, then the animation for pop transitions will be the opposite animation to that returned by `animationTypeForPush`.
+    /// If `animationTypeForPush` is also `.auto`, then the animation for navigation transitions will be the default system animation.
+    @objc public var animationTypeForPop: SDOSHeroAnimationType {
+        get {
+            return desiredNavigationHeroDefaultAnimationType.sdosHeroAnimationTypeForDismissing
+        }
+    }
+    
     
     //MARK: - Initialization
     
     public override init(rootViewController: UIViewController) {
         super.init(rootViewController: rootViewController)
-        isHeroEnabled = true
-        heroNavigationAnimationType = .push(direction: .left)
-        heroModalAnimationType = HeroDefaultAnimationType.autoReverse(presenting: .cover(direction: .up))
-    }
-    
-    
-    @objc public init(rootViewController: UIViewController, withSDOSHeroAnimationTypeForNavigationTransitions navigationType: SDOSHeroAnimationType, withSDOSHeroAnimationTypeForModalTransitions modalType: SDOSHeroAnimationType) {
-        super.init(rootViewController: rootViewController)
-        heroNavigationAnimationType = navigationType.heroDefaultAnimationType
-        heroModalAnimationType = HeroDefaultAnimationType.autoReverse(presenting:modalType.heroDefaultAnimationType)
-        isHeroEnabled = true
+        hero.isEnabled = true
     }
     
     
     public override init(navigationBarClass: AnyClass?, toolbarClass: AnyClass?) {
         super.init(navigationBarClass: navigationBarClass, toolbarClass: toolbarClass)
-        isHeroEnabled = true
-        heroNavigationAnimationType = .push(direction: .left)
-        heroModalAnimationType = HeroDefaultAnimationType.autoReverse(presenting: .cover(direction: .up))
+        hero.isEnabled = true
     }
-    
-    
-    @objc public init(navigationBarClass: AnyClass?, toolbarClass: AnyClass?, withSDOSHeroAnimationTypeForNavigationTransitions navigationType: SDOSHeroAnimationType, withSDOSHeroAnimationTypeForModalTransitions modalType: SDOSHeroAnimationType) {
-        super.init(navigationBarClass: navigationBarClass, toolbarClass: toolbarClass)
-        heroNavigationAnimationType = navigationType.heroDefaultAnimationType
-        heroModalAnimationType = HeroDefaultAnimationType.autoReverse(presenting:modalType.heroDefaultAnimationType)
-        isHeroEnabled = true
-    }
-    
+
     
     public required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
-        heroNavigationAnimationType = .push(direction: .left)
-        heroModalAnimationType = HeroDefaultAnimationType.autoReverse(presenting: .cover(direction: .up))
-        isHeroEnabled = true
+        hero.isEnabled = true
     }
     
     
-    //MARK: - Changing the Animation type
+    //MARK: - Setting the animation types
+    
+    /// Method used to set the default animation type for push transitions.
+    ///
+    /// - Parameter type: The type of the animation for push transitions.
+    @objc public func setSDOSHeroAnimationType(forPushNavigations type: SDOSHeroAnimationType) {
+        
+        let heroAnimationType = type.heroDefaultAnimationType
+        switch desiredNavigationHeroDefaultAnimationType {
+        case .selectBy(presenting: _, dismissing: let currentDesiredPopType):
+            desiredNavigationHeroDefaultAnimationType = .selectBy(presenting: heroAnimationType, dismissing: currentDesiredPopType)
+        default:
+            desiredNavigationHeroDefaultAnimationType = .selectBy(presenting: heroAnimationType, dismissing: .auto)
+        }
+    }
+    
+    /// Method used to set the default animation type for pop transitions.
+    ///
+    /// - Parameter type: The type of the animation for pop transitions.
+    @objc public func setSDOSHeroAnimationType(forPopNavigations type: SDOSHeroAnimationType) {
+        
+        let heroAnimationType = type.heroDefaultAnimationType
+        switch desiredNavigationHeroDefaultAnimationType {
+        case .selectBy(presenting: let currentDesiredPushType, dismissing: _):
+            desiredNavigationHeroDefaultAnimationType = .selectBy(presenting: currentDesiredPushType, dismissing: heroAnimationType)
+        default:
+            desiredNavigationHeroDefaultAnimationType = .selectBy(presenting: .auto, dismissing: heroAnimationType)
+        }
+    }
+    
+    
+    //MARK: - Setting the animation types
     
     /// Method used to set the default animation type for push and pop transitions.
     ///
-    /// - Parameter type: The type of the animation for the navigation transitions.
-    @objc public func setSDOSHeroAnimationTypeForNavigationTransitions(_ type: SDOSHeroAnimationType) {
-        heroNavigationAnimationType = type.heroDefaultAnimationType
-    }
-    
-    private var heroAnimationForNextNavigationTransition: HeroDefaultAnimationType?
-    
-    /// Method used to set the animation type for the next navigation transition.
-    ///
-    /// - Parameter type: The type of the animation for the next navigation.
-    @objc public func setSDOSHeroAnimationTypeForNextNavigationTransition(_ type: SDOSHeroAnimationType) {
-        heroAnimationForNextNavigationTransition = type.heroDefaultAnimationType
+    /// - Parameter pushType: The type of the animation for push transitions.
+    /// - Parameter popType: The type of the animation for pop transitions.
+    @objc public func setSDOSHeroAnimationType(forPushNavigations pushType: SDOSHeroAnimationType, forPopNavigations popType: SDOSHeroAnimationType) {
+        desiredNavigationHeroDefaultAnimationType = .selectBy(presenting: pushType.heroDefaultAnimationType, dismissing: popType.heroDefaultAnimationType)
     }
     
     
-    //MARK: - Navigation
+    /// For internal use. Used in the push and pop methods in case the default animation needs to be change for that transition
+    fileprivate var heroAnimationForNextNavigationTransition: HeroDefaultAnimationType?
+    
+    
+    //MARK: - Push
+    
+    @objc public func push(viewController: UIViewController, usingAnimation pushAnimation: SDOSHeroAnimationType) {
+        push(viewController: viewController, pushHeroAnimation: pushAnimation.heroDefaultAnimationType, popHeroAnimation: desiredNavigationHeroDefaultAnimationType.heroDefaultAnimationTypeForDismissing)
+    }
+    
+    
+    @objc public func push(viewController: UIViewController, usingAnimationForPushAndOppositeForPop pushAnimation: SDOSHeroAnimationType) {
+        push(viewController: viewController, pushHeroAnimation: pushAnimation.heroDefaultAnimationType, popHeroAnimation: pushAnimation.heroDefaultAnimationType.oppositeAnimationType)
+    }
+    
+    
+    @objc public func push(viewController: UIViewController, usingAnimation pushAnimation: SDOSHeroAnimationType, withAnimationForPop popAnimation: SDOSHeroAnimationType) {
+        push(viewController: viewController, pushHeroAnimation: pushAnimation.heroDefaultAnimationType, popHeroAnimation: popAnimation.heroDefaultAnimationType)
+    }
+    
+    
+    private func push(viewController: UIViewController, pushHeroAnimation: HeroDefaultAnimationType, popHeroAnimation: HeroDefaultAnimationType) {
+        heroAnimationForNextNavigationTransition = HeroDefaultAnimationType.selectBy(presenting: pushHeroAnimation, dismissing: popHeroAnimation)
+        pushViewController(viewController, animated: true)
+    }
 
+    
     public override func pushViewController(_ viewController: UIViewController, animated: Bool) {
         
-        var animationType: HeroDefaultAnimationType?
-        
-        if heroAnimationForNextNavigationTransition != nil {
-            animationType = heroAnimationForNextNavigationTransition
-            heroAnimationForNextNavigationTransition = nil
-        }
-        if animationType == nil {
-            animationType = heroNavigationAnimationType
-        }
-        
-        heroTransition.defaultAnimation = animationType!
-        
-        arrayHeroAnimationPushHistory.append(animationType!)
+        let animationType = finalAnimationForNextPush()
+        arrayHeroAnimationNavigationHistory.append(animationType)
+        hero.navigationAnimationType = animationType
+
         super.pushViewController(viewController, animated: animated)
         
         updateInteractivePopGestureRecognizer()
@@ -110,41 +151,72 @@ public class SDOSHeroNavigationController: UINavigationController, UIGestureReco
     }
     
     
-    public override func popViewController(animated: Bool) -> UIViewController? {
-        var animationType: HeroDefaultAnimationType? = arrayHeroAnimationPushHistory.popLast()?.oppositeAnimationType
-        
-        if heroAnimationForNextNavigationTransition != nil {
-            animationType = heroAnimationForNextNavigationTransition
+    private func finalAnimationForNextPush() -> HeroDefaultAnimationType {
+        var animationType: HeroDefaultAnimationType
+        if let type = heroAnimationForNextNavigationTransition {
             heroAnimationForNextNavigationTransition = nil
+            animationType = type
+        } else {
+            animationType = desiredNavigationHeroDefaultAnimationType
         }
         
-        if animationType == nil {
-            animationType = heroNavigationAnimationType.oppositeAnimationType
-        }
-        
-        updateInteractivePopGestureRecognizer()
+        return parse(animationType: animationType)
+    }
     
-        heroTransition.defaultAnimation = animationType!
+    
+    /// This function takes care of normalizing the animation for presentation and dismissal. That is to make sure that if the animation for only one transition (presentation or dismissal) is set to .auto, it changes it to the opposite of the animation for the other transition.
+    ///
+    /// - Parameter type: the animation type to be normalized
+    /// - Returns: the normalized animation type
+    private func parse(animationType type: HeroDefaultAnimationType) -> HeroDefaultAnimationType {
+        let parsedAnimationType: HeroDefaultAnimationType
+        switch type {
+        case .selectBy(presenting: .auto, dismissing: .auto):
+            parsedAnimationType = .auto
+        case .selectBy(presenting: let presenting, dismissing: .auto):
+            parsedAnimationType = .selectBy(presenting: presenting, dismissing: presenting.oppositeAnimationType)
+        case .selectBy(presenting: .auto, dismissing: let dismissing):
+            parsedAnimationType = .selectBy(presenting: dismissing.oppositeAnimationType, dismissing: dismissing)
+        default:
+            parsedAnimationType = type
+        }
+        return parsedAnimationType
+    }
+    
+    
+    //MARK: Pop
+    
+    @objc public func popViewController(usingAnimation popAnimation: SDOSHeroAnimationType) -> UIViewController? {
+        heroAnimationForNextNavigationTransition = HeroDefaultAnimationType.selectBy(presenting: .auto, dismissing: popAnimation.heroDefaultAnimationType)
+        return popViewController(animated: true)
+    }
+    
+    
+    public override func popViewController(animated: Bool) -> UIViewController? {
         
-        let controller = super.popViewController(animated: animated)
+        let animationType = finalAnimationForNextPopTransition(historyAnimationType: arrayHeroAnimationNavigationHistory.popLast())
+        hero.navigationAnimationType = animationType
         
-        return controller
+        return super.popViewController(animated: animated)
     }
     
     
     public override func popToViewController(_ viewController: UIViewController, animated: Bool) -> [UIViewController]? {
         if let index = viewControllers.index(of: viewController) {
-            var arrayAnimations = arrayHeroAnimationPushHistory[0...index]
-            var animationType = arrayAnimations.popLast()?.oppositeAnimationType
-            arrayHeroAnimationPushHistory = Array(arrayAnimations)
             
-            if (animationType == nil) {
-                animationType = heroNavigationAnimationType.oppositeAnimationType
-            }
+            let animationTypeInHistory = arrayHeroAnimationNavigationHistory.popLast()
+            arrayHeroAnimationNavigationHistory = Array(arrayHeroAnimationNavigationHistory[0..<index])
             
+            // This would be done if the first animation in the history array is wanted
+//            var arrayAnimations = arrayHeroAnimationNavigationHistory[0...index]
+//            var animationTypeInHistory = arrayAnimations.popLast()
+//            arrayHeroAnimationNavigationHistory = Array(arrayAnimations)
+            
+            let animationType = finalAnimationForNextPopTransition(historyAnimationType: animationTypeInHistory)
+
+            hero.navigationAnimationType = animationType
+
             updateInteractivePopGestureRecognizer()
-            
-            heroTransition.defaultAnimation = animationType!
         }
         return super.popToViewController(viewController, animated: animated)
     }
@@ -152,17 +224,27 @@ public class SDOSHeroNavigationController: UINavigationController, UIGestureReco
     
     public override func popToRootViewController(animated: Bool) -> [UIViewController]? {
      
-        var animationType: HeroDefaultAnimationType? = arrayHeroAnimationPushHistory.first?.oppositeAnimationType
-        arrayHeroAnimationPushHistory.removeAll()
+        let animationTypeInHistory = arrayHeroAnimationNavigationHistory.last
+        arrayHeroAnimationNavigationHistory.removeAll()
         
-        if (animationType == nil) {
-            animationType = heroNavigationAnimationType.oppositeAnimationType
-        }
+        let animationType = finalAnimationForNextPopTransition(historyAnimationType: animationTypeInHistory)
         
         updateInteractivePopGestureRecognizer()
         
-        heroTransition.defaultAnimation = animationType!
+        hero.navigationAnimationType = animationType
         return super.popToRootViewController(animated: animated)
+    }
+    
+    
+    private func finalAnimationForNextPopTransition(historyAnimationType: HeroDefaultAnimationType?) -> HeroDefaultAnimationType {
+        let animationType: HeroDefaultAnimationType
+        if let type = heroAnimationForNextNavigationTransition {
+            heroAnimationForNextNavigationTransition = nil
+            animationType = type
+        } else {
+            animationType = historyAnimationType ?? desiredNavigationHeroDefaultAnimationType
+        }
+        return parse(animationType: animationType)
     }
     
     
@@ -196,9 +278,9 @@ public class SDOSHeroNavigationController: UINavigationController, UIGestureReco
             return
         }
         
-        if supportsInteractiveTransition && arrayHeroAnimationPushHistory.count > 0 {
+        if supportsInteractiveTransition && arrayHeroAnimationNavigationHistory.count > 0 {
             
-            let edges: UIRectEdge = arrayHeroAnimationPushHistory.last!.edgeForPanGesture
+            let edges: UIRectEdge = arrayHeroAnimationNavigationHistory.last!.edgeForPanGesture
             if customInteractivePopGestureRecognizer == nil || customInteractivePopGestureRecognizer!.edges != edges {
                 let edgePanGesture = UIScreenEdgePanGestureRecognizer(target: self, action: #selector(handlePan(gestureRecognizer:)))
                 // In order for the gesture to be recognized when edges == .top or .bottom, it is necessary for the ViewController's prefersStatusBarHidden method to return true
@@ -238,8 +320,8 @@ public class SDOSHeroNavigationController: UINavigationController, UIGestureReco
         
         switch gestureRecognizer.state {
         case .began:
-            // Since in popViewController(animated:) we drop the last element of arrayHeroAnimationPushHistory. We need to temporaly store it in order to be able to put the animation back to arrayHeroAnimationPushHistory in case the pop is cancelled after all.
-            animationTypeForCurrentPop = arrayHeroAnimationPushHistory.last?.oppositeAnimationType
+            // Since in popViewController(animated:) we drop the last element of arrayHeroAnimationNavigationHistory. We need to temporaly store it in order to be able to put the animation back to arrayHeroAnimationNavigationHistory in case the pop is cancelled after all.
+            animationTypeForCurrentPop = arrayHeroAnimationNavigationHistory.last
             // begin the transition as normal
             heroTransition.start()
             popViewController(animated: true)
@@ -284,9 +366,9 @@ public class SDOSHeroNavigationController: UINavigationController, UIGestureReco
     
     
     private func cancelPop() {
-        if animationTypeForCurrentPop != nil {
-            arrayHeroAnimationPushHistory.append(animationTypeForCurrentPop!.oppositeAnimationType)
-            animationTypeForCurrentPop = nil
+        if let animationTypeForCurrentPop = animationTypeForCurrentPop {
+            arrayHeroAnimationNavigationHistory.append(animationTypeForCurrentPop)
+            self.animationTypeForCurrentPop = nil
         }
         heroTransition.cancel(animate: true)
         updateInteractivePopGestureRecognizer()
@@ -319,7 +401,6 @@ fileprivate extension UIScreenEdgePanGestureRecognizer {
             return velocity(in: nil).x / view.frame.size.width
         }
     }
-    
 }
 
 
@@ -337,6 +418,8 @@ fileprivate extension HeroDefaultAnimationType {
             case .down:
                 return .bottom
             }
+        case .selectBy(presenting: let presenting, dismissing: let _):
+            return presenting.edgeForPanGesture
         default:
             return .left
         }
