@@ -133,20 +133,29 @@ public class SDOSHeroNavigationController: UINavigationController, UIGestureReco
     }
 
     
+    private var viewControllersHashes = [Int]()
+    
     public override func pushViewController(_ viewController: UIViewController, animated: Bool) {
         
-        let animationType = finalAnimationForNextPush()
-        arrayHeroAnimationNavigationHistory.append(animationType)
-        hero.navigationAnimationType = animationType
-
-        super.pushViewController(viewController, animated: animated)
-        
-        updateInteractivePopGestureRecognizer()
-        
-        // Disable the interactions during the push animation
-        customInteractivePopGestureRecognizer?.isEnabled = false
-        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.351) {
-            self.customInteractivePopGestureRecognizer?.isEnabled = true
+        if viewControllersHashes.contains(viewController.hash) {
+            super.pushViewController(viewController, animated: animated)
+        } else {
+            viewControllersHashes.append(viewController.hash)
+            
+            let animationType = finalAnimationForNextPush()
+            arrayHeroAnimationNavigationHistory.append(animationType)
+    
+            hero.navigationAnimationType = animationType
+            
+            super.pushViewController(viewController, animated: animated)
+            
+            updateInteractivePopGestureRecognizer()
+            
+            // Disable the interactions during the push animation
+            customInteractivePopGestureRecognizer?.isEnabled = false
+            DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.351) {
+                self.customInteractivePopGestureRecognizer?.isEnabled = true
+            }
         }
     }
     
@@ -197,28 +206,39 @@ public class SDOSHeroNavigationController: UINavigationController, UIGestureReco
         let animationType = finalAnimationForNextPopTransition(historyAnimationType: arrayHeroAnimationNavigationHistory.popLast())
         hero.navigationAnimationType = animationType
         
-        return super.popViewController(animated: animated)
+        let vc = super.popViewController(animated: animated)
+        cleanTrackOf(viewController: vc)
+        return vc
     }
     
     
     public override func popToViewController(_ viewController: UIViewController, animated: Bool) -> [UIViewController]? {
+        
         if let index = viewControllers.index(of: viewController) {
             
-            let animationTypeInHistory = arrayHeroAnimationNavigationHistory.popLast()
-            arrayHeroAnimationNavigationHistory = Array(arrayHeroAnimationNavigationHistory[0..<index])
+            var animationTypeInHistory: HeroDefaultAnimationType? = nil
             
-            // This would be done if the first animation in the history array is wanted
+            // This is needed because, in some cases where a lot of pushes and pops are invoked, a crash could happen due to an "Array index is out of range" error.
+            if index < arrayHeroAnimationNavigationHistory.count {
+                animationTypeInHistory = arrayHeroAnimationNavigationHistory.popLast()
+                arrayHeroAnimationNavigationHistory = Array(arrayHeroAnimationNavigationHistory[0..<index])
+            }
+            
+            // This would be done if the first animation in the history array is wanted (instead of the last)
 //            var arrayAnimations = arrayHeroAnimationNavigationHistory[0...index]
 //            var animationTypeInHistory = arrayAnimations.popLast()
 //            arrayHeroAnimationNavigationHistory = Array(arrayAnimations)
-            
             let animationType = finalAnimationForNextPopTransition(historyAnimationType: animationTypeInHistory)
-
             hero.navigationAnimationType = animationType
 
             updateInteractivePopGestureRecognizer()
         }
-        return super.popToViewController(viewController, animated: animated)
+        
+        let arrayVCs = super.popToViewController(viewController, animated: animated)
+        arrayVCs?.forEach {
+            cleanTrackOf(viewController: $0)
+        }
+        return arrayVCs
     }
     
     
@@ -228,11 +248,21 @@ public class SDOSHeroNavigationController: UINavigationController, UIGestureReco
         arrayHeroAnimationNavigationHistory.removeAll()
         
         let animationType = finalAnimationForNextPopTransition(historyAnimationType: animationTypeInHistory)
-        
         updateInteractivePopGestureRecognizer()
-        
         hero.navigationAnimationType = animationType
-        return super.popToRootViewController(animated: animated)
+        
+        let arrayVC = super.popToRootViewController(animated: animated)
+        arrayVC?.forEach {
+            cleanTrackOf(viewController: $0)
+        }
+        return arrayVC
+    }
+    
+    
+    private func cleanTrackOf(viewController: UIViewController?) {
+        if let hash = viewController?.hash, let index = viewControllersHashes.index(of: hash) {
+            viewControllersHashes.remove(at: index)
+        }
     }
     
     
@@ -313,6 +343,7 @@ public class SDOSHeroNavigationController: UINavigationController, UIGestureReco
     
     
     private var animationTypeForCurrentPop: HeroDefaultAnimationType?
+    private var hashForCurrentPop: Int?
     
     func handlePan(gestureRecognizer: UIScreenEdgePanGestureRecognizer) {
         var progress = abs(gestureRecognizer.translation(in: self.view).x / self.view.bounds.width)
@@ -322,6 +353,8 @@ public class SDOSHeroNavigationController: UINavigationController, UIGestureReco
         case .began:
             // Since in popViewController(animated:) we drop the last element of arrayHeroAnimationNavigationHistory. We need to temporaly store it in order to be able to put the animation back to arrayHeroAnimationNavigationHistory in case the pop is cancelled after all.
             animationTypeForCurrentPop = arrayHeroAnimationNavigationHistory.last
+            hashForCurrentPop = viewControllersHashes.last
+            
             // begin the transition as normal
             heroTransition.start()
             popViewController(animated: true)
@@ -369,6 +402,10 @@ public class SDOSHeroNavigationController: UINavigationController, UIGestureReco
         if let animationTypeForCurrentPop = animationTypeForCurrentPop {
             arrayHeroAnimationNavigationHistory.append(animationTypeForCurrentPop)
             self.animationTypeForCurrentPop = nil
+        }
+        if let hashForCurrentPop = hashForCurrentPop {
+            viewControllersHashes.append(hashForCurrentPop)
+            self.hashForCurrentPop = nil
         }
         heroTransition.cancel(animate: true)
         updateInteractivePopGestureRecognizer()
