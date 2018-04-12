@@ -69,7 +69,7 @@ public class SDOSHeroNavigationController: UINavigationController, UIGestureReco
     /// Method used to set the default animation type for push transitions.
     ///
     /// - Parameter type: The type of the animation for push transitions.
-    @objc public func setSDOSHeroAnimationType(forPushNavigations type: SDOSHeroAnimationType) {
+    @objc public func setSDOSHeroAnimationTypeForPushNavigations(_ type: SDOSHeroAnimationType) {
         
         let heroAnimationType = type.heroDefaultAnimationType
         switch desiredNavigationHeroDefaultAnimationType {
@@ -83,7 +83,7 @@ public class SDOSHeroNavigationController: UINavigationController, UIGestureReco
     /// Method used to set the default animation type for pop transitions.
     ///
     /// - Parameter type: The type of the animation for pop transitions.
-    @objc public func setSDOSHeroAnimationType(forPopNavigations type: SDOSHeroAnimationType) {
+    @objc public func setSDOSHeroAnimationTypeForPopNavigations(_ type: SDOSHeroAnimationType) {
         
         let heroAnimationType = type.heroDefaultAnimationType
         switch desiredNavigationHeroDefaultAnimationType {
@@ -101,7 +101,7 @@ public class SDOSHeroNavigationController: UINavigationController, UIGestureReco
     ///
     /// - Parameter pushType: The type of the animation for push transitions.
     /// - Parameter popType: The type of the animation for pop transitions.
-    @objc public func setSDOSHeroAnimationType(forPushNavigations pushType: SDOSHeroAnimationType, forPopNavigations popType: SDOSHeroAnimationType) {
+    @objc public func setSDOSHeroAnimationTypeForPushNavigations(_ pushType: SDOSHeroAnimationType, forPopNavigations popType: SDOSHeroAnimationType) {
         desiredNavigationHeroDefaultAnimationType = .selectBy(presenting: pushType.heroDefaultAnimationType, dismissing: popType.heroDefaultAnimationType)
     }
     
@@ -112,22 +112,22 @@ public class SDOSHeroNavigationController: UINavigationController, UIGestureReco
     
     //MARK: - Push
     
-    @objc public func push(viewController: UIViewController, usingAnimation pushAnimation: SDOSHeroAnimationType) {
-        push(viewController: viewController, pushHeroAnimation: pushAnimation.heroDefaultAnimationType, popHeroAnimation: desiredNavigationHeroDefaultAnimationType.heroDefaultAnimationTypeForDismissing)
+    @objc public func pushViewController(_ viewController: UIViewController, usingAnimation pushAnimation: SDOSHeroAnimationType) {
+        pushViewController(viewController, pushHeroAnimation: pushAnimation.heroDefaultAnimationType, popHeroAnimation: desiredNavigationHeroDefaultAnimationType.heroDefaultAnimationTypeForDismissing)
     }
     
     
-    @objc public func push(viewController: UIViewController, usingAnimationForPushAndOppositeForPop pushAnimation: SDOSHeroAnimationType) {
-        push(viewController: viewController, pushHeroAnimation: pushAnimation.heroDefaultAnimationType, popHeroAnimation: pushAnimation.heroDefaultAnimationType.oppositeAnimationType)
+    @objc public func pushViewController(_ viewController: UIViewController, usingAnimationForPushAndOppositeForPop pushAnimation: SDOSHeroAnimationType) {
+        pushViewController(viewController, pushHeroAnimation: pushAnimation.heroDefaultAnimationType, popHeroAnimation: pushAnimation.heroDefaultAnimationType.oppositeAnimationType)
     }
     
     
-    @objc public func push(viewController: UIViewController, usingAnimation pushAnimation: SDOSHeroAnimationType, withAnimationForPop popAnimation: SDOSHeroAnimationType) {
-        push(viewController: viewController, pushHeroAnimation: pushAnimation.heroDefaultAnimationType, popHeroAnimation: popAnimation.heroDefaultAnimationType)
+    @objc public func pushViewController(_ viewController: UIViewController, usingAnimation pushAnimation: SDOSHeroAnimationType, withAnimationForPop popAnimation: SDOSHeroAnimationType) {
+        pushViewController(viewController, pushHeroAnimation: pushAnimation.heroDefaultAnimationType, popHeroAnimation: popAnimation.heroDefaultAnimationType)
     }
     
     
-    private func push(viewController: UIViewController, pushHeroAnimation: HeroDefaultAnimationType, popHeroAnimation: HeroDefaultAnimationType) {
+    private func pushViewController(_ viewController: UIViewController, pushHeroAnimation: HeroDefaultAnimationType, popHeroAnimation: HeroDefaultAnimationType) {
         heroAnimationForNextNavigationTransition = HeroDefaultAnimationType.selectBy(presenting: pushHeroAnimation, dismissing: popHeroAnimation)
         pushViewController(viewController, animated: true)
     }
@@ -195,7 +195,7 @@ public class SDOSHeroNavigationController: UINavigationController, UIGestureReco
     
     //MARK: Pop
     
-    @objc public func popViewController(usingAnimation popAnimation: SDOSHeroAnimationType) -> UIViewController? {
+    @objc public func popViewControllerUsingAnimation(_ popAnimation: SDOSHeroAnimationType) -> UIViewController? {
         heroAnimationForNextNavigationTransition = HeroDefaultAnimationType.selectBy(presenting: .auto, dismissing: popAnimation.heroDefaultAnimationType)
         return popViewController(animated: true)
     }
@@ -209,6 +209,12 @@ public class SDOSHeroNavigationController: UINavigationController, UIGestureReco
         let vc = super.popViewController(animated: animated)
         cleanTrackOf(viewController: vc)
         return vc
+    }
+    
+    
+    @objc public func popToViewController(_ viewController: UIViewController, usingAnimation animation: SDOSHeroAnimationType) -> [UIViewController]? {
+        heroAnimationForNextNavigationTransition = HeroDefaultAnimationType.selectBy(presenting: .auto, dismissing: animation.heroDefaultAnimationType)
+        return popToViewController(viewController, animated: true)
     }
     
     
@@ -232,6 +238,8 @@ public class SDOSHeroNavigationController: UINavigationController, UIGestureReco
             hero.navigationAnimationType = animationType
 
             updateInteractivePopGestureRecognizer()
+        } else {
+            heroAnimationForNextNavigationTransition = nil
         }
         
         let arrayVCs = super.popToViewController(viewController, animated: animated)

@@ -9,66 +9,70 @@
 
 @interface SDOSHeroModifier : NSObject
 
-extern NSString * _Nonnull const HeroModifierFade;
+@property (strong, readonly) NSString *string;
+- (instancetype)initWithString:(NSString *)string;
 
-NSString * _Nonnull HeroModifierOpacity(float opacity);
 
-NSString * _Nonnull HeroModifierPosition(float x, float y);
+SDOSHeroModifier * _Nonnull HeroModifierFade(void);
 
-NSString * _Nonnull HeroModifierSize(float width, float height);
+SDOSHeroModifier * _Nonnull HeroModifierOpacity(float opacity);
 
-NSString * _Nonnull HeroModifierScale(float scale);
+SDOSHeroModifier * _Nonnull HeroModifierPosition(float x, float y);
 
-NSString * _Nonnull HeroModifierScaleXYZ(float x, float y, float z);
+SDOSHeroModifier * _Nonnull HeroModifierSize(float width, float height);
 
-NSString * _Nonnull HeroModifierRotate(float z);
+SDOSHeroModifier * _Nonnull HeroModifierScale(float scale);
 
-NSString * _Nonnull HeroModifierRotateXYZ(float x, float y, float z);
+SDOSHeroModifier * _Nonnull HeroModifierScaleXYZ(float x, float y, float z);
 
-NSString * _Nonnull HeroModifierTranslate(float x, float y, float z);
+SDOSHeroModifier * _Nonnull HeroModifierRotate(float z);
 
-NSString * _Nonnull HeroModifierOverlayColor(float red, float green, float blue, float opacity);
+SDOSHeroModifier * _Nonnull HeroModifierRotateXYZ(float x, float y, float z);
 
-NSString * _Nonnull HeroModifierDuration(double duration);
+SDOSHeroModifier * _Nonnull HeroModifierTranslate(float x, float y, float z);
 
-extern NSString * _Nonnull const HeroModifierDurationMatchLongest;
+SDOSHeroModifier * _Nonnull HeroModifierOverlayColor(float red, float green, float blue, float opacity);
 
-NSString * _Nonnull HeroModifierDelay(double delay);
+SDOSHeroModifier * _Nonnull HeroModifierDuration(double duration);
 
-extern NSString * _Nonnull const HeroModifierSpring;
+SDOSHeroModifier * _Nonnull HeroModifierDurationMatchLongest(void);
 
-NSString * _Nonnull HeroModifierSpringWith(float stiffness, float damping);
+SDOSHeroModifier * _Nonnull HeroModifierDelay(double delay);
 
-NSString * _Nonnull HeroModifierTimingFunction(float cp1, float cp2, float cp3, float cp4);
+SDOSHeroModifier * _Nonnull HeroModifierSpring(void);
 
-NSString * _Nonnull HeroModifierTimingFunctionWithName(NSString * _Nonnull name);
+SDOSHeroModifier * _Nonnull HeroModifierSpringWith(float stiffness, float damping);
 
-NSString * _Nonnull HeroModifierArc(float intensity);
+SDOSHeroModifier * _Nonnull HeroModifierTimingFunction(float cp1, float cp2, float cp3, float cp4);
 
-NSString * _Nonnull HeroModifierCascadeBottomToTop(float delay, BOOL forceMatchedToWait);
+SDOSHeroModifier * _Nonnull HeroModifierTimingFunctionWithName(NSString * _Nonnull name);
 
-NSString * _Nonnull HeroModifierCascadeLeftToRight(float delay, BOOL forceMatchedToWait);
+SDOSHeroModifier * _Nonnull HeroModifierArc(float intensity);
 
-NSString * _Nonnull HeroModifierCascadeRightToLeft(float delay, BOOL forceMatchedToWait);
+SDOSHeroModifier * _Nonnull HeroModifierCascadeBottomToTop(float delay, BOOL forceMatchedToWait);
 
-NSString * _Nonnull HeroModifierCascadeTopToBottom(float delay, BOOL forceMatchedToWait);
+SDOSHeroModifier * _Nonnull HeroModifierCascadeLeftToRight(float delay, BOOL forceMatchedToWait);
 
-NSString * _Nonnull HeroModifierSource(NSString * _Nonnull source_heroID);
+SDOSHeroModifier * _Nonnull HeroModifierCascadeRightToLeft(float delay, BOOL forceMatchedToWait);
 
-extern NSString * _Nonnull const HeroModifierUseGlobalCoordinateSpace;
+SDOSHeroModifier * _Nonnull HeroModifierCascadeTopToBottom(float delay, BOOL forceMatchedToWait);
 
-extern NSString * _Nonnull const HeroModifierIgnoreSubviewModifiers;
+SDOSHeroModifier * _Nonnull HeroModifierSource(NSString * _Nonnull source_heroID);
 
-NSString * _Nonnull HeroModifierZPosition(float z);
+SDOSHeroModifier * _Nonnull HeroModifierUseGlobalCoordinateSpace(void);
 
-extern NSString * _Nonnull const HeroModifierUseOptimizedSnapshot;
+SDOSHeroModifier * _Nonnull HeroModifierIgnoreSubviewModifiers(void);
 
-extern NSString * _Nonnull const HeroModifierUseNormalSnapshot;
+SDOSHeroModifier * _Nonnull HeroModifierZPosition(float z);
 
-extern NSString * _Nonnull const HeroModifierUseLayerRenderSnapshot;
+SDOSHeroModifier * _Nonnull HeroModifierUseOptimizedSnapshot(void);
 
-extern NSString * _Nonnull const HeroModifierUseNoSnapshot;
+SDOSHeroModifier * _Nonnull HeroModifierUseNormalSnapshot(void);
 
-extern NSString * _Nonnull const HeroModifierForceAnimate;
+SDOSHeroModifier * _Nonnull HeroModifierUseLayerRenderSnapshot(void);
+
+SDOSHeroModifier * _Nonnull HeroModifierUseNoSnapshot(void);
+
+SDOSHeroModifier * _Nonnull HeroModifierForceAnimate(void);
 
 @end

@@ -30,8 +30,8 @@
 
 
 - (void)loadStyle {
-    self.navigationController.isHeroEnabled = YES; // For Navigation Transitions
-    self.isHeroEnabled = YES; // For Modal Transitions
+//    self.navigationController.isHeroEnabled = YES; // For Navigation Transitions
+//    self.isHeroEnabled = YES; // For Modal Transitions
     self.navigationItem.title = [self.navigationController isKindOfClass:[SDOSHeroNavigationController class]] ? @"Navigation" : @"Modal";
 }
 
@@ -70,7 +70,7 @@
     ExampleTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
     cell.lbTitle.text = self.arrayAnimationTypes[indexPath.row];
     cell.lbTitle.sdosHeroID = self.arrayAnimationTypes[indexPath.row];
-    [cell.lbTitle setHeroModifierStringWithHeroModifiers:@[HeroModifierArc(1)]];
+    [cell.lbTitle setSDOSHeroModifiers:@[HeroModifierArc(1)]];
     return cell;
 }
 

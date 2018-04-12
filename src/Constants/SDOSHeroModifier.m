@@ -7,111 +7,144 @@
 
 #import "SDOSHeroModifier.h"
 
+@interface SDOSHeroModifier ()
+
+@property (strong, readwrite) NSString *string;
+
+@end
+
 @implementation SDOSHeroModifier
 
-NSString * _Nonnull const HeroModifierFade = @"fade";
-
-NSString * _Nonnull HeroModifierOpacity(float opacity) {
-    return [NSString stringWithFormat:@"opacity(%f)", opacity];
+- (instancetype)initWithString:(NSString *)string {
+    if (self = [super init]) {
+        self.string = string;
+    }
+    return self;
 }
 
-NSString * _Nonnull HeroModifierPosition(float x, float y) {
-    return [NSString stringWithFormat:@"position(%f, %f)", x, y];
+SDOSHeroModifier * _Nonnull HeroModifierFade() {
+    return [[SDOSHeroModifier alloc] initWithString:@"fade"];
 }
 
-NSString * _Nonnull HeroModifierSize(float width, float height) {
-    return [NSString stringWithFormat:@"size(%f, %f)", width, height];
+SDOSHeroModifier * _Nonnull HeroModifierOpacity(float opacity) {
+    return [[SDOSHeroModifier alloc] initWithString:[NSString stringWithFormat:@"opacity(%f)", opacity]];
 }
 
-NSString * _Nonnull HeroModifierScale(float scale) {
-    return [NSString stringWithFormat:@"scale(%f)", scale];
+SDOSHeroModifier * _Nonnull HeroModifierPosition(float x, float y) {
+    return [[SDOSHeroModifier alloc] initWithString:[NSString stringWithFormat:@"position(%f, %f)", x, y]];
 }
 
-NSString * _Nonnull HeroModifierScaleXYZ(float x, float y, float z) {
-    return [NSString stringWithFormat:@"scale(%f, %f, %f)", x, y, z];
+SDOSHeroModifier * _Nonnull HeroModifierSize(float width, float height) {
+    return [[SDOSHeroModifier alloc] initWithString:[NSString stringWithFormat:@"size(%f, %f)", width, height]];
 }
 
-NSString * _Nonnull HeroModifierRotate(float z) {
-    return [NSString stringWithFormat:@"rotate(%f)", z];
+SDOSHeroModifier * _Nonnull HeroModifierScale(float scale) {
+    return [[SDOSHeroModifier alloc] initWithString:[NSString stringWithFormat:@"scale(%f)", scale]];
 }
 
-NSString * _Nonnull HeroModifierRotateXYZ(float x, float y, float z) {
-    return [NSString stringWithFormat:@"rotate(%f, %f, %f)", x, y, z];
+SDOSHeroModifier * _Nonnull HeroModifierScaleXYZ(float x, float y, float z) {
+    return [[SDOSHeroModifier alloc] initWithString:[NSString stringWithFormat:@"scale(%f, %f, %f)", x, y, z]];
 }
 
-NSString * _Nonnull HeroModifierTranslate(float x, float y, float z) {
-    return [NSString stringWithFormat:@"translate(%f, %f, %f)", x, y, z];
+SDOSHeroModifier * _Nonnull HeroModifierRotate(float z) {
+    return [[SDOSHeroModifier alloc] initWithString:[NSString stringWithFormat:@"rotate(%f)", z]];
 }
 
-NSString * _Nonnull HeroModifierOverlayColor(float red, float green, float blue, float opacity) {
-    return [NSString stringWithFormat:@"overlay(%f, %f, %f, %f)", red, green, blue, opacity];
+SDOSHeroModifier * _Nonnull HeroModifierRotateXYZ(float x, float y, float z) {
+    return [[SDOSHeroModifier alloc] initWithString:[NSString stringWithFormat:@"rotate(%f, %f, %f)", x, y, z]];
 }
 
-NSString * _Nonnull HeroModifierDuration(double duration) {
-    return [NSString stringWithFormat:@"duration(%f)", duration];
+SDOSHeroModifier * _Nonnull HeroModifierTranslate(float x, float y, float z) {
+    return [[SDOSHeroModifier alloc] initWithString:[NSString stringWithFormat:@"translate(%f, %f, %f)", x, y, z]];
 }
 
-NSString * _Nonnull const HeroModifierDurationMatchLongest = @"durationMatchLongest";
-
-NSString * _Nonnull HeroModifierDelay(double delay) {
-    return [NSString stringWithFormat:@"delay(%f)", delay];
+SDOSHeroModifier * _Nonnull HeroModifierOverlayColor(float red, float green, float blue, float opacity) {
+    return [[SDOSHeroModifier alloc] initWithString:[NSString stringWithFormat:@"overlay(%f, %f, %f, %f)", red, green, blue, opacity]];
 }
 
-NSString * _Nonnull const HeroModifierSpring = @"spring";
-
-NSString * _Nonnull HeroModifierSpringWith(float stiffness, float damping) {
-    return [NSString stringWithFormat:@"spring(%f, %f)", stiffness, damping];
+SDOSHeroModifier * _Nonnull HeroModifierDuration(double duration) {
+    return [[SDOSHeroModifier alloc] initWithString:[NSString stringWithFormat:@"duration(%f)", duration]];
 }
 
-NSString * _Nonnull HeroModifierTimingFunction(float cp1, float cp2, float cp3, float cp4) {
-    return [NSString stringWithFormat:@"timingFunction(%f, %f, %f, %f)", cp1, cp2, cp3, cp4];
+SDOSHeroModifier * _Nonnull HeroModifierDurationMatchLongest() {
+    return [[SDOSHeroModifier alloc] initWithString:@"durationMatchLongest"];
 }
 
-NSString * _Nonnull HeroModifierTimingFunctionWithName(NSString * _Nonnull name) {
-    return [NSString stringWithFormat:@"timingFunction(%@)", name];
+SDOSHeroModifier * _Nonnull HeroModifierDelay(double delay) {
+    return [[SDOSHeroModifier alloc] initWithString:[NSString stringWithFormat:@"delay(%f)", delay]];
 }
 
-NSString * _Nonnull HeroModifierArc(float intensity) {
-    return [NSString stringWithFormat:@"arc(%f)", intensity];
+SDOSHeroModifier * _Nonnull HeroModifierSpring() {
+    return [[SDOSHeroModifier alloc] initWithString:@"spring"];
 }
 
-NSString * _Nonnull HeroModifierCascadeBottomToTop(float delay, BOOL forceMatchedToWait) {
-    return [NSString stringWithFormat:@"cascade(%f, bottomToTop, %@)", delay, forceMatchedToWait ? HeroModifierBoolTrue : HeroModifierBoolFalse];
+SDOSHeroModifier * _Nonnull HeroModifierSpringWith(float stiffness, float damping) {
+    return [[SDOSHeroModifier alloc] initWithString:[NSString stringWithFormat:@"spring(%f, %f)", stiffness, damping]];
 }
 
-NSString * _Nonnull HeroModifierCascadeLeftToRight(float delay, BOOL forceMatchedToWait) {
-    return [NSString stringWithFormat:@"cascade(%f, leftToRight, %@)", delay, forceMatchedToWait ? HeroModifierBoolTrue : HeroModifierBoolFalse];
+SDOSHeroModifier * _Nonnull HeroModifierTimingFunction(float cp1, float cp2, float cp3, float cp4) {
+    return [[SDOSHeroModifier alloc] initWithString:[NSString stringWithFormat:@"timingFunction(%f, %f, %f, %f)", cp1, cp2, cp3, cp4]];
 }
 
-NSString * _Nonnull HeroModifierCascadeRightToLeft(float delay, BOOL forceMatchedToWait) {
-    return [NSString stringWithFormat:@"cascade(%f, rightToLeft, %@)", delay, forceMatchedToWait ? HeroModifierBoolTrue : HeroModifierBoolFalse];
+SDOSHeroModifier * _Nonnull HeroModifierTimingFunctionWithName(NSString * _Nonnull name) {
+    return [[SDOSHeroModifier alloc] initWithString:[NSString stringWithFormat:@"timingFunction(%@)", name]];
 }
 
-NSString * _Nonnull HeroModifierCascadeTopToBottom(float delay, BOOL forceMatchedToWait) {
-    return [NSString stringWithFormat:@"cascade(%f, topToBottom, %@)", delay, forceMatchedToWait ? HeroModifierBoolTrue : HeroModifierBoolFalse];
+SDOSHeroModifier * _Nonnull HeroModifierArc(float intensity) {
+    return [[SDOSHeroModifier alloc] initWithString:[NSString stringWithFormat:@"arc(%f)", intensity]];
 }
 
-NSString * _Nonnull HeroModifierSource(NSString * _Nonnull source_heroID) {
-    return [NSString stringWithFormat:@"source(%@)", source_heroID];
+SDOSHeroModifier * _Nonnull HeroModifierCascadeBottomToTop(float delay, BOOL forceMatchedToWait) {
+    return [[SDOSHeroModifier alloc] initWithString:[NSString stringWithFormat:@"cascade(%f, bottomToTop, %@)", delay, forceMatchedToWait ? HeroModifierBoolTrue : HeroModifierBoolFalse]];
 }
 
-NSString * _Nonnull const HeroModifierUseGlobalCoordinateSpace = @"useGlobalCoordinateSpace";
-
-NSString * _Nonnull const HeroModifierIgnoreSubviewModifiers = @"ignoreSubviewModifiers";
-
-NSString * _Nonnull HeroModifierZPosition(float z) {
-    return [NSString stringWithFormat:@"zPosition(%f)", z];
+SDOSHeroModifier * _Nonnull HeroModifierCascadeLeftToRight(float delay, BOOL forceMatchedToWait) {
+    return [[SDOSHeroModifier alloc] initWithString:[NSString stringWithFormat:@"cascade(%f, leftToRight, %@)", delay, forceMatchedToWait ? HeroModifierBoolTrue : HeroModifierBoolFalse]];
 }
 
-NSString * _Nonnull const HeroModifierUseOptimizedSnapshot = @"useOptimizedSnapshot";
+SDOSHeroModifier * _Nonnull HeroModifierCascadeRightToLeft(float delay, BOOL forceMatchedToWait) {
+    return [[SDOSHeroModifier alloc] initWithString:[NSString stringWithFormat:@"cascade(%f, rightToLeft, %@)", delay, forceMatchedToWait ? HeroModifierBoolTrue : HeroModifierBoolFalse]];
+}
 
-NSString * _Nonnull const HeroModifierUseNormalSnapshot = @"useNormalSnapshot";
+SDOSHeroModifier * _Nonnull HeroModifierCascadeTopToBottom(float delay, BOOL forceMatchedToWait) {
+    return [[SDOSHeroModifier alloc] initWithString:[NSString stringWithFormat:@"cascade(%f, topToBottom, %@)", delay, forceMatchedToWait ? HeroModifierBoolTrue : HeroModifierBoolFalse]];
+}
 
-NSString * _Nonnull const HeroModifierUseLayerRenderSnapshot = @"useLayerRenderSnapshot";
+SDOSHeroModifier * _Nonnull HeroModifierSource(NSString * _Nonnull source_heroID) {
+    return [[SDOSHeroModifier alloc] initWithString:[NSString stringWithFormat:@"source(%@)", source_heroID]];
+}
 
-NSString * _Nonnull const HeroModifierUseNoSnapshot = @"useNoSnapshot";
+SDOSHeroModifier * _Nonnull HeroModifierUseGlobalCoordinateSpace() {
+    return [[SDOSHeroModifier alloc] initWithString:@"useGlobalCoordinateSpace"];
+}
 
-NSString * _Nonnull const HeroModifierForceAnimate = @"forceAnimate";
+SDOSHeroModifier * _Nonnull HeroModifierIgnoreSubviewModifiers() {
+    return [[SDOSHeroModifier alloc] initWithString:@"ignoreSubviewModifiers"];
+}
+
+SDOSHeroModifier * _Nonnull HeroModifierZPosition(float z) {
+    return [[SDOSHeroModifier alloc] initWithString:[NSString stringWithFormat:@"zPosition(%f)", z]];
+}
+
+SDOSHeroModifier * _Nonnull HeroModifierUseOptimizedSnapshot() {
+    return [[SDOSHeroModifier alloc] initWithString:@"useOptimizedSnapshot"];
+}
+
+SDOSHeroModifier * _Nonnull HeroModifierUseNormalSnapshot() {
+    return [[SDOSHeroModifier alloc] initWithString:@"useNormalSnapshot"];
+}
+
+SDOSHeroModifier * _Nonnull HeroModifierUseLayerRenderSnapshot() {
+    return [[SDOSHeroModifier alloc] initWithString:@"useLayerRenderSnapshot"];
+}
+
+SDOSHeroModifier * _Nonnull HeroModifierUseNoSnapshot() {
+    return [[SDOSHeroModifier alloc] initWithString:@"useNoSnapshot"];
+}
+
+SDOSHeroModifier * _Nonnull HeroModifierForceAnimate() {
+    return [[SDOSHeroModifier alloc] initWithString:@"forceAnimate"];
+}
 
 
 // Booleans

@@ -65,7 +65,7 @@ extension UIViewController {
     /// - Parameter type: The type of the animation for the modal presentation
     @objc public func setSDOSHeroAnimationTypeForModalPresenting(_ type: SDOSHeroAnimationType) {
         
-        isHeroEnabled = true
+        hero.isEnabled = true
         
         let heroPresentationType = type.heroDefaultAnimationType
         switch desiredHeroDefaultAnimationType {
@@ -104,7 +104,7 @@ extension UIViewController {
     /// - Parameter dismissalType: The type of the animation for the modal dismissal
     @objc public func setSDOSHeroAnimationTypeForModalPresenting(_ presentationType: SDOSHeroAnimationType, forModalDismissing dismissalType: SDOSHeroAnimationType) {
         
-        isHeroEnabled = true
+        hero.isEnabled = true
         
         let heroPresentationType = presentationType.heroDefaultAnimationType
         let heroDismissalType = dismissalType.heroDefaultAnimationType
@@ -118,7 +118,7 @@ extension UIViewController {
     /// - Parameter viewController: The `UIViewController` instance from which to copy the hero modal animation type
     @objc public func copyModalSDOSHeroAnimationTypeFrom(viewController: UIViewController) {
         
-        isHeroEnabled = true
+        hero.isEnabled = true
         
         desiredHeroDefaultAnimationType = viewController.desiredHeroDefaultAnimationType
         
@@ -142,12 +142,12 @@ extension UIViewController {
     
     //MARK: - Present methods
     
-    @objc public func present(viewController: UIViewController, usingAnimation animationType: SDOSHeroAnimationType) {
-        present(viewController: viewController, usingAnimation: animationType, completion: nil)
+    @objc public func presentViewController(_ viewController: UIViewController, usingAnimation animationType: SDOSHeroAnimationType) {
+        presentViewController(viewController, usingAnimation: animationType, completion: nil)
     }
     
     
-    @objc public func present(viewController: UIViewController, usingAnimation animationType: SDOSHeroAnimationType, completion: (() -> Void)?) {
+    @objc public func presentViewController(_ viewController: UIViewController, usingAnimation animationType: SDOSHeroAnimationType, completion: (() -> Void)?) {
         let currentAnimationType = viewController.hero.modalAnimationType
         viewController.hero.modalAnimationType = animationType.heroDefaultAnimationType
         present(viewController, animated: true, completion: completion)
@@ -157,12 +157,12 @@ extension UIViewController {
     
     //MARK: - Dismiss methods
     
-    @objc public func dismissViewController(usingAnimation animationType: SDOSHeroAnimationType) {
-        dismissViewController(usingAnimation: animationType, completion: nil)
+    @objc public func dismissViewControllerUsingAnimation(_ animationType: SDOSHeroAnimationType) {
+        dismissViewControllerUsingAnimation(animationType, completion: nil)
     }
     
     
-    @objc public func dismissViewController(usingAnimation animationType: SDOSHeroAnimationType, completion: (() -> Void)?) {
+    @objc public func dismissViewControllerUsingAnimation(_ animationType: SDOSHeroAnimationType, completion: (() -> Void)?) {
         
         // Only change the hero.modalAnimationType for the controller that is going to be dismissed
         let lastPresentedViewController = self.lastPresentedViewController()
@@ -181,7 +181,7 @@ extension UIViewController {
     /// Dismisses all the presented view controllers at once using the passed animation. This method can be called on any of the view controllers in the modal stack
     ///
     /// - Parameter type: The animation used to dismiss all the presented view controllers
-    @objc public func sdoshero_unwindToRootViewControllerUsing(animation type: SDOSHeroAnimationType) {
+    @objc public func sdoshero_unwindToRootViewControllerUsingAnimation(_ type: SDOSHeroAnimationType) {
         let lastPresentedViewController = self.lastPresentedViewController()
         lastPresentedViewController.hero.isEnabled = true
         
@@ -197,6 +197,18 @@ extension UIViewController {
         lastPresentedViewController.hero.modalAnimationType = currentAnimationType
     }
 
+    
+    //MARK: - Enabling/Disabling Hero
+    
+    @objc public var sdosHeroIsEnabled: Bool {
+        get {
+            return hero.isEnabled
+        }
+        set {
+            hero.isEnabled = newValue
+        }
+    }
+    
     
     //MARK: - Helper methods
     

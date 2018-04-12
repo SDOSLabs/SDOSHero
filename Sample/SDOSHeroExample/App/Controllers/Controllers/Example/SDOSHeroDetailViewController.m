@@ -41,7 +41,7 @@
     
     [self.lbAnimationGo loadStyleLabelExample];
     self.lbAnimationGo.sdosHeroID = self.textAnimationType;
-    [self.lbAnimationGo setHeroModifierStringWithHeroModifiers:@[HeroModifierSpringWith(300, 15)]];
+    [self.lbAnimationGo setSDOSHeroModifiers:@[HeroModifierSpringWith(300, 15)]];
     self.lbAnimationGo.text = self.textAnimationType;
 
     NSString *textOppositeAnimationType = [SDOSHeroAnimationTypeUtil identifierForType:SDOSHeroOppositeAnimationTo([SDOSHeroAnimationTypeUtil typeForIdentifier:self.textAnimationType])];
@@ -49,7 +49,7 @@
     
     [self.lbAnimationReturn loadStyleLabelExample];
     self.lbAnimationReturn.sdosHeroID = textOppositeAnimationType;
-    [self.lbAnimationReturn setHeroModifierStringWithHeroModifiers:@[HeroModifierDelay(0.5)]];
+    [self.lbAnimationReturn setSDOSHeroModifiers:@[HeroModifierDelay(0.5)]];
     self.lbAnimationReturn.text = textOppositeAnimationType;
     
     NSString *titleGo;
@@ -106,7 +106,7 @@
         if ([vc isKindOfClass:[SDOSHeroDetailViewController class]]) {
             ((SDOSHeroDetailViewController *) vc).textAnimationType = [SDOSHeroAnimationTypeUtil identifierForType:type];
         }
-        [(SDOSHeroNavigationController *)self.navigationController pushWithViewController:vc usingAnimation:type];
+        [(SDOSHeroNavigationController *)self.navigationController pushViewController:vc usingAnimation:type];
     }
 }
 
@@ -126,4 +126,73 @@
     return (self.navigationController.viewControllers.firstObject != self);
 }
 
+- (void)test {
+    UIViewController *viewController = [[UIViewController alloc] init];
+    
+    // Presentación modal de viewController
+    [viewController setSDOSHeroAnimationTypeForModalPresenting:SDOSHeroAnimationTypePageInUp];
+    
+    // Ocultación modal de viewController
+    [viewController setSDOSHeroAnimationTypeForModalDismissing:SDOSHeroOppositeAnimationTo(SDOSHeroAnimationTypePageInUp)];
+    
+    // Presentación y ocultación modal de viewController simultáneamente
+    [viewController setSDOSHeroAnimationTypeForModalPresenting:SDOSHeroAnimationTypePageInUp forModalDismissing:SDOSHeroOppositeAnimationTo(SDOSHeroAnimationTypePageInUp)];
+    
+    // Podemos consultar
+
+    viewController.animationTypeForPresenting;
+    viewController.animationTypeForDismissing;
+    
+    [self presentViewController:viewController usingAnimation:SDOSHeroAnimationTypeZoom];
+    [self presentViewController:viewController usingAnimation:SDOSHeroAnimationTypeZoom completion:^{
+        // Completion code here
+    }];
+    
+    [self dismissViewControllerUsingAnimation:SDOSHeroAnimationTypeFade];
+    [self dismissViewControllerUsingAnimation:SDOSHeroAnimationTypeFade completion:^{
+        // Completion code here
+    }];
+    
+    [self sdoshero_unwindToRootViewControllerUsingAnimation:SDOSHeroAnimationTypeNone];
+    [self sdoshero_unwindToRootViewController];
+    
+    [self copyModalSDOSHeroAnimationTypeFromViewController:viewController];
+    
+    SDOSHeroNavigationController *navController = [[SDOSHeroNavigationController alloc] init];
+    
+    [navController setSDOSHeroAnimationTypeForPushNavigations:SDOSHeroAnimationTypePageInUp];
+    
+    [navController setSDOSHeroAnimationTypeForPopNavigations:SDOSHeroAnimationTypePullUp];
+    
+    [navController setSDOSHeroAnimationTypeForPushNavigations:SDOSHeroAnimationTypePageInUp forPopNavigations:SDOSHeroAnimationTypePullUp];
+     
+    [navController pushViewController:viewController usingAnimation:SDOSHeroAnimationTypePageInUp];
+    
+    // Se puede consultar el tipo de animación por defecto para la presentación y para la ocultación de un view controller específico
+    navController.animationTypeForPush;
+    navController.animationTypeForPop;
+    
+    
+    [navController pushViewController:viewController usingAnimation:SDOSHeroAnimationTypeCoverRight];
+    
+    [navController pushViewController:viewController usingAnimationForPushAndOppositeForPop:SDOSHeroAnimationTypePullUp];
+    
+    [navController popViewControllerUsingAnimation:SDOSHeroAnimationTypeUncoverDown];
+    
+    [navController pushViewController:viewController usingAnimation:SDOSHeroAnimationTypeZoom withAnimationForPop:SDOSHeroAnimationTypeFade];
+    
+    [navController popToViewController:viewController usingAnimation:SDOSHeroAnimationTypeZoom];
+    
+}
+
 @end
+
+
+
+
+
+
+
+
+
+
