@@ -57,4 +57,54 @@ public func oppositeAnimation(type: SDOSHeroAnimationType) -> SDOSHeroAnimationT
     return type.oppositeAnimationType
 }
 
+public extension HeroDefaultAnimationType.Direction {
+    public var descr: String {
+        switch self {
+        case .left:
+            return "left"
+        case .right:
+            return "right"
+        case .up:
+            return "up"
+        case .down:
+            return "down"
+        }
+    }
+}
+
+public extension HeroDefaultAnimationType {
+    public var descr: String {
+        switch self {
+        case .selectBy(presenting: let presenting, dismissing: let dismissing):
+            return "[\(presenting.descr),\(dismissing.descr)]"
+        case .auto:
+            return "auto"
+        case .fade:
+            return "fade"
+        case .zoom:
+            return "zoom"
+        case .zoomOut:
+            return "zoomOut"
+        case .push(direction: let dir):
+            return "push_\(dir.descr)"
+        case .pull(direction: let dir):
+            return "pull_\(dir.descr)"
+        case .cover(direction: let dir):
+            return "cover_\(dir.descr)"
+        case .uncover(direction: let dir):
+            return "uncover_\(dir.descr)"
+        case .slide(direction: let dir):
+            return "slide_\(dir.descr)"
+        case .zoomSlide(direction: let dir):
+            return "zoomSlide_\(dir.descr)"
+        case .pageIn(direction: let dir):
+            return "pageIn_\(dir.descr)"
+        case .pageOut(direction: let dir):
+            return "pageOut_\(dir.descr)"
+        case .none:
+            return "none"
+        }
+    }
+}
+
 
