@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="B4b-eH-NeG">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="B4b-eH-NeG">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="Navigation items with more than one left or right bar item" minToolsVersion="7.0"/>
@@ -163,7 +163,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="animación" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o6K-Bo-xLV">
-                                                <rect key="frame" x="0.0" y="20.5" width="0.0" height="20.5"/>
+                                                <rect key="frame" x="148.5" y="20.5" width="78" height="20.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -181,7 +181,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="La animación de vuelta será:" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wQf-zk-Fk8">
-                                                <rect key="frame" x="0.0" y="69.5" width="0.0" height="20.5"/>
+                                                <rect key="frame" x="79" y="69.5" width="217" height="20.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -197,6 +197,7 @@
                                 </constraints>
                             </view>
                         </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="7ya-mi-9pH" firstAttribute="centerY" secondItem="RoC-hl-ryQ" secondAttribute="centerY" multiplier="1.5" priority="1" id="2WW-Ss-cIB"/>
                             <constraint firstAttribute="trailing" secondItem="HmE-Li-t6A" secondAttribute="trailing" id="4U7-x5-p7r"/>
@@ -240,6 +241,48 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YcI-78-zyq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1566" y="1969"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="wZ9-40-hby">
+            <objects>
+                <viewController id="oaS-dQ-Xsx" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="2gB-uI-MkD"/>
+                        <viewControllerLayoutGuide type="bottom" id="bDd-Hw-p9W"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="iAV-RD-cdr">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aWf-P4-Cx0">
+                                <rect key="frame" x="164.5" y="318.5" width="46" height="30"/>
+                                <state key="normal" title="Button"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isHeroEnabled" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="heroModifierString" value="delay(1), transformation(30,30)"/>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <segue destination="oaS-dQ-Xsx" kind="show" id="SQT-zm-e8f"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="aWf-P4-Cx0" firstAttribute="centerX" secondItem="iAV-RD-cdr" secondAttribute="centerX" id="Ike-Ky-p66"/>
+                            <constraint firstItem="aWf-P4-Cx0" firstAttribute="centerY" secondItem="iAV-RD-cdr" secondAttribute="centerY" id="ljg-oV-iYM"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="fGs-vA-NAm">
+                        <barButtonItem key="rightBarButtonItem" title="Item" id="PTT-mW-U23">
+                            <connections>
+                                <segue destination="oaS-dQ-Xsx" kind="show" id="PVi-2Z-Gqn"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5Vx-vD-Wx2" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1566" y="2758"/>
         </scene>
         <!--Documentation-->
         <scene sceneID="Jcc-I7-tZh">
