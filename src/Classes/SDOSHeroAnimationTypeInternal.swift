@@ -202,3 +202,9 @@ internal extension HeroDefaultAnimationType {
     }
 }
 
+@objc public class SDOSHeroAnimationTypeHelper: NSObject {
+    @objc public class func oppositeAnimationTo(_ type: SDOSHeroAnimationType) -> SDOSHeroAnimationType {
+        return type.oppositeAnimationType
+    }
+}
+

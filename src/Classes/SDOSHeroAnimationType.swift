@@ -53,10 +53,6 @@ public extension SDOSHeroAnimationType {
     }
 }
 
-public func oppositeAnimation(type: SDOSHeroAnimationType) -> SDOSHeroAnimationType {
-    return type.oppositeAnimationType
-}
-
 public extension HeroDefaultAnimationType.Direction {
     public var descr: String {
         switch self {

@@ -43,8 +43,9 @@
     self.lbAnimationGo.sdosHeroID = self.textAnimationType;
     [self.lbAnimationGo setHeroModifierStringWithHeroModifiers:@[HeroModifierSpringWith(300, 15)]];
     self.lbAnimationGo.text = self.textAnimationType;
+
+    NSString *textOppositeAnimationType = [SDOSHeroAnimationTypeUtil identifierForType:SDOSHeroOppositeAnimationTo([SDOSHeroAnimationTypeUtil typeForIdentifier:self.textAnimationType])];
     
-    NSString *textOppositeAnimationType = [SDOSHeroAnimationTypeUtil identifierForType:[SDOSHero oppositeAnimation:[SDOSHeroAnimationTypeUtil typeForIdentifier:self.textAnimationType]]];
     
     [self.lbAnimationReturn loadStyleLabelExample];
     self.lbAnimationReturn.sdosHeroID = textOppositeAnimationType;

@@ -72,8 +72,3 @@ extern NSString * _Nonnull const HeroModifierUseNoSnapshot;
 extern NSString * _Nonnull const HeroModifierForceAnimate;
 
 @end
-
-
-
-
-
