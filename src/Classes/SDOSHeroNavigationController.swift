@@ -48,19 +48,16 @@ public class SDOSHeroNavigationController: UINavigationController, UIGestureReco
     
     public override init(rootViewController: UIViewController) {
         super.init(rootViewController: rootViewController)
-        hero.isEnabled = true
     }
     
     
     public override init(navigationBarClass: AnyClass?, toolbarClass: AnyClass?) {
         super.init(navigationBarClass: navigationBarClass, toolbarClass: toolbarClass)
-        hero.isEnabled = true
     }
 
     
     public required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
-        hero.isEnabled = true
     }
     
     

@@ -242,48 +242,6 @@
             </objects>
             <point key="canvasLocation" x="1566" y="1969"/>
         </scene>
-        <!--View Controller-->
-        <scene sceneID="wZ9-40-hby">
-            <objects>
-                <viewController id="oaS-dQ-Xsx" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="2gB-uI-MkD"/>
-                        <viewControllerLayoutGuide type="bottom" id="bDd-Hw-p9W"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="iAV-RD-cdr">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aWf-P4-Cx0">
-                                <rect key="frame" x="164.5" y="318.5" width="46" height="30"/>
-                                <state key="normal" title="Button"/>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isHeroEnabled" value="YES"/>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="heroModifierString" value="delay(1), transformation(30,30)"/>
-                                </userDefinedRuntimeAttributes>
-                                <connections>
-                                    <segue destination="oaS-dQ-Xsx" kind="show" id="SQT-zm-e8f"/>
-                                </connections>
-                            </button>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <constraints>
-                            <constraint firstItem="aWf-P4-Cx0" firstAttribute="centerX" secondItem="iAV-RD-cdr" secondAttribute="centerX" id="Ike-Ky-p66"/>
-                            <constraint firstItem="aWf-P4-Cx0" firstAttribute="centerY" secondItem="iAV-RD-cdr" secondAttribute="centerY" id="ljg-oV-iYM"/>
-                        </constraints>
-                    </view>
-                    <navigationItem key="navigationItem" id="fGs-vA-NAm">
-                        <barButtonItem key="rightBarButtonItem" title="Item" id="PTT-mW-U23">
-                            <connections>
-                                <segue destination="oaS-dQ-Xsx" kind="show" id="PVi-2Z-Gqn"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="5Vx-vD-Wx2" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1566" y="2758"/>
-        </scene>
         <!--Documentation-->
         <scene sceneID="Jcc-I7-tZh">
             <objects>

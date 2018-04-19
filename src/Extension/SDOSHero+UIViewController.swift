@@ -65,8 +65,6 @@ extension UIViewController {
     /// - Parameter type: The type of the animation for the modal presentation
     @objc public func setSDOSHeroAnimationTypeForModalPresenting(_ type: SDOSHeroAnimationType) {
         
-        hero.isEnabled = true
-        
         let heroPresentationType = type.heroDefaultAnimationType
         switch desiredHeroDefaultAnimationType {
         case .selectBy(presenting: _, dismissing: let currentDesiredDismissalType):
@@ -83,8 +81,6 @@ extension UIViewController {
     ///
     /// - Parameter type: The type of the animation for the modal dismissal
     @objc public func setSDOSHeroAnimationTypeForModalDismissing(_ type: SDOSHeroAnimationType) {
-        
-        hero.isEnabled = true
         
         let heroDismissalType = type.heroDefaultAnimationType
         switch desiredHeroDefaultAnimationType {
@@ -104,8 +100,6 @@ extension UIViewController {
     /// - Parameter dismissalType: The type of the animation for the modal dismissal
     @objc public func setSDOSHeroAnimationTypeForModalPresenting(_ presentationType: SDOSHeroAnimationType, forModalDismissing dismissalType: SDOSHeroAnimationType) {
         
-        hero.isEnabled = true
-        
         let heroPresentationType = presentationType.heroDefaultAnimationType
         let heroDismissalType = dismissalType.heroDefaultAnimationType
         desiredHeroDefaultAnimationType = .selectBy(presenting: heroPresentationType, dismissing: heroDismissalType)
@@ -117,8 +111,6 @@ extension UIViewController {
     ///
     /// - Parameter viewController: The `UIViewController` instance from which to copy the hero modal animation type
     @objc public func copyModalSDOSHeroAnimationTypeFrom(viewController: UIViewController) {
-        
-        hero.isEnabled = true
         
         desiredHeroDefaultAnimationType = viewController.desiredHeroDefaultAnimationType
         
@@ -183,8 +175,6 @@ extension UIViewController {
     /// - Parameter type: The animation used to dismiss all the presented view controllers
     @objc public func sdoshero_unwindToRootViewControllerUsingAnimation(_ type: SDOSHeroAnimationType) {
         let lastPresentedViewController = self.lastPresentedViewController()
-        lastPresentedViewController.hero.isEnabled = true
-        
         let heroAnimationType = type.heroDefaultAnimationType
         
         // The animation type of lastPresentedViewController is only changed for this transition

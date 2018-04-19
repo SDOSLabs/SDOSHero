@@ -14,7 +14,6 @@ public class SDOSHeroTabBarController: UITabBarController {
     ///
     /// - Parameter type: The type of the transition animation for the tab bar item selection.
     @objc public func setTabBarSDOSHeroAnimationType(_ type: SDOSHeroAnimationType) {
-        hero.isEnabled = true
         hero.tabBarAnimationType = type.heroDefaultAnimationType
         currentTabBarAnimationTypeIsReversed = false
     }

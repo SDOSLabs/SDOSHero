@@ -30,8 +30,8 @@
 
 
 - (void)loadStyle {
-//    self.navigationController.isHeroEnabled = YES; // For Navigation Transitions
-//    self.isHeroEnabled = YES; // For Modal Transitions
+    self.navigationController.sdosHeroIsEnabled = YES; // For Navigation Transitions
+    self.sdosHeroIsEnabled = YES; // For Modal Transitions
     self.navigationItem.title = [self.navigationController isKindOfClass:[SDOSHeroNavigationController class]] ? @"Navigation" : @"Modal";
 }
 
@@ -89,7 +89,8 @@
     } else {
         SDOSHeroNavigationController *detailNavigationController = [self.storyboard instantiateViewControllerWithIdentifier:SDOSHeroDetailNavigationViewControllerIdentifier];
         if (detailNavigationController != nil) {
-//            [detailNavigationController setModalSDOSHeroAnimationType:type];
+
+            detailNavigationController.sdosHeroIsEnabled = YES;
             [detailNavigationController setSDOSHeroAnimationTypeForModalPresenting:type];
             
             if (detailNavigationController.viewControllers.firstObject != nil && [detailNavigationController.viewControllers.firstObject isKindOfClass:[SDOSHeroDetailViewController class]]) {
