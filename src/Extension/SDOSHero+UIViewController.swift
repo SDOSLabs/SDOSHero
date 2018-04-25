@@ -181,17 +181,27 @@ extension UIViewController {
     }
     
     
-    /// Unwind to the root view controller using Hero
-    @objc public func sdoshero_unwindToRootViewController() {
+    /// Dismisses at once all the modally presented view controllers in the stack using Hero.
+    /// This method can be called on any of the view controllers in the modal stack
+    @objc public func dismissAllPresentedViewControllers() {
+        guard lastPresentedViewController().presentingViewController != nil else {
+            NSLog("Attempted to dismiss a view controller that has no presenting view controller: \(self). Nothing will happen")
+            return
+        }
         hero.unwindToRootViewController()
     }
     
     
-    /// Dismisses all the presented view controllers at once using the passed animation. This method can be called on any of the view controllers in the modal stack
+    /// Dismisses at once all the modally presented view controllers in the stack using the passed animation.
+    /// This method can be called on any of the view controllers in the modal stack
     ///
     /// - Parameter type: The animation used to dismiss all the presented view controllers
-    @objc public func sdoshero_unwindToRootViewControllerUsingAnimation(_ type: SDOSHeroAnimationType) {
-        let lastPresentedViewController = self.lastPresentedViewController()
+    @objc public func dismissAllViewControllersUsingAnimation(_ type: SDOSHeroAnimationType) {
+        let lastPresentedViewController = lastPresentedViewController()
+        guard lastPresentedViewController.presentingViewController != nil else {
+            NSLog("Attempted to dismiss a view controller that has no presenting view controller: \(self). Nothing will happen")
+            return
+        }
         let heroAnimationType = type.heroDefaultAnimationType
         
         // The animation type of lastPresentedViewController is only changed for this transition
