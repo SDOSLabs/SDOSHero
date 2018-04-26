@@ -114,7 +114,7 @@
 
 - (void)actionGoToRootViewController:(UIBarButtonItem *)sender {
     if (self.navigationController.viewControllers.firstObject == self) {
-        [self sdoshero_unwindToRootViewController];
+        [self dismissAllPresentedViewControllers];
     } else {
         [self.navigationController popToRootViewControllerAnimated:YES];
     }

@@ -197,7 +197,7 @@ extension UIViewController {
     ///
     /// - Parameter type: The animation used to dismiss all the presented view controllers
     @objc public func dismissAllViewControllersUsingAnimation(_ type: SDOSHeroAnimationType) {
-        let lastPresentedViewController = lastPresentedViewController()
+        let lastPresentedViewController = self.lastPresentedViewController()
         guard lastPresentedViewController.presentingViewController != nil else {
             NSLog("Attempted to dismiss a view controller that has no presenting view controller: \(self). Nothing will happen")
             return

@@ -31,8 +31,8 @@ SDOSHeroModifier * _Nonnull HeroModifierForceNonFade(void);
 /**
  Set the position for the view to animate from/to.
  
- @param position position for the view to animate from/to
- @return A SDOSHeroModifier instance representing the appropriate Hero modifier
+ @param position position for the view to animate from/to.
+ @return A SDOSHeroModifier instance representing the appropriate Hero modifier.
  */
 SDOSHeroModifier * _Nonnull HeroModifierPosition(CGPoint position);
 
@@ -40,9 +40,16 @@ SDOSHeroModifier * _Nonnull HeroModifierPosition(CGPoint position);
  Set the size for the view to animate from/to.
  
  @param size size for the view to animate from/to.
- @return A SDOSHeroModifier instance representing the appropriate Hero modifier
+ @return A SDOSHeroModifier instance representing the appropriate Hero modifier.
  */
 SDOSHeroModifier * _Nonnull HeroModifierSize(CGSize size);
+
+/**
+ Hero will be forced to respect the receiver's autolayout constraints. This is needed due to a bug in Hero in cases where the receiver might be misplaced because it is animating since the view controller is created.
+
+ @return A SDOSHeroModifier instance representing the appropriate Hero modifier.
+ */
+SDOSHeroModifier * _Nonnull HeroModifierRespectAutolayout(void);
 
 
 #pragma mark - Transform modifiers
@@ -74,9 +81,9 @@ SDOSHeroModifier * _Nonnull HeroModifierPerspective(CGFloat perspective);
 SDOSHeroModifier * _Nonnull HeroModifierScale3D(CGFloat x, CGFloat y, CGFloat z);
 
 /**
- Scale in x & y axis
+ Scale in x & y axis.
  
- @param scale scale factor in both x & y axis
+ @param scale scale factor in both x & y axis.
  @return A SDOSHeroModifier instance representing the appropriate Hero modifier.
  */
 SDOSHeroModifier * _Nonnull HeroModifierScale(CGFloat scale);
@@ -103,7 +110,7 @@ SDOSHeroModifier * _Nonnull HeroModifierTranslate3D(CGFloat x, CGFloat y, CGFloa
  Rotate 2d.
  
  @param z rotation in radian.
- @return A SDOSHeroModifier instance representing the appropriate Hero modifier
+ @return A SDOSHeroModifier instance representing the appropriate Hero modifier.
  */
 SDOSHeroModifier * _Nonnull HeroModifierRotate(CGFloat z);
 
@@ -113,7 +120,7 @@ SDOSHeroModifier * _Nonnull HeroModifierRotate(CGFloat z);
  @param x rotation on x axis in radian, default 0.
  @param y rotation on y axis in radian, default 0.
  @param z rotation on z axis in radian, default 0.
- @return A SDOSHeroModifier instance representing the appropriate Hero modifier
+ @return A SDOSHeroModifier instance representing the appropriate Hero modifier.
  */
 SDOSHeroModifier * _Nonnull HeroModifierRotateXYZ(CGFloat x, CGFloat y, CGFloat z);
 
@@ -123,8 +130,8 @@ SDOSHeroModifier * _Nonnull HeroModifierRotateXYZ(CGFloat x, CGFloat y, CGFloat 
 /**
  Set the opacity for the view to animate from/to.
  
- @param opacity the opacity for the view to animate from/to
- @return A SDOSHeroModifier instance representing the appropriate Hero modifier
+ @param opacity the opacity for the view to animate from/to.
+ @return A SDOSHeroModifier instance representing the appropriate Hero modifier.
  */
 SDOSHeroModifier * _Nonnull HeroModifierOpacity(CGFloat opacity);
 
@@ -139,7 +146,7 @@ SDOSHeroModifier * _Nonnull HeroModifierBackgroundColor(UIColor *color);
 /**
  Set the cornerRadius for the view to animate from/to.
  
- @param cornerRadius cornerRadius for the view to animate from/to
+ @param cornerRadius cornerRadius for the view to animate from/to.
  @return A SDOSHeroModifier instance representing the appropriate Hero modifier.
  */
 SDOSHeroModifier * _Nonnull HeroModifierCornerRadius(CGFloat cornerRadius);
@@ -164,7 +171,7 @@ SDOSHeroModifier * _Nonnull HeroModifierContentsRect(CGRect contentsRect);
  Set the contentsScale for the view to animate from/to.
  
  @param contentsScale contentsScale for the view to animate from/to.
- @return A SDOSHeroModifier instance representing the appropriate Hero modifier
+ @return A SDOSHeroModifier instance representing the appropriate Hero modifier.
  */
 SDOSHeroModifier * _Nonnull HeroModifierContentsScale(CGFloat contentsScale);
 
@@ -172,7 +179,7 @@ SDOSHeroModifier * _Nonnull HeroModifierContentsScale(CGFloat contentsScale);
  Set the borderWidth for the view to animate from/to.
  
  @param borderWidth borderWidth for the view to animate from/to.
- @return A SDOSHeroModifier instance representing the appropriate Hero modifier
+ @return A SDOSHeroModifier instance representing the appropriate Hero modifier.
  */
 
 SDOSHeroModifier * _Nonnull HeroModifierBorderWidth(CGFloat borderWidth);
@@ -180,7 +187,7 @@ SDOSHeroModifier * _Nonnull HeroModifierBorderWidth(CGFloat borderWidth);
  Set the borderColor for the view to animate from/to.
  
  @param borderColor borderColor for the view to animate from/to.
- @return A SDOSHeroModifier instance representing the appropriate Hero modifier
+ @return A SDOSHeroModifier instance representing the appropriate Hero modifier.
  */
 SDOSHeroModifier * _Nonnull HeroModifierBorderColor(UIColor *borderColor);
 
@@ -188,7 +195,7 @@ SDOSHeroModifier * _Nonnull HeroModifierBorderColor(UIColor *borderColor);
  Set the shadowColor for the view to animate from/to.
  
  @param shadowColor shadowColor for the view to animate from/to.
- @return A SDOSHeroModifier instance representing the appropriate Hero modifier
+ @return A SDOSHeroModifier instance representing the appropriate Hero modifier.
  */
 SDOSHeroModifier * _Nonnull HeroModifierShadowColor(UIColor *shadowColor);
 
@@ -196,7 +203,7 @@ SDOSHeroModifier * _Nonnull HeroModifierShadowColor(UIColor *shadowColor);
  Set the shadowOpacity for the view to animate from/to.
  
  @param shadowOpacity shadowOpacity for the view to animate from/to.
- @return A SDOSHeroModifier instance representing the appropriate Hero modifier
+ @return A SDOSHeroModifier instance representing the appropriate Hero modifier.
  */
 SDOSHeroModifier * _Nonnull HeroModifierShadowOpacity(CGFloat shadowOpacity);
 
@@ -204,15 +211,15 @@ SDOSHeroModifier * _Nonnull HeroModifierShadowOpacity(CGFloat shadowOpacity);
  Set the shadowOffset for the view to animate from/to.
  
  @param shadowOffset shadowOffset for the view to animate from/to.
- @return A SDOSHeroModifier instance representing the appropriate Hero modifier
+ @return A SDOSHeroModifier instance representing the appropriate Hero modifier.
  */
 SDOSHeroModifier * _Nonnull HeroModifierShadowOffset(CGSize shadowOffset);
 
 /**
  Set the shadowRadius for the view to animate from/to.
  
- @param shadowRadius shadowRadius for the view to animate from/to
- @return A SDOSHeroModifier instance representing the appropriate Hero modifier
+ @param shadowRadius shadowRadius for the view to animate from/to.
+ @return A SDOSHeroModifier instance representing the appropriate Hero modifier.
  */
 SDOSHeroModifier * _Nonnull HeroModifierShadowRadius(CGFloat shadowRadius);
 
@@ -220,7 +227,7 @@ SDOSHeroModifier * _Nonnull HeroModifierShadowRadius(CGFloat shadowRadius);
  Set the shadowPath for the view to animate from/to.
  
  @param shadowPath shadowPath for the view to animate from/to.
- @return A SDOSHeroModifier instance representing the appropriate Hero modifier
+ @return A SDOSHeroModifier instance representing the appropriate Hero modifier.
  */
 SDOSHeroModifier * _Nonnull HeroModifierShadowPath(CGPathRef shadowPath);
 
@@ -233,7 +240,7 @@ SDOSHeroModifier * _Nonnull HeroModifierShadowPath(CGPathRef shadowPath);
 SDOSHeroModifier * _Nonnull HeroModifierMasksToBounds(BOOL masksToBounds);
 
 /**
- Create an overlay on the animating view..
+ Create an overlay on the animating view.
  
  @param color color of the overlay.
  @param opacity opacity of the overlay.
@@ -288,7 +295,7 @@ SDOSHeroModifier * _Nonnull HeroModifierTimingFunction(CAMediaTimingFunction *ti
 #pragma mark - Other modifiers
 
 /**
- Transition from/to the state of the view with matching heroID
+ Transition from/to the state of the view with matching heroID.
  Will also force the view to use global coordinate space.
  
  The following layer properties will be animated from the given view.
@@ -310,7 +317,7 @@ SDOSHeroModifier * _Nonnull HeroModifierTimingFunction(CAMediaTimingFunction *ti
  borderColor
  
  @param source_heroID the source view's heroId.
- @return A SDOSHeroModifier instance representing the appropriate Hero modifier
+ @return A SDOSHeroModifier instance representing the appropriate Hero modifier.
  */
 SDOSHeroModifier * _Nonnull HeroModifierSource(NSString * _Nonnull source_heroID);
 
@@ -318,7 +325,7 @@ SDOSHeroModifier * _Nonnull HeroModifierSource(NSString * _Nonnull source_heroID
  Works in combination with position modifier to apply a natural curve when moving to the destination.
  
  @param intensity a value of 1 represent a downward natural curve ╰. a value of -1 represent a upward curve ╮.
- @return A SDOSHeroModifier instance representing the appropriate Hero modifier
+ @return A SDOSHeroModifier instance representing the appropriate Hero modifier.
  */
 SDOSHeroModifier * _Nonnull HeroModifierArc(CGFloat intensity);
 
@@ -326,9 +333,9 @@ SDOSHeroModifier * _Nonnull HeroModifierArc(CGFloat intensity);
  Cascade applies increasing delay modifiers to subviews starting with the subviews at the bottom.
  
  @param delta delay in between each animation.
- @param direction cascade direction
+ @param direction cascade direction.
  @param delayMatchedViews whether or not to delay matched subviews until all cascading animation have started.
- @return A SDOSHeroModifier instance representing the appropriate Hero modifier
+ @return A SDOSHeroModifier instance representing the appropriate Hero modifier.
  */
 SDOSHeroModifier * _Nonnull HeroModifierCascade(CGFloat delta, enum HeroModifierCascadeDirection direction, BOOL delayMatchedViews);
 
@@ -338,7 +345,7 @@ SDOSHeroModifier * _Nonnull HeroModifierCascade(CGFloat delta, enum HeroModifier
  @param delta delay in between each animation.
  @param center the point used to decide what subviews are animated before. The closer a subview is from the center, the sooner it will animate.
  @param delayMatchedViews whether or not to delay matched subviews until all cascading animation have started.
- @return A SDOSHeroModifier instance representing the appropriate Hero modifier
+ @return A SDOSHeroModifier instance representing the appropriate Hero modifier.
  */
 SDOSHeroModifier * _Nonnull HeroModifierCascadeRadial(CGFloat delta, CGPoint center, BOOL delayMatchedViews);
 
@@ -348,7 +355,7 @@ SDOSHeroModifier * _Nonnull HeroModifierCascadeRadial(CGFloat delta, CGPoint cen
  @param delta delay in between each animation.
  @param center the point used to decide what subviews are animated before. The closer a subview is from the center, the later it will animate.
  @param delayMatchedViews whether or not to delay matched subviews until all cascading animation have started.
- @return A SDOSHeroModifier instance representing the appropriate Hero modifier
+ @return A SDOSHeroModifier instance representing the appropriate Hero modifier.
  */
 SDOSHeroModifier * _Nonnull HeroModifierCascadeInverseRadial(CGFloat delta, CGPoint center, BOOL delayMatchedViews);
 
@@ -364,14 +371,14 @@ SDOSHeroModifier * _Nonnull HeroModifierCascadeInverseRadial(CGFloat delta, CGPo
  When a view is matched, this is automatically enabled.
  The `source` modifier will also enable this.
  
- @return A SDOSHeroModifier instance representing the appropriate Hero modifier
+ @return A SDOSHeroModifier instance representing the appropriate Hero modifier.
  */
 SDOSHeroModifier * _Nonnull HeroModifierUseGlobalCoordinateSpace(void);
 
 /**
  Ignore all heroModifiers attributes for a view's direct subviews.
  
- @return A SDOSHeroModifier instance representing the appropriate Hero modifier
+ @return A SDOSHeroModifier instance representing the appropriate Hero modifier.
  */
 SDOSHeroModifier * _Nonnull HeroModifierIgnoreSubviewModifiers(void);
 
@@ -383,14 +390,14 @@ SDOSHeroModifier * _Nonnull HeroModifierIgnoreSubviewModifiers(void);
  
  This modifier actually does nothing by itself since .useOptimizedSnapshot is the default.
  
- @return A SDOSHeroModifier instance representing the appropriate Hero modifier
+ @return A SDOSHeroModifier instance representing the appropriate Hero modifier.
  */
 SDOSHeroModifier * _Nonnull HeroModifierUseOptimizedSnapshot(void);
 
 /**
  Create snapshot using snapshotView(afterScreenUpdates:).
  
- @return A SDOSHeroModifier instance representing the appropriate Hero modifier
+ @return A SDOSHeroModifier instance representing the appropriate Hero modifier.
  */
 SDOSHeroModifier * _Nonnull HeroModifierUseNormalSnapshot(void);
 
@@ -398,16 +405,16 @@ SDOSHeroModifier * _Nonnull HeroModifierUseNormalSnapshot(void);
  Create snapshot using layer.render(in: currentContext).
  This is slower than .useNormalSnapshot but gives more accurate snapshot for some views (eg. UIStackView).
  
- @return A SDOSHeroModifier instance representing the appropriate Hero modifier
+ @return A SDOSHeroModifier instance representing the appropriate Hero modifier.
  */
 SDOSHeroModifier * _Nonnull HeroModifierUseLayerRenderSnapshot(void);
 
 /**
  Force Hero to not create any snapshot when animating this view.
- This will mess up the view hierarchy, therefore, view controllers have to rebuild
+ This will mess up the view hierarchy, therefore, view controllers have to rebuild.
  its view structure after the transition finishes.
  
- @return A SDOSHeroModifier instance representing the appropriate Hero modifier
+ @return A SDOSHeroModifier instance representing the appropriate Hero modifier.
  */
 SDOSHeroModifier * _Nonnull HeroModifierUseNoSnapshot(void);
 
@@ -416,7 +423,7 @@ SDOSHeroModifier * _Nonnull HeroModifierUseNoSnapshot(void);
  
  By default, Hero will not animate if the view is outside the screen bounds or if there is no animatable hero modifier, unless this modifier is used.
  
- @return A SDOSHeroModifier instance representing the appropriate Hero modifier
+ @return A SDOSHeroModifier instance representing the appropriate Hero modifier.
  */
 SDOSHeroModifier * _Nonnull HeroModifierForceAnimate(void);
 @end

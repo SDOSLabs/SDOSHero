@@ -84,7 +84,7 @@
     SDOSHeroAnimationType type = [SDOSHeroAnimationTypeUtil typeForIdentifier:strIdentifier];
     
     if ([self.navigationController isKindOfClass:[SDOSHeroNavigationController class]]) {
-        [((SDOSHeroNavigationController *) self.navigationController) setSDOSHeroAnimationTypeForPushNavigations:type];
+        ((SDOSHeroNavigationController *) self.navigationController).animationTypeForPush = type;
         [self performSegueWithIdentifier:ShowDetailStoryboardSegue sender:indexPath];
     } else {
         SDOSHeroNavigationController *detailNavigationController = [self.storyboard instantiateViewControllerWithIdentifier:SDOSHeroDetailNavigationViewControllerIdentifier];

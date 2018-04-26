@@ -34,6 +34,10 @@ import Hero
         return SDOSHeroModifier.init(heroModifier: .size(size))
     }
     
+    @objc public class func HeroModifierRespectAutolayout() -> SDOSHeroModifier {
+        return SDOSHeroModifier.init(heroModifier: HeroModifier.autolayout)
+    }
+    
     
     //MARK: - Transform modifiers
     

@@ -28,6 +28,10 @@ SDOSHeroModifier * _Nonnull HeroModifierSize(CGSize size) {
     return [SDOSHeroModifier HeroModifierSize:size];
 }
 
+SDOSHeroModifier * _Nonnull HeroModifierRespectAutolayout(void) {
+    return [SDOSHeroModifier HeroModifierRespectAutolayout];
+}
+
 
 #pragma mark - Transform modifiers
 
