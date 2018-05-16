@@ -278,6 +278,21 @@ public class SDOSHeroNavigationController: UINavigationController, UIGestureReco
     }
     
     
+    //MARK: - Set view controllers
+    
+    /// Replaces the view controllers currently managed by the navigation controller with the specified items.
+    ///
+    /// Use this method to update or replace the current view controller stack without pushing or popping each controller explicitly.
+    ///
+    /// - Parameters:
+    ///   - viewControllers: The view controllers to place in the stack. The front-to-back order of the controllers in this array represents the new bottom-to-top order of the controllers in the navigation stack. Thus, the last item added to the array becomes the top item of the navigation stack.
+    ///   - animation: The animation type for the transition.
+    @objc public func setViewControllers(_ viewControllers: [UIViewController], usingAnimation animation: SDOSHeroAnimationType) {
+        hero.navigationAnimationType = animation.heroDefaultAnimationType
+        setViewControllers(viewControllers, animated: true)
+    }
+    
+    
     //MARK: - Helper
     
     private func cleanTrackOf(viewController: UIViewController?) {
