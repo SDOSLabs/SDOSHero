@@ -36,62 +36,52 @@ extension UIViewController {
     
     //MARK: - Getting the animation types
     
-    /// Returns the current animation type of the receiver for modal presentations.
+    /// The current animation type of the receiver for modal presentations.
     ///
-    /// If the returned animation type is `.auto`, then the animation for the modal presentation will be the opposite animation to that returned by `animationTypeForDismissing`.
+    /// If set to `.auto`, then the animation for the modal presentation will be the opposite animation to that in `animationTypeForDismissing`.
     /// If `animationTypeForDismissing` is also `.auto`, then the animation for the modal presentation will be the default animation for Hero, that is, fade.
+    ///
+    /// - Important: The receiver must be the view controller that is going to be presented (do not confuse with the presenting view controller).
     @objc public var animationTypeForPresenting: SDOSHeroAnimationType {
         get {
             return desiredHeroDefaultAnimationType.sdosHeroAnimationTypeForPresenting
         }
+        set {
+            let heroPresentationType = newValue.heroDefaultAnimationType
+            switch desiredHeroDefaultAnimationType {
+            case .selectBy(presenting: _, dismissing: let currentDesiredDismissalType):
+                desiredHeroDefaultAnimationType = .selectBy(presenting: heroPresentationType, dismissing: currentDesiredDismissalType)
+            default:
+                desiredHeroDefaultAnimationType = .selectBy(presenting: heroPresentationType, dismissing: .auto)
+            }
+            
+            updateHeroModalAnimationType()
+        }
     }
     
-    /// Returns the current animation type of the receiver for modal dismissals.
+    /// The current animation type of the receiver for modal dismissals.
     ///
-    /// If the returned animation type is `.auto`, then the animation for the modal dismissal will be the opposite animation to that returned by `animationTypeForPresenting`.
+    /// If set to `.auto`, then the animation for the modal dismissal will be the opposite animation to that in `animationTypeForPresenting`.
     /// If `animationTypeForPresenting` is also `.auto`, then the animation for modal dismissals will be the default animation for Hero, that is, fade.
+    ///
+    /// - Important: The receiver must be the view controller that is going to be dismissed (do not confuse with the presenting view controller).
     @objc public var animationTypeForDismissing: SDOSHeroAnimationType {
         get {
             return desiredHeroDefaultAnimationType.sdosHeroAnimationTypeForDismissing
         }
-    }
-    
-    
-    //MARK: - Setting the animation types
-    
-    /// Method used to set the Hero animation type for modal presentation of the receiver. By default, the animation type for modal dismissal will be the oposite animation type. If wanted a different animation type for dismissal, it can be set using `setSDOSHeroAnimationTypeForModalDismissing:` ( or `setSDOSHeroAnimationTypeForModalPresenting:forModalDismissing:` to change both animation types at once)
-    /// - Important: The receiver must be the view controller that is going to be presented (do not confuse with the presenting view controller).
-    ///
-    /// - Parameter type: The type of the animation for the modal presentation
-    @objc public func setSDOSHeroAnimationTypeForModalPresenting(_ type: SDOSHeroAnimationType) {
-        
-        let heroPresentationType = type.heroDefaultAnimationType
-        switch desiredHeroDefaultAnimationType {
-        case .selectBy(presenting: _, dismissing: let currentDesiredDismissalType):
-            desiredHeroDefaultAnimationType = .selectBy(presenting: heroPresentationType, dismissing: currentDesiredDismissalType)
-        default:
-            desiredHeroDefaultAnimationType = .selectBy(presenting: heroPresentationType, dismissing: .auto)
+        set {
+            let heroDismissalType = newValue.heroDefaultAnimationType
+            switch desiredHeroDefaultAnimationType {
+            case .selectBy(presenting: let currentDesiredPresentationType, dismissing: _):
+                desiredHeroDefaultAnimationType = .selectBy(presenting: currentDesiredPresentationType, dismissing: heroDismissalType)
+            default:
+                desiredHeroDefaultAnimationType = .selectBy(presenting: .auto, dismissing: heroDismissalType)
+            }
+            
+            updateHeroModalAnimationType()
         }
-        
-        updateHeroModalAnimationType()
     }
     
-    /// Method used to set the Hero animation type for modal dismissal of the receiver. By default, the animation type for modal presentation will be the oposite animation type. If wanted a different animation type for dismissal, it can be set using `setSDOSHeroAnimationTypeForModalPresenting:` ( or `setSDOSHeroAnimationTypeForModalPresenting:forModalDismissing:` to change both animation types at once)
-    /// - Important: The receiver must be the view controller that is going to be dismissed (do not confuse with the presenting view controller).
-    ///
-    /// - Parameter type: The type of the animation for the modal dismissal
-    @objc public func setSDOSHeroAnimationTypeForModalDismissing(_ type: SDOSHeroAnimationType) {
-        
-        let heroDismissalType = type.heroDefaultAnimationType
-        switch desiredHeroDefaultAnimationType {
-        case .selectBy(presenting: let currentDesiredPresentationType, dismissing: _):
-            desiredHeroDefaultAnimationType = .selectBy(presenting: currentDesiredPresentationType, dismissing: heroDismissalType)
-        default:
-            desiredHeroDefaultAnimationType = .selectBy(presenting: .auto, dismissing: heroDismissalType)
-        }
-        
-        updateHeroModalAnimationType()
-    }
     
     /// Method used to set the Hero animation type for modal presentations and dismissals of the receiver. Passing .auto for both parameters will cause the modal transitions to be performed using the default animations provided by the system. Setting the animation type to .auto for only one transition will cause that transition to be animated with the opposite animation type of the other passed animation type.
     /// - Important: The receiver must be the view controller that is going to be presented and/or dismissed (do not confuse with the presenting view controller).

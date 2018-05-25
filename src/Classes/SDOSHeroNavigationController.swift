@@ -261,6 +261,17 @@ public class SDOSHeroNavigationController: UINavigationController, UIGestureReco
     }
     
     
+    /// Pops all the view controllers on the stack except the root view controller and updates the display. It animates the transition using the passed animation type.
+    ///
+    /// The root view controller becomes the top view controller.
+    ///
+    /// - Parameter animation: The animation type for the pop transition.
+    /// - Returns: An array of view controllers representing the items that were popped from the stack.
+    @objc public func popToRootViewController(usingAnimation animation: SDOSHeroAnimationType) -> [UIViewController]? {
+        heroAnimationForNextNavigationTransition = animation.heroDefaultAnimationType
+        return popToRootViewController(animated: true)
+    }
+    
     public override func popToRootViewController(animated: Bool) -> [UIViewController]? {
      
         let animationTypeInHistory = arrayHeroAnimationNavigationHistory.last
@@ -291,6 +302,15 @@ public class SDOSHeroNavigationController: UINavigationController, UIGestureReco
         hero.navigationAnimationType = animation.heroDefaultAnimationType
         setViewControllers(viewControllers, animated: true)
     }
+    
+    public override func setViewControllers(_ viewControllers: [UIViewController], animated: Bool) {
+        if animated {
+            hero.navigationAnimationType = desiredNavigationHeroDefaultAnimationType.heroDefaultAnimationTypeForPresenting
+        }
+        super.setViewControllers(viewControllers, animated: animated)
+    }
+    
+    
     
     
     //MARK: - Helper
