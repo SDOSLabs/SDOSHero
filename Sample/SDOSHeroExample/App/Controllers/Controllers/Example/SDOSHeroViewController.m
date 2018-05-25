@@ -14,6 +14,7 @@
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (strong, nonatomic) NSArray <NSString *> *arrayAnimationTypes;
+@property (copy, nonatomic) NSString *heroIdPrefix;
 
 
 @end
@@ -45,6 +46,14 @@
     self.arrayAnimationTypes = [SDOSHeroAnimationTypeUtil getAllAnimationTypesIdentifiers];
 }
 
+#pragma mark - Inject
+
+- (NSString *)heroIdPrefix {
+    if (!_heroIdPrefix) {
+        _heroIdPrefix = [NSString stringWithFormat:@"%p", self];
+    }
+    return _heroIdPrefix;
+}
 
 #pragma mark - Actions
 
@@ -69,7 +78,7 @@
     
     ExampleTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
     cell.lbTitle.text = self.arrayAnimationTypes[indexPath.row];
-    cell.lbTitle.sdosHeroID = self.arrayAnimationTypes[indexPath.row];
+    cell.lbTitle.sdosHeroID = [NSString stringWithFormat:@"%@%@", self.heroIdPrefix, self.arrayAnimationTypes[indexPath.row]];
     [cell.lbTitle setSDOSHeroModifiers:@[HeroModifierArc(1)]];
     return cell;
 }
@@ -91,10 +100,11 @@
         if (detailNavigationController != nil) {
 
             detailNavigationController.sdosHeroIsEnabled = YES;
-            [detailNavigationController setSDOSHeroAnimationTypeForModalPresenting:type];
+            detailNavigationController.animationTypeForPresenting = type;
             
             if (detailNavigationController.viewControllers.firstObject != nil && [detailNavigationController.viewControllers.firstObject isKindOfClass:[SDOSHeroDetailViewController class]]) {
                 ((SDOSHeroDetailViewController *) detailNavigationController.viewControllers.firstObject).textAnimationType = self.arrayAnimationTypes[indexPath.row];
+                ((SDOSHeroDetailViewController *)detailNavigationController).heroIdPrefix = self.heroIdPrefix;
             }
             [self.tabBarController presentViewController:detailNavigationController animated:YES completion:nil];
         }
@@ -120,6 +130,7 @@
     if ([segue.identifier isEqualToString:ShowDetailStoryboardSegue]) {
         if ([segue.destinationViewController isKindOfClass:[SDOSHeroDetailViewController class]] && [sender isKindOfClass:[NSIndexPath class]]) {
             ((SDOSHeroDetailViewController *)segue.destinationViewController).textAnimationType = self.arrayAnimationTypes[((NSIndexPath *) sender).row];
+            ((SDOSHeroDetailViewController *)segue.destinationViewController).heroIdPrefix = self.heroIdPrefix;
         }
     }
 }

@@ -11,5 +11,6 @@
 @interface SDOSHeroDetailViewController : BaseViewController
 
 @property (copy, nonatomic) NSString *textAnimationType;
+@property (copy, nonatomic) NSString *heroIdPrefix;
 
 @end

@@ -40,7 +40,7 @@
     
     
     [self.lbAnimationGo loadStyleLabelExample];
-    self.lbAnimationGo.sdosHeroID = self.textAnimationType;
+    self.lbAnimationGo.sdosHeroID = [NSString stringWithFormat:@"%@%@", self.heroIdPrefix, self.textAnimationType]; ;
     [self.lbAnimationGo setSDOSHeroModifiers:@[HeroModifierSpring(300, 15)]];
     self.lbAnimationGo.text = self.textAnimationType;
 
@@ -48,7 +48,7 @@
     
     
     [self.lbAnimationReturn loadStyleLabelExample];
-    self.lbAnimationReturn.sdosHeroID = textOppositeAnimationType;
+    self.lbAnimationReturn.sdosHeroID = [NSString stringWithFormat:@"%@%@", self.heroIdPrefix, textOppositeAnimationType];
     [self.lbAnimationReturn setSDOSHeroModifiers:@[HeroModifierDelay(0.5)]];
     self.lbAnimationReturn.text = textOppositeAnimationType;
     
@@ -93,7 +93,7 @@
         UIViewController *vc = [self.storyboard instantiateViewControllerWithIdentifier:SDOSHeroDetailNavigationViewControllerIdentifier];
         
         vc.sdosHeroIsEnabled = YES;
-        [vc setSDOSHeroAnimationTypeForModalPresenting:type];
+        vc.animationTypeForPresenting = type;
         if ([vc isKindOfClass:[UINavigationController class]]) {
             UIViewController *firstVC = ((UINavigationController *)vc).viewControllers.firstObject;
             if ([firstVC isKindOfClass:[SDOSHeroDetailViewController class]]) {
