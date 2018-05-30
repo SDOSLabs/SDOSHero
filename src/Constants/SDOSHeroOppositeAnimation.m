@@ -1,8 +1,7 @@
 //
 //  SDOSHeroOppositeAnimation.m
-//  SDOSHero
 //
-//  Created by Antonio Jesús Pallares on 12/4/18.
+//  Copyright © 2018 SDOS. All rights reserved.
 //
 
 #import "SDOSHeroOppositeAnimation.h"

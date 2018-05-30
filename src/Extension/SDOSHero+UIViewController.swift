@@ -1,8 +1,7 @@
 //
 //  SDOSHero+UIViewController.swift
-//  SDOSHero
 //
-//  Created by Antonio Jesús Pallares on 13/7/17.
+//  Copyright © 2018 SDOS. All rights reserved.
 //
 
 import Hero

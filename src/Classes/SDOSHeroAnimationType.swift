@@ -1,8 +1,7 @@
 //
 //  SDOSHeroAnimationType.swift
-//  SDOSHero
 //
-//  Created by Antonio Jesús Pallares on 27/3/18.
+//  Copyright © 2018 SDOS. All rights reserved.
 //
 
 import Hero

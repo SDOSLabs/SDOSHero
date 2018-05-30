@@ -1,8 +1,7 @@
 //
 //  SDOSHeroNavigationController.h
-//  SDOSHero
 //
-//  Created by Antonio Jesús Pallares on 14/11/17.
+//  Copyright © 2018 SDOS. All rights reserved.
 //
 
 #ifndef SDOSHeroNavigationController_h

@@ -1,9 +1,7 @@
 //
 //  Hero+Autolayout.swift
-//  SDOSHero
 //
-//  Created by Antonio Jesús Pallares on 30/11/17.
-//  Copyright © 2017 SDOS. All rights reserved.
+//  Copyright © 2018 SDOS. All rights reserved.
 //
 
 

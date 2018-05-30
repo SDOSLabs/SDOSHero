@@ -1,8 +1,7 @@
 //
 //  SDOSHeroModifierHelper.h
-//  SDOSHero
 //
-//  Created by Antonio Jesús Pallares on 24/4/18.
+//  Copyright © 2018 SDOS. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>

@@ -1,9 +1,7 @@
 //
 //  SDOSHeroNavigationController.swift
-//  SDOSHero
 //
-//  Created by Antonio Jesús Pallares on 12/6/17.
-//
+//  Copyright © 2018 SDOS. All rights reserved.
 //
 
 import UIKit
