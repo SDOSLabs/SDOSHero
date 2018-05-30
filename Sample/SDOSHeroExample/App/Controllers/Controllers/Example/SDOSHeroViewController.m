@@ -7,6 +7,7 @@
 //
 
 #import "SDOSHeroViewController.h"
+#import "SDOSHeroDetailViewController.h"
 #import "ExampleTableViewCell.h"
 #import "SDOSHeroExample-Swift.h"
 

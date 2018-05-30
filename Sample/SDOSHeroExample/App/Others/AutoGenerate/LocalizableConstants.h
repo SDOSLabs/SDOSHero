@@ -4,10 +4,10 @@
 //  Created by SDOS
 //
 
-#define LS_coreiOS_cargando LSFromTable(@"coreiOS.cargando", @"Localizable")
-#define LS_SDOSHeroExample_alertOkActionTitle LSFromTable(@"SDOSHeroExample.alertOkActionTitle", @"Localizable")
-#define LS_coreiOS_error_closeDefault LSFromTable(@"coreiOS.error.closeDefault", @"Localizable")
-#define LS_coreiOS_error_titleDefault LSFromTable(@"coreiOS.error.titleDefault", @"Localizable")
-#define LS_coreiOS_error_sinConexion LSFromTable(@"coreiOS.error.sinConexion", @"Localizable")
-#define LS_coreiOS_error_desconocido LSFromTable(@"coreiOS.error.desconocido", @"Localizable")
-#define LS_SDOSHeroExample_version LSFromTable(@"SDOSHeroExample.version", @"Localizable")
+#define LS_coreiOS_cargando LSFromBundleAndTable(@"coreiOS.cargando", nil, @"Localizable")
+#define LS_SDOSHeroExample_alertOkActionTitle LSFromBundleAndTable(@"SDOSHeroExample.alertOkActionTitle", nil, @"Localizable")
+#define LS_coreiOS_error_closeDefault LSFromBundleAndTable(@"coreiOS.error.closeDefault", nil, @"Localizable")
+#define LS_coreiOS_error_titleDefault LSFromBundleAndTable(@"coreiOS.error.titleDefault", nil, @"Localizable")
+#define LS_coreiOS_error_sinConexion LSFromBundleAndTable(@"coreiOS.error.sinConexion", nil, @"Localizable")
+#define LS_coreiOS_error_desconocido LSFromBundleAndTable(@"coreiOS.error.desconocido", nil, @"Localizable")
+#define LS_SDOSHeroExample_version LSFromBundleAndTable(@"SDOSHeroExample.version", nil, @"Localizable")

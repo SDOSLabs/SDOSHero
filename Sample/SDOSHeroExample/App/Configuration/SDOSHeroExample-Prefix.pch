@@ -10,8 +10,6 @@
 
 //Import de las dependencias
 #import <SDOS/SDOS.h>
-#import <SDOSHero/SDOSHero-Swift.h>
-#import <Hero/Hero-Swift.h>
 #import "Design+Extensions.h"
 #import "Constants.h"
 #import "ConstantsWS.h"

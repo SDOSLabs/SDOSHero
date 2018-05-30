@@ -59,7 +59,7 @@
 		5C57D9A01FB9DA6B00357C0B /* SDOSHeroDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C57D99F1FB9DA6B00357C0B /* SDOSHeroDetailViewController.m */; };
 		5C6406FB1FBACF54005A14CB /* SDOSHeroAnimationTypeUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C6406FA1FBACF54005A14CB /* SDOSHeroAnimationTypeUtil.swift */; };
 		5C64070A1FBAEC5C005A14CB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5C6407091FBAEC5C005A14CB /* Assets.xcassets */; };
-		E460D4AB64A506511D86C511 /* Pods_SDOSHeroExample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAFCCEA5F02F264CFFC150D4 /* Pods_SDOSHeroExample.framework */; };
+		C41F1E5694D23ADA105D6D6C /* libPods-SDOSHeroExample.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F888923A01FBFE69E58F8D0 /* libPods-SDOSHeroExample.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -128,12 +128,12 @@
 		5C57D99F1FB9DA6B00357C0B /* SDOSHeroDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SDOSHeroDetailViewController.m; sourceTree = "<group>"; };
 		5C6406FA1FBACF54005A14CB /* SDOSHeroAnimationTypeUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDOSHeroAnimationTypeUtil.swift; sourceTree = "<group>"; };
 		5C6407091FBAEC5C005A14CB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		7F888923A01FBFE69E58F8D0 /* libPods-SDOSHeroExample.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SDOSHeroExample.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8F259F8463884433891D8A3E /* Pods-SDOSHeroExample.production.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SDOSHeroExample.production.xcconfig"; path = "Pods/Target Support Files/Pods-SDOSHeroExample/Pods-SDOSHeroExample.production.xcconfig"; sourceTree = "<group>"; };
 		B1193FE31DBCE77C00717955 /* Octopush+Base.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Octopush+Base.h"; sourceTree = "<group>"; };
 		B17C8CA51E9691AF00BBE3D6 /* LocalizableConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocalizableConstants.h; sourceTree = "<group>"; };
 		B197B9231E44840E009A0A74 /* NotificationsDebug.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = NotificationsDebug.entitlements; sourceTree = "<group>"; };
 		B197B9241E44840E009A0A74 /* NotificationsProduction.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = NotificationsProduction.entitlements; sourceTree = "<group>"; };
-		FAFCCEA5F02F264CFFC150D4 /* Pods_SDOSHeroExample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SDOSHeroExample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -141,7 +141,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E460D4AB64A506511D86C511 /* Pods_SDOSHeroExample.framework in Frameworks */,
+				C41F1E5694D23ADA105D6D6C /* libPods-SDOSHeroExample.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -152,7 +152,7 @@
 			isa = PBXGroup;
 			children = (
 				17EFE1856AE679994C7C312D /* Pods.framework */,
-				FAFCCEA5F02F264CFFC150D4 /* Pods_SDOSHeroExample.framework */,
+				7F888923A01FBFE69E58F8D0 /* libPods-SDOSHeroExample.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -192,10 +192,8 @@
 		298FD5A21C0701E500BA707E /* Base */ = {
 			isa = PBXGroup;
 			children = (
-				B1DC18F31D78625500BA1B5D /* Analytics */,
 				298FD5A31C0701E500BA707E /* Controller */,
 				B1193FE71DBCE8D800717955 /* DAO */,
-				B1DC18F61D78625500BA1B5D /* Fabric */,
 				298FD5A91C0701E500BA707E /* Loader */,
 				B1193FE11DBCE77C00717955 /* Octopush */,
 			);
@@ -614,20 +612,6 @@
 			path = Notifications;
 			sourceTree = "<group>";
 		};
-		B1DC18F31D78625500BA1B5D /* Analytics */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Analytics;
-			sourceTree = "<group>";
-		};
-		B1DC18F61D78625500BA1B5D /* Fabric */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Fabric;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -642,8 +626,6 @@
 				2970AD731BFA153F007CFBD9 /* Resources */,
 				29AFB21D1C04C7CB004AB1B6 /* Warnings */,
 				B197B9361E4486AE009A0A74 /* Embed App Extensions */,
-				ECC1130299F44FCF80A7A411 /* [CP] Embed Pods Frameworks */,
-				64C5E777E5A180D7430B61D4 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -759,7 +741,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/SDOS/src/Scripts/SDOS.sh\"";
+			shellScript = "\"${SRCROOT}/Pods/SDOS/src/Scripts/SDOS.sh\" --skip-segue-constants";
 		};
 		29AFB21D1C04C7CB004AB1B6 /* Warnings */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -789,21 +771,6 @@
 			shellPath = /bin/sh;
 			shellScript = "file=\"$SRCROOT/XcodeVersion.properties\"\n\n# create file if it does not exist\ntouch \"${file}\"\n\n# if file does not exist or it is not readable -> error\nif [ ! -r \"${file}\" ]\nthen\necho \"error: Could not create file: ${file} (see the Xcode Version script in Build Phases)\"\nerror -1\nfi\n# read the keys and values in the file\nwhile IFS='=' read -r key value\ndo\neval \"${key}='${value}'\"\ndone < \"${file}\"\n\n# if not defined the keys: XCODE_VERSION_MAJOR_REQUIRED, XCODE_VERSION_MINOR_REQUIRED, XCODE_VERSION_ACTUAL_REQUIRED\nif ([ -z ${XCODE_VERSION_MAJOR_REQUIRED:+\"1\"} ] || [ -z ${XCODE_VERSION_MINOR_REQUIRED:+\"1\"} ] || [ -z ${XCODE_VERSION_ACTUAL_REQUIRED:+\"1\"} ])\nthen\necho \"XCODE_VERSION_MAJOR_REQUIRED=${XCODE_VERSION_MAJOR}\" > \"${file}\"\necho \"XCODE_VERSION_MINOR_REQUIRED=${XCODE_VERSION_MINOR}\" >> \"${file}\"\necho \"XCODE_VERSION_ACTUAL_REQUIRED=${XCODE_VERSION_ACTUAL}\" >> \"${file}\"\n\necho \"warning: Required Xcode version set to ${XCODE_VERSION_ACTUAL} in this project. If you want to build this project with a different version of Xcode, please remove XcodeVersion.properties file\"\nelif [ ${XCODE_VERSION_MAJOR_REQUIRED} != ${XCODE_VERSION_MAJOR} ]\nthen\necho \"error: The required version of Xcode to run this project is ${XCODE_VERSION_MAJOR_REQUIRED} and the current version of Xcode is ${XCODE_VERSION_MAJOR}. If you want to build this project with a different version of Xcode, please remove XcodeVersion.properties file\"\nerror 0\nelif ([ ${XCODE_VERSION_MINOR_REQUIRED} != ${XCODE_VERSION_MINOR} ] || [ ${XCODE_VERSION_ACTUAL_REQUIRED} != ${XCODE_VERSION_ACTUAL} ])\nthen\necho \"warning: XCODE VERSION CONFLICT: The required version of Xcode to run this project is ${XCODE_VERSION_ACTUAL_REQUIRED} and the current version of Xcode is ${XCODE_VERSION_ACTUAL}. This might cause some problems at runtime.\"\nfi";
 		};
-		64C5E777E5A180D7430B61D4 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SDOSHeroExample/Pods-SDOSHeroExample-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		CB1D7BBDBDF5C8D966A1F3A0 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -820,26 +787,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		ECC1130299F44FCF80A7A411 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-SDOSHeroExample/Pods-SDOSHeroExample-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/Hero/Hero.framework",
-				"${BUILT_PRODUCTS_DIR}/SDOSHero/SDOSHero.framework",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Hero.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDOSHero.framework",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SDOSHeroExample/Pods-SDOSHeroExample-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */

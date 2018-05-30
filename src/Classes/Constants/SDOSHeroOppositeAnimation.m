@@ -5,7 +5,7 @@
 //
 
 #import "SDOSHeroOppositeAnimation.h"
-#import <SDOSHero/SDOSHero-Swift.h>
+#import "SDOSHero-Swift.h"
 
 @implementation SDOSHeroOppositeAnimation
 

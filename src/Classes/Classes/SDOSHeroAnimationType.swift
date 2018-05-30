@@ -48,7 +48,7 @@ import Hero
 
 public extension SDOSHeroAnimationType {
     var oppositeAnimationType: SDOSHeroAnimationType {
-        return HeroDefaultAnimationType.sdosHeroAnimationTypeFrom(basicHeroDefaultAnimationType: self.heroDefaultAnimationType.oppositeAnimationType)
+        return HeroDefaultAnimationType.sdosHeroAnimationTypeFrom(basicHeroDefaultAnimationType: self.heroDefaultAnimationType)
     }
 }
 
