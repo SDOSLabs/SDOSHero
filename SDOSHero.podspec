@@ -12,7 +12,8 @@ Pod::Spec.new do |spec|
   spec.requires_arc = true
 
   spec.subspec 'Hero' do |s1|
-    s1.source_files = 'src/**/*.{swift,h}'
+      s1.preserve_paths = 'src/Classes/*'
+      s1.source_files = ['src/Classes/*{*.m,*.h,*.swift}', 'src/Classes/**/*{*.m,*.h,*.swift}']
   end
 
   spec.dependency 'Hero', '~> 1.2.0'
