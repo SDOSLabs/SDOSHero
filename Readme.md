@@ -1,3 +1,3 @@
 # SDOSHero
 
-Esta librería está documentada en http://kc.sdos.es/display/mobility/SDOSHero
+Esta librería está documentada en https://kc.sdos.es/x/joDn
