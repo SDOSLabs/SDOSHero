@@ -399,7 +399,7 @@ public class SDOSHeroNavigationController: UINavigationController, UIGestureReco
     private var animationTypeForCurrentPop: HeroDefaultAnimationType?
     private var hashForCurrentPop: Int?
     
-    func handlePan(gestureRecognizer: UIScreenEdgePanGestureRecognizer) {
+    @objc func handlePan(gestureRecognizer: UIScreenEdgePanGestureRecognizer) {
         var progress = abs(gestureRecognizer.translation(in: self.view).x / self.view.bounds.width)
         progress = min(1.0, max(0.0, progress))
         
