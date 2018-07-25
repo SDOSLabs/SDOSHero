@@ -141,8 +141,10 @@ extension UIViewController {
     @objc public func presentViewController(_ viewController: UIViewController, usingAnimation animationType: SDOSHeroAnimationType, completion: (() -> Void)?) {
         let currentAnimationType = viewController.hero.modalAnimationType
         viewController.hero.modalAnimationType = animationType.heroDefaultAnimationType
-        present(viewController, animated: true, completion: completion)
-        viewController.hero.modalAnimationType = currentAnimationType
+        present(viewController, animated: true) {
+            viewController.hero.modalAnimationType = currentAnimationType
+            completion?()
+        }
     }
     
     
@@ -165,8 +167,10 @@ extension UIViewController {
         let lastPresentedViewController = self.lastPresentedViewController()
         let currentAnimationType = lastPresentedViewController.hero.modalAnimationType
         lastPresentedViewController.hero.modalAnimationType = animationType.heroDefaultAnimationType
-        dismiss(animated: true, completion: completion)
-        lastPresentedViewController.hero.modalAnimationType = currentAnimationType
+        dismiss(animated: true) {
+            lastPresentedViewController.hero.modalAnimationType = currentAnimationType
+            completion?()
+        }
     }
     
     
