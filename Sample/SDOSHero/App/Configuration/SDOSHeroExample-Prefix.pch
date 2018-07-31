@@ -13,6 +13,7 @@
 #import "Design+Extensions.h"
 #import "Constants.h"
 #import "ConstantsWS.h"
+@import SDOSHero;
 
 //AutoGenerate
 #import "KZBootstrapConstants.h"
