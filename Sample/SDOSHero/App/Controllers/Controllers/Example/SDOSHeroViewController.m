@@ -104,8 +104,9 @@
             detailNavigationController.animationTypeForPresenting = type;
             
             if (detailNavigationController.viewControllers.firstObject != nil && [detailNavigationController.viewControllers.firstObject isKindOfClass:[SDOSHeroDetailViewController class]]) {
-                ((SDOSHeroDetailViewController *) detailNavigationController.viewControllers.firstObject).textAnimationType = self.arrayAnimationTypes[indexPath.row];
-                ((SDOSHeroDetailViewController *)detailNavigationController).heroIdPrefix = self.heroIdPrefix;
+                SDOSHeroDetailViewController *detailViewController = (SDOSHeroDetailViewController *)detailNavigationController.viewControllers.firstObject;
+                detailViewController.textAnimationType = self.arrayAnimationTypes[indexPath.row];
+                detailViewController.heroIdPrefix = self.heroIdPrefix;
             }
             [self.tabBarController presentViewController:detailNavigationController animated:YES completion:nil];
         }
