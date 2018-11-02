@@ -1,14 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="B4b-eH-NeG">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="B4b-eH-NeG">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
-        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
-        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
-        <capability name="Navigation items with more than one left or right bar item" minToolsVersion="7.0"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -226,10 +223,10 @@
             </objects>
             <point key="canvasLocation" x="2474" y="1236"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Hero Navigation Controller-->
         <scene sceneID="kGY-Ul-hAh">
             <objects>
-                <navigationController storyboardIdentifier="SDOSHeroDetailNavigationViewControllerIdentifier" id="a1Q-RY-aWC" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="SDOSHeroDetailNavigationViewControllerIdentifier" id="a1Q-RY-aWC" customClass="SDOSHeroNavigationController" customModule="SDOSHero" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="iCM-s6-RjS">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -322,13 +319,13 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Documentation" width="15" height="15"/>
-        <image name="Modal" width="15" height="15"/>
-        <image name="Navigation" width="15" height="15"/>
-        <image name="SDOSLogo" width="200" height="200"/>
+        <image name="Documentation" width="30" height="30"/>
+        <image name="Modal" width="30" height="30"/>
+        <image name="Navigation" width="30" height="30"/>
+        <image name="SDOSLogo" width="400" height="400"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="dWO-rw-Yk0"/>
+        <segue reference="sOz-ZI-0rq"/>
         <segue reference="JZf-Lz-Nbw"/>
     </inferredMetricsTieBreakers>
 </document>
