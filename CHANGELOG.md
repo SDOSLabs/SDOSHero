@@ -1,3 +1,7 @@
+## [1.1.1 Open classes](http://git.sdos.es/ios/SDOSHero/tree/v1.1.1)
+
+- Las clases SDOSHeroTabBarController y SDOSHeroNavigationController se han marcado como 'open' para que puedan ser extensibles mediante subclases.
+
 ## [1.1.0 Hero 1.4.0](http://git.sdos.es/ios/SDOSHero/tree/v1.1.0)
 
 - Actualizada la librería Hero a la versión 1.4.0 que añade soporte para Swift 4.2, siendo retrocompatible con Swift 4.
