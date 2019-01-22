@@ -6,7 +6,7 @@
 
 import Hero
 
-public class SDOSHeroTabBarController: UITabBarController {
+open class SDOSHeroTabBarController: UITabBarController {
     
     
     /// Method used to set the Hero animation type for the item selections of the tab bar. For visual consistency, the passed animation `type` will be used when the target item index is bigger than the current index. Otherwise, the opposite animation will be used.
@@ -19,7 +19,7 @@ public class SDOSHeroTabBarController: UITabBarController {
     
     private var currentTabBarAnimationTypeIsReversed: Bool = false
     
-    override public func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem) {
+    override open func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem) {
         if let items = tabBar.items,
             let nextIndex = items.index(of: item) {
             let currentIndex = selectedIndex
