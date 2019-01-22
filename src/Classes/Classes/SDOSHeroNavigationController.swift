@@ -7,7 +7,7 @@
 import UIKit
 import Hero
 
-public class SDOSHeroNavigationController: UINavigationController, UIGestureRecognizerDelegate {
+open class SDOSHeroNavigationController: UINavigationController, UIGestureRecognizerDelegate {
     
     private var arrayHeroAnimationNavigationHistory = [HeroDefaultAnimationType]()
     private lazy var heroTransition: HeroTransition = {
@@ -135,7 +135,7 @@ public class SDOSHeroNavigationController: UINavigationController, UIGestureReco
     private var viewControllersHashes = [Int]()
     
     
-    public override func pushViewController(_ viewController: UIViewController, animated: Bool) {
+    open override func pushViewController(_ viewController: UIViewController, animated: Bool) {
         
         if viewControllersHashes.contains(viewController.hash) {
             super.pushViewController(viewController, animated: animated)
@@ -208,7 +208,7 @@ public class SDOSHeroNavigationController: UINavigationController, UIGestureReco
     }
     
     
-    public override func popViewController(animated: Bool) -> UIViewController? {
+    open override func popViewController(animated: Bool) -> UIViewController? {
         
         let animationType = finalAnimationForNextPopTransition(historyAnimationType: arrayHeroAnimationNavigationHistory.popLast())
         hero.navigationAnimationType = animationType
@@ -231,7 +231,7 @@ public class SDOSHeroNavigationController: UINavigationController, UIGestureReco
     }
     
     
-    public override func popToViewController(_ viewController: UIViewController, animated: Bool) -> [UIViewController]? {
+    open override func popToViewController(_ viewController: UIViewController, animated: Bool) -> [UIViewController]? {
         
         if let index = viewControllers.index(of: viewController) {
             
@@ -270,7 +270,7 @@ public class SDOSHeroNavigationController: UINavigationController, UIGestureReco
         return popToRootViewController(animated: true)
     }
     
-    public override func popToRootViewController(animated: Bool) -> [UIViewController]? {
+    open override func popToRootViewController(animated: Bool) -> [UIViewController]? {
      
         let animationTypeInHistory = arrayHeroAnimationNavigationHistory.last
         arrayHeroAnimationNavigationHistory.removeAll()
@@ -301,7 +301,7 @@ public class SDOSHeroNavigationController: UINavigationController, UIGestureReco
         setViewControllers(viewControllers, animated: true)
     }
     
-    public override func setViewControllers(_ viewControllers: [UIViewController], animated: Bool) {
+    open override func setViewControllers(_ viewControllers: [UIViewController], animated: Bool) {
         if animated {
             hero.navigationAnimationType = desiredNavigationHeroDefaultAnimationType.heroDefaultAnimationTypeForPresenting
         }
@@ -389,7 +389,7 @@ public class SDOSHeroNavigationController: UINavigationController, UIGestureReco
     }
     
 
-    override public var interactivePopGestureRecognizer: UIGestureRecognizer? {
+    override open var interactivePopGestureRecognizer: UIGestureRecognizer? {
         get {
             return customInteractivePopGestureRecognizer
         }
