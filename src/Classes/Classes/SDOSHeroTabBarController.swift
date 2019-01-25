@@ -29,10 +29,7 @@ open class SDOSHeroTabBarController: UITabBarController {
                 return
             }
             
-            if (nextIndex < currentIndex && !currentTabBarAnimationTypeIsReversed) || (nextIndex > currentIndex && currentTabBarAnimationTypeIsReversed) {
-                heroTabBarAnimationType = heroTabBarAnimationType.oppositeAnimationType
-            }
-            currentTabBarAnimationTypeIsReversed = nextIndex < currentIndex
+            configureAnimationForTransition(fromIndex: currentIndex, toIndex: nextIndex)
             
             // Necessary to avoid a crash of Hero when tapping the tabBar very quickly
             tabBar.isUserInteractionEnabled = false
@@ -41,5 +38,31 @@ open class SDOSHeroTabBarController: UITabBarController {
             })
         }
     }
-
+    
+    
+    open override var selectedIndex: Int {
+        willSet {
+            configureAnimationForTransition(fromIndex: selectedIndex, toIndex: newValue)
+        }
+    }
+    
+    open override var selectedViewController: UIViewController? {
+        willSet {
+            guard
+                let vc = newValue,
+                let newIndex = viewControllers?.firstIndex(of: vc)
+                else {
+                    return
+            }
+            configureAnimationForTransition(fromIndex: selectedIndex, toIndex: newIndex)
+        }
+    }
+    
+    private func configureAnimationForTransition(fromIndex: Int, toIndex: Int) {
+        if (toIndex < fromIndex && !currentTabBarAnimationTypeIsReversed) || (toIndex > fromIndex && currentTabBarAnimationTypeIsReversed) {
+            heroTabBarAnimationType = heroTabBarAnimationType.oppositeAnimationType
+        }
+        currentTabBarAnimationTypeIsReversed = toIndex < fromIndex
+    }
+    
 }
