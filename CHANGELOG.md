@@ -1,3 +1,7 @@
+## [1.1.2 Fix animations in SDOSHeroTabBarController](http://git.sdos.es/ios/SDOSHero/tree/v1.1.2)
+
+- En el SDOSHeroTabBarController, al seleccionar un tab programáticamente, se respeta la dirección de la animación seteada al realizar la transición.
+
 ## [1.1.1 Open classes](http://git.sdos.es/ios/SDOSHero/tree/v1.1.1)
 
 - Las clases SDOSHeroTabBarController y SDOSHeroNavigationController se han marcado como 'open' para que puedan ser extensibles mediante subclases.
