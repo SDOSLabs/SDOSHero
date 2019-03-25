@@ -5,7 +5,7 @@
 //
 
 #import "SDOSHeroModifierHelper.h"
-#import "SDOSHero-Swift.h"
+#import "SDOSHeroExample-Swift.h"
 
 @implementation SDOSHeroModifierHelper
 

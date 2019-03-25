@@ -8,7 +8,8 @@
 
 #import "SDOSHeroDetailViewController.h"
 #import "SDOSHeroExample-Swift.h"
-
+#import "SDOSHeroModifierHelper.h"
+#import "SDOSHeroOppositeAnimation.h"
 
 @interface SDOSHeroDetailViewController ()
 @property (weak, nonatomic) IBOutlet UILabel *lbAnimationGoTitle;
