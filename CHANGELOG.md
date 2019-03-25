@@ -1,3 +1,7 @@
+## [2.0.0 Eliminado soporte para Objective-c](http://git.sdos.es/ios/SDOSHero/tree/v2.0.0)
+
+- Se ha eliminado el soporte a Objective-c por problemas de compatibilidad al usar cocoapods y use_frameworks!. La librería puede seguir siendo usada en Objective-c pero será necesario incluir los ficheros que hacían de puente en el proyecto. Para ello es necesario copiar los ficheros que se encuentran en el proyecto de ejemplo en la ruta Sample/SDOSHero/App/Others/SDOSHero
+
 ## [1.1.2 Fix animations in SDOSHeroTabBarController](http://git.sdos.es/ios/SDOSHero/tree/v1.1.2)
 
 - En el SDOSHeroTabBarController, al seleccionar un tab programáticamente, se respeta la dirección de la animación seteada al realizar la transición.

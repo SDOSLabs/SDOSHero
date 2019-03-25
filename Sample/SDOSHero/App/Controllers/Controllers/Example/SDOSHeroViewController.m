@@ -10,6 +10,7 @@
 #import "SDOSHeroDetailViewController.h"
 #import "ExampleTableViewCell.h"
 #import "SDOSHeroExample-Swift.h"
+#import "SDOSHeroModifierHelper.h"
 
 @interface SDOSHeroViewController () <UITableViewDelegate, UITableViewDataSource>
 

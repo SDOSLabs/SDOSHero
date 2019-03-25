@@ -48,6 +48,8 @@
 		298FD6721C0701E500BA707E /* Design+Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 298FD6391C0701E500BA707E /* Design+Extensions.m */; };
 		298FD6731C0701E500BA707E /* default.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 298FD63C1C0701E500BA707E /* default.bundle */; };
 		298FD6741C0701E500BA707E /* Util.m in Sources */ = {isa = PBXBuildFile; fileRef = 298FD6401C0701E500BA707E /* Util.m */; };
+		29B0F27522492E3E00947F62 /* SDOSHeroModifierHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B0F27322492E3E00947F62 /* SDOSHeroModifierHelper.m */; };
+		29B0F27622492E3E00947F62 /* SDOSHeroOppositeAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B0F27422492E3E00947F62 /* SDOSHeroOppositeAnimation.m */; };
 		5C57D98A1FB9D5B800357C0B /* ExampleSDOSHero.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5C57D9881FB9D5B800357C0B /* ExampleSDOSHero.storyboard */; };
 		5C57D98B1FB9D5B800357C0B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5C57D9891FB9D5B800357C0B /* LaunchScreen.storyboard */; };
 		5C57D98E1FB9D69600357C0B /* InitialViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C57D98C1FB9D69600357C0B /* InitialViewController.m */; };
@@ -108,6 +110,10 @@
 		298FD63F1C0701E500BA707E /* Util.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Util.h; sourceTree = "<group>"; };
 		298FD6401C0701E500BA707E /* Util.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Util.m; sourceTree = "<group>"; };
 		298FD6751C0706D400BA707E /* ImagesConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImagesConstants.h; sourceTree = "<group>"; };
+		29B0F27122492E3E00947F62 /* SDOSHeroOppositeAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDOSHeroOppositeAnimation.h; sourceTree = "<group>"; };
+		29B0F27222492E3E00947F62 /* SDOSHeroModifierHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDOSHeroModifierHelper.h; sourceTree = "<group>"; };
+		29B0F27322492E3E00947F62 /* SDOSHeroModifierHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDOSHeroModifierHelper.m; sourceTree = "<group>"; };
+		29B0F27422492E3E00947F62 /* SDOSHeroOppositeAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDOSHeroOppositeAnimation.m; sourceTree = "<group>"; };
 		3D8D6D080C4E62D3E74E1C87 /* Pods-SDOSHeroExample.preproduction.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SDOSHeroExample.preproduction.xcconfig"; path = "Pods/Target Support Files/Pods-SDOSHeroExample/Pods-SDOSHeroExample.preproduction.xcconfig"; sourceTree = "<group>"; };
 		422C009CD9E3D72A651ACADA /* Pods-SDOSHeroExample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SDOSHeroExample.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SDOSHeroExample/Pods-SDOSHeroExample.debug.xcconfig"; sourceTree = "<group>"; };
 		5C57D9881FB9D5B800357C0B /* ExampleSDOSHero.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ExampleSDOSHero.storyboard; sourceTree = "<group>"; };
@@ -347,6 +353,7 @@
 		298FD6241C0701E500BA707E /* Others */ = {
 			isa = PBXGroup;
 			children = (
+				29B0F27722492FA200947F62 /* SDOSHero */,
 				298FD6251C0701E500BA707E /* AplicationShared */,
 				298FD6271C0701E500BA707E /* AutoGenerate */,
 				298FD62D1C0701E500BA707E /* Constants */,
@@ -456,6 +463,17 @@
 				298FD6401C0701E500BA707E /* Util.m */,
 			);
 			path = Util;
+			sourceTree = "<group>";
+		};
+		29B0F27722492FA200947F62 /* SDOSHero */ = {
+			isa = PBXGroup;
+			children = (
+				29B0F27222492E3E00947F62 /* SDOSHeroModifierHelper.h */,
+				29B0F27322492E3E00947F62 /* SDOSHeroModifierHelper.m */,
+				29B0F27122492E3E00947F62 /* SDOSHeroOppositeAnimation.h */,
+				29B0F27422492E3E00947F62 /* SDOSHeroOppositeAnimation.m */,
+			);
+			path = SDOSHero;
 			sourceTree = "<group>";
 		};
 		29E3FED71C08736F006DD0BF /* Database */ = {
@@ -797,6 +815,8 @@
 				5C57D98E1FB9D69600357C0B /* InitialViewController.m in Sources */,
 				298FD64A1C0701E500BA707E /* main.m in Sources */,
 				5C57D9991FB9D7CE00357C0B /* ExampleTableViewCell.m in Sources */,
+				29B0F27622492E3E00947F62 /* SDOSHeroOppositeAnimation.m in Sources */,
+				29B0F27522492E3E00947F62 /* SDOSHeroModifierHelper.m in Sources */,
 				298FD6411C0701E500BA707E /* BaseViewController.m in Sources */,
 				298FD6741C0701E500BA707E /* Util.m in Sources */,
 			);
