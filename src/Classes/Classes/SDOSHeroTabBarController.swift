@@ -12,8 +12,8 @@ open class SDOSHeroTabBarController: UITabBarController {
     /// Method used to set the Hero animation type for the item selections of the tab bar. For visual consistency, the passed animation `type` will be used when the target item index is bigger than the current index. Otherwise, the opposite animation will be used.
     ///
     /// - Parameter type: The type of the transition animation for the tab bar item selection.
-    @objc public func setTabBarSDOSHeroAnimationType(_ type: SDOSHeroAnimationType) {
-        hero.tabBarAnimationType = type.heroDefaultAnimationType
+    public func setTabBarAnimationType(_ type: HeroDefaultAnimationType) {
+        hero.tabBarAnimationType = type
         currentTabBarAnimationTypeIsReversed = false
     }
     
@@ -46,7 +46,7 @@ open class SDOSHeroTabBarController: UITabBarController {
         }
     }
     
-    open override var selectedViewController: UIViewController? {
+    open override var selectedViewController: UIViewController? {
         willSet {
             guard
                 let vc = newValue,
