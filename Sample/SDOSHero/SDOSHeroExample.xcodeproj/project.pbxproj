@@ -32,11 +32,9 @@
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
-		290A16DC1BFB3146002361EF /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 290A16A41BFB3146002361EF /* AppDelegate.m */; };
 		298FD6411C0701E500BA707E /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 298FD5A51C0701E500BA707E /* BaseViewController.m */; };
 		298FD6471C0701E500BA707E /* AppIcon.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 298FD5B71C0701E500BA707E /* AppIcon.xcassets */; };
 		298FD6491C0701E500BA707E /* Launcher.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 298FD5BA1C0701E500BA707E /* Launcher.xcassets */; };
-		298FD64A1C0701E500BA707E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 298FD5BB1C0701E500BA707E /* main.m */; };
 		298FD64B1C0701E500BA707E /* App.debug.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 298FD5BD1C0701E500BA707E /* App.debug.xcconfig */; };
 		298FD64E1C0701E500BA707E /* Shared.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 298FD5C01C0701E500BA707E /* Shared.xcconfig */; };
 		298FD64F1C0701E500BA707E /* KZBEnvironments.plist in Resources */ = {isa = PBXBuildFile; fileRef = 298FD5C21C0701E500BA707E /* KZBEnvironments.plist */; };
@@ -48,17 +46,16 @@
 		298FD6721C0701E500BA707E /* Design+Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 298FD6391C0701E500BA707E /* Design+Extensions.m */; };
 		298FD6731C0701E500BA707E /* default.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 298FD63C1C0701E500BA707E /* default.bundle */; };
 		298FD6741C0701E500BA707E /* Util.m in Sources */ = {isa = PBXBuildFile; fileRef = 298FD6401C0701E500BA707E /* Util.m */; };
-		29B0F27522492E3E00947F62 /* SDOSHeroModifierHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B0F27322492E3E00947F62 /* SDOSHeroModifierHelper.m */; };
-		29B0F27622492E3E00947F62 /* SDOSHeroOppositeAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B0F27422492E3E00947F62 /* SDOSHeroOppositeAnimation.m */; };
 		5C57D98A1FB9D5B800357C0B /* ExampleSDOSHero.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5C57D9881FB9D5B800357C0B /* ExampleSDOSHero.storyboard */; };
 		5C57D98B1FB9D5B800357C0B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5C57D9891FB9D5B800357C0B /* LaunchScreen.storyboard */; };
 		5C57D98E1FB9D69600357C0B /* InitialViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C57D98C1FB9D69600357C0B /* InitialViewController.m */; };
-		5C57D9921FB9D71E00357C0B /* SDOSHeroViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C57D9911FB9D71E00357C0B /* SDOSHeroViewController.m */; };
 		5C57D9991FB9D7CE00357C0B /* ExampleTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C57D9971FB9D7CE00357C0B /* ExampleTableViewCell.m */; };
 		5C57D99A1FB9D7CE00357C0B /* ExampleTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5C57D9981FB9D7CE00357C0B /* ExampleTableViewCell.xib */; };
-		5C57D9A01FB9DA6B00357C0B /* SDOSHeroDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C57D99F1FB9DA6B00357C0B /* SDOSHeroDetailViewController.m */; };
 		5C6406FB1FBACF54005A14CB /* SDOSHeroAnimationTypeUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C6406FA1FBACF54005A14CB /* SDOSHeroAnimationTypeUtil.swift */; };
 		5C64070A1FBAEC5C005A14CB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5C6407091FBAEC5C005A14CB /* Assets.xcassets */; };
+		5C75A9B7227AC27C0067271E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C75A9B6227AC27C0067271E /* AppDelegate.swift */; };
+		5C75A9B9227AC4E00067271E /* SDOSHeroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C75A9B8227AC4E00067271E /* SDOSHeroViewController.swift */; };
+		5C75A9BB227ADC5C0067271E /* SDOSHeroDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C75A9BA227ADC5C0067271E /* SDOSHeroDetailViewController.swift */; };
 		C41F1E5694D23ADA105D6D6C /* libPods-SDOSHeroExample.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F888923A01FBFE69E58F8D0 /* libPods-SDOSHeroExample.a */; };
 /* End PBXBuildFile section */
 
@@ -77,8 +74,6 @@
 
 /* Begin PBXFileReference section */
 		17EFE1856AE679994C7C312D /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		290A16A31BFB3146002361EF /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		290A16A41BFB3146002361EF /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		2970AD751BFA153F007CFBD9 /* SDOSHeroExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SDOSHeroExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		298FD5A41C0701E500BA707E /* BaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseViewController.h; sourceTree = "<group>"; };
 		298FD5A51C0701E500BA707E /* BaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseViewController.m; sourceTree = "<group>"; };
@@ -86,7 +81,6 @@
 		298FD5B81C0701E500BA707E /* SDOSHeroExample-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SDOSHeroExample-Prefix.pch"; sourceTree = "<group>"; };
 		298FD5B91C0701E500BA707E /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		298FD5BA1C0701E500BA707E /* Launcher.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Launcher.xcassets; sourceTree = "<group>"; };
-		298FD5BB1C0701E500BA707E /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		298FD5BD1C0701E500BA707E /* App.debug.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = App.debug.xcconfig; sourceTree = "<group>"; };
 		298FD5C01C0701E500BA707E /* Shared.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = Shared.xcconfig; sourceTree = "<group>"; };
 		298FD5C21C0701E500BA707E /* KZBEnvironments.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = KZBEnvironments.plist; sourceTree = "<group>"; };
@@ -110,26 +104,21 @@
 		298FD63F1C0701E500BA707E /* Util.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Util.h; sourceTree = "<group>"; };
 		298FD6401C0701E500BA707E /* Util.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Util.m; sourceTree = "<group>"; };
 		298FD6751C0706D400BA707E /* ImagesConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImagesConstants.h; sourceTree = "<group>"; };
-		29B0F27122492E3E00947F62 /* SDOSHeroOppositeAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDOSHeroOppositeAnimation.h; sourceTree = "<group>"; };
-		29B0F27222492E3E00947F62 /* SDOSHeroModifierHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDOSHeroModifierHelper.h; sourceTree = "<group>"; };
-		29B0F27322492E3E00947F62 /* SDOSHeroModifierHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDOSHeroModifierHelper.m; sourceTree = "<group>"; };
-		29B0F27422492E3E00947F62 /* SDOSHeroOppositeAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDOSHeroOppositeAnimation.m; sourceTree = "<group>"; };
 		3D8D6D080C4E62D3E74E1C87 /* Pods-SDOSHeroExample.preproduction.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SDOSHeroExample.preproduction.xcconfig"; path = "Pods/Target Support Files/Pods-SDOSHeroExample/Pods-SDOSHeroExample.preproduction.xcconfig"; sourceTree = "<group>"; };
 		422C009CD9E3D72A651ACADA /* Pods-SDOSHeroExample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SDOSHeroExample.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SDOSHeroExample/Pods-SDOSHeroExample.debug.xcconfig"; sourceTree = "<group>"; };
 		5C57D9881FB9D5B800357C0B /* ExampleSDOSHero.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ExampleSDOSHero.storyboard; sourceTree = "<group>"; };
 		5C57D9891FB9D5B800357C0B /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5C57D98C1FB9D69600357C0B /* InitialViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InitialViewController.m; sourceTree = "<group>"; };
 		5C57D98D1FB9D69600357C0B /* InitialViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InitialViewController.h; sourceTree = "<group>"; };
-		5C57D9901FB9D71E00357C0B /* SDOSHeroViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SDOSHeroViewController.h; sourceTree = "<group>"; };
-		5C57D9911FB9D71E00357C0B /* SDOSHeroViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SDOSHeroViewController.m; sourceTree = "<group>"; };
 		5C57D9961FB9D7CE00357C0B /* ExampleTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ExampleTableViewCell.h; sourceTree = "<group>"; };
 		5C57D9971FB9D7CE00357C0B /* ExampleTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ExampleTableViewCell.m; sourceTree = "<group>"; };
 		5C57D9981FB9D7CE00357C0B /* ExampleTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ExampleTableViewCell.xib; sourceTree = "<group>"; };
 		5C57D99B1FB9D9C900357C0B /* SDOSHeroExample-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SDOSHeroExample-Bridging-Header.h"; sourceTree = "<group>"; };
-		5C57D99E1FB9DA6B00357C0B /* SDOSHeroDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SDOSHeroDetailViewController.h; sourceTree = "<group>"; };
-		5C57D99F1FB9DA6B00357C0B /* SDOSHeroDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SDOSHeroDetailViewController.m; sourceTree = "<group>"; };
 		5C6406FA1FBACF54005A14CB /* SDOSHeroAnimationTypeUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDOSHeroAnimationTypeUtil.swift; sourceTree = "<group>"; };
 		5C6407091FBAEC5C005A14CB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		5C75A9B6227AC27C0067271E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		5C75A9B8227AC4E00067271E /* SDOSHeroViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDOSHeroViewController.swift; sourceTree = "<group>"; };
+		5C75A9BA227ADC5C0067271E /* SDOSHeroDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDOSHeroDetailViewController.swift; sourceTree = "<group>"; };
 		7F888923A01FBFE69E58F8D0 /* libPods-SDOSHeroExample.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SDOSHeroExample.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8F259F8463884433891D8A3E /* Pods-SDOSHeroExample.production.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SDOSHeroExample.production.xcconfig"; path = "Pods/Target Support Files/Pods-SDOSHeroExample/Pods-SDOSHeroExample.production.xcconfig"; sourceTree = "<group>"; };
 		B1193FE31DBCE77C00717955 /* Octopush+Base.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Octopush+Base.h"; sourceTree = "<group>"; };
@@ -162,8 +151,7 @@
 		290A16A21BFB3146002361EF /* App */ = {
 			isa = PBXGroup;
 			children = (
-				290A16A31BFB3146002361EF /* AppDelegate.h */,
-				290A16A41BFB3146002361EF /* AppDelegate.m */,
+				5C75A9B6227AC27C0067271E /* AppDelegate.swift */,
 				298FD5A21C0701E500BA707E /* Base */,
 				298FD5B61C0701E500BA707E /* Configuration */,
 				298FD5C61C0701E500BA707E /* Controllers */,
@@ -223,7 +211,6 @@
 			children = (
 				B197B9221E44840E009A0A74 /* Notifications */,
 				298FD5C51C0701E500BA707E /* Settings.bundle */,
-				298FD5BB1C0701E500BA707E /* main.m */,
 				298FD5B81C0701E500BA707E /* SDOSHeroExample-Prefix.pch */,
 				298FD5B91C0701E500BA707E /* Info.plist */,
 				298FD5B71C0701E500BA707E /* AppIcon.xcassets */,
@@ -353,7 +340,6 @@
 		298FD6241C0701E500BA707E /* Others */ = {
 			isa = PBXGroup;
 			children = (
-				29B0F27722492FA200947F62 /* SDOSHero */,
 				298FD6251C0701E500BA707E /* AplicationShared */,
 				298FD6271C0701E500BA707E /* AutoGenerate */,
 				298FD62D1C0701E500BA707E /* Constants */,
@@ -465,17 +451,6 @@
 			path = Util;
 			sourceTree = "<group>";
 		};
-		29B0F27722492FA200947F62 /* SDOSHero */ = {
-			isa = PBXGroup;
-			children = (
-				29B0F27222492E3E00947F62 /* SDOSHeroModifierHelper.h */,
-				29B0F27322492E3E00947F62 /* SDOSHeroModifierHelper.m */,
-				29B0F27122492E3E00947F62 /* SDOSHeroOppositeAnimation.h */,
-				29B0F27422492E3E00947F62 /* SDOSHeroOppositeAnimation.m */,
-			);
-			path = SDOSHero;
-			sourceTree = "<group>";
-		};
 		29E3FED71C08736F006DD0BF /* Database */ = {
 			isa = PBXGroup;
 			children = (
@@ -493,10 +468,8 @@
 		5C57D98F1FB9D70B00357C0B /* Example */ = {
 			isa = PBXGroup;
 			children = (
-				5C57D9901FB9D71E00357C0B /* SDOSHeroViewController.h */,
-				5C57D9911FB9D71E00357C0B /* SDOSHeroViewController.m */,
-				5C57D99E1FB9DA6B00357C0B /* SDOSHeroDetailViewController.h */,
-				5C57D99F1FB9DA6B00357C0B /* SDOSHeroDetailViewController.m */,
+				5C75A9B8227AC4E00067271E /* SDOSHeroViewController.swift */,
+				5C75A9BA227ADC5C0067271E /* SDOSHeroDetailViewController.swift */,
 				5C6406FA1FBACF54005A14CB /* SDOSHeroAnimationTypeUtil.swift */,
 			);
 			path = Example;
@@ -684,6 +657,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 				es,
@@ -806,17 +780,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5C57D9921FB9D71E00357C0B /* SDOSHeroViewController.m in Sources */,
+				5C75A9B9227AC4E00067271E /* SDOSHeroViewController.swift in Sources */,
 				298FD6721C0701E500BA707E /* Design+Extensions.m in Sources */,
-				290A16DC1BFB3146002361EF /* AppDelegate.m in Sources */,
-				5C57D9A01FB9DA6B00357C0B /* SDOSHeroDetailViewController.m in Sources */,
+				5C75A9B7227AC27C0067271E /* AppDelegate.swift in Sources */,
 				298FD6701C0701E500BA707E /* StoryboardConstants.m in Sources */,
 				5C6406FB1FBACF54005A14CB /* SDOSHeroAnimationTypeUtil.swift in Sources */,
 				5C57D98E1FB9D69600357C0B /* InitialViewController.m in Sources */,
-				298FD64A1C0701E500BA707E /* main.m in Sources */,
+				5C75A9BB227ADC5C0067271E /* SDOSHeroDetailViewController.swift in Sources */,
 				5C57D9991FB9D7CE00357C0B /* ExampleTableViewCell.m in Sources */,
-				29B0F27622492E3E00947F62 /* SDOSHeroOppositeAnimation.m in Sources */,
-				29B0F27522492E3E00947F62 /* SDOSHeroModifierHelper.m in Sources */,
 				298FD6411C0701E500BA707E /* BaseViewController.m in Sources */,
 				298FD6741C0701E500BA707E /* Util.m in Sources */,
 			);

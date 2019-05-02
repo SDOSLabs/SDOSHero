@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="B4b-eH-NeG">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="B4b-eH-NeG">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -89,7 +89,7 @@
         <!--Hero View Controller-->
         <scene sceneID="8P1-Hu-qVw">
             <objects>
-                <viewController id="155-Xg-B2B" customClass="SDOSHeroViewController" sceneMemberID="viewController">
+                <viewController id="155-Xg-B2B" customClass="SDOSHeroViewController" customModule="SDOSHeroExample" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="smQ-NI-bwc"/>
                         <viewControllerLayoutGuide type="bottom" id="5dM-jk-jzQ"/>
@@ -123,7 +123,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="iuo-en-NHO"/>
                     <connections>
-                        <outlet property="tableView" destination="on8-zJ-kou" id="XNk-h8-1aO"/>
+                        <outlet property="tableView" destination="on8-zJ-kou" id="1rX-St-mRt"/>
                         <segue destination="VC8-eR-rGp" kind="show" identifier="ShowDetailStoryboardSegue" id="dWO-rw-Yk0"/>
                     </connections>
                 </viewController>
@@ -134,7 +134,7 @@
         <!--Hero Detail View Controller-->
         <scene sceneID="Lkh-rm-wqb">
             <objects>
-                <viewController storyboardIdentifier="SDOSHeroDetailViewControllerIdentifier" id="VC8-eR-rGp" customClass="SDOSHeroDetailViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SDOSHeroDetailViewControllerIdentifier" id="VC8-eR-rGp" customClass="SDOSHeroDetailViewController" customModule="SDOSHeroExample" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="UgD-Q8-WXH"/>
                         <viewControllerLayoutGuide type="bottom" id="j0T-Pd-1dV"/>
@@ -319,13 +319,13 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Documentation" width="30" height="30"/>
-        <image name="Modal" width="30" height="30"/>
-        <image name="Navigation" width="30" height="30"/>
-        <image name="SDOSLogo" width="400" height="400"/>
+        <image name="Documentation" width="15" height="15"/>
+        <image name="Modal" width="15" height="15"/>
+        <image name="Navigation" width="15" height="15"/>
+        <image name="SDOSLogo" width="200" height="200"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="sOz-ZI-0rq"/>
+        <segue reference="dWO-rw-Yk0"/>
         <segue reference="JZf-Lz-Nbw"/>
     </inferredMetricsTieBreakers>
 </document>
