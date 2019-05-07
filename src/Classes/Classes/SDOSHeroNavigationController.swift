@@ -25,17 +25,16 @@ open class SDOSHeroNavigationController: UINavigationController, UIGestureRecogn
     ///
     /// If its value is `.auto`, then the animation for push transitions will be the opposite animation to that returned by `animationTypeForPop`.
     /// If the value of `animationTypeForPop` is also `.auto`, then the animation for navigation transitions will be the default system animation.
-    @objc public var animationTypeForPush: SDOSHeroAnimationType {
+    public var animationTypeForPush: HeroDefaultAnimationType {
         get {
-            return desiredNavigationHeroDefaultAnimationType.sdosHeroAnimationTypeForPresenting
+            return desiredNavigationHeroDefaultAnimationType.heroDefaultAnimationTypeForPresenting
         }
         set {
-            let heroAnimationType = newValue.heroDefaultAnimationType
             switch desiredNavigationHeroDefaultAnimationType {
             case .selectBy(presenting: _, dismissing: let currentDesiredPopType):
-                desiredNavigationHeroDefaultAnimationType = .selectBy(presenting: heroAnimationType, dismissing: currentDesiredPopType)
+                desiredNavigationHeroDefaultAnimationType = .selectBy(presenting: newValue, dismissing: currentDesiredPopType)
             default:
-                desiredNavigationHeroDefaultAnimationType = .selectBy(presenting: heroAnimationType, dismissing: .auto)
+                desiredNavigationHeroDefaultAnimationType = .selectBy(presenting: newValue, dismissing: .auto)
             }
         }
     }
@@ -44,17 +43,16 @@ open class SDOSHeroNavigationController: UINavigationController, UIGestureRecogn
     ///
     /// If its value is `.auto`, then the animation for pop transitions will be the opposite animation to that returned by `animationTypeForPush`.
     /// If the value of `animationTypeForPush` is also `.auto`, then the animation for navigation transitions will be the default system animation.
-    @objc public var animationTypeForPop: SDOSHeroAnimationType {
+    public var animationTypeForPop: HeroDefaultAnimationType {
         get {
-            return desiredNavigationHeroDefaultAnimationType.sdosHeroAnimationTypeForDismissing
+            return desiredNavigationHeroDefaultAnimationType.heroDefaultAnimationTypeForDismissing
         }
         set {
-            let heroAnimationType = newValue.heroDefaultAnimationType
             switch desiredNavigationHeroDefaultAnimationType {
             case .selectBy(presenting: let currentDesiredPushType, dismissing: _):
-                desiredNavigationHeroDefaultAnimationType = .selectBy(presenting: currentDesiredPushType, dismissing: heroAnimationType)
+                desiredNavigationHeroDefaultAnimationType = .selectBy(presenting: currentDesiredPushType, dismissing: newValue)
             default:
-                desiredNavigationHeroDefaultAnimationType = .selectBy(presenting: .auto, dismissing: heroAnimationType)
+                desiredNavigationHeroDefaultAnimationType = .selectBy(presenting: .auto, dismissing: newValue)
             }
         }
     }
@@ -66,8 +64,8 @@ open class SDOSHeroNavigationController: UINavigationController, UIGestureRecogn
     ///
     /// - Parameter pushType: The type of the animation for push transitions.
     /// - Parameter popType: The type of the animation for pop transitions.
-    @objc public func setSDOSHeroAnimationTypeForPushNavigations(_ pushType: SDOSHeroAnimationType, forPopNavigations popType: SDOSHeroAnimationType) {
-        desiredNavigationHeroDefaultAnimationType = .selectBy(presenting: pushType.heroDefaultAnimationType, dismissing: popType.heroDefaultAnimationType)
+    public func setHeroAnimationTypeForPushNavigations(_ pushType: HeroDefaultAnimationType, forPopNavigations popType: HeroDefaultAnimationType) {
+        desiredNavigationHeroDefaultAnimationType = .selectBy(presenting: pushType.heroDefaultAnimationTypeForPresenting, dismissing: popType.heroDefaultAnimationTypeForDismissing)
     }
     
     
@@ -88,8 +86,8 @@ open class SDOSHeroNavigationController: UINavigationController, UIGestureRecogn
     /// - Parameters:
     ///   - viewController: The view controller to push onto the stack. This object cannot be a tab bar controller. If the view controller is already on the navigation stack, this method throws an exception.
     ///   - pushAnimation: The animation type for the push transition.
-    @objc public func pushViewController(_ viewController: UIViewController, usingAnimation pushAnimation: SDOSHeroAnimationType) {
-        pushViewController(viewController, pushHeroAnimation: pushAnimation.heroDefaultAnimationType, popHeroAnimation: desiredNavigationHeroDefaultAnimationType.heroDefaultAnimationTypeForDismissing)
+    public func pushViewController(_ viewController: UIViewController, usingAnimation pushAnimation: HeroDefaultAnimationType) {
+        pushViewController(viewController, usingPushAnimation: pushAnimation.heroDefaultAnimationTypeForPresenting, popAnimation: desiredNavigationHeroDefaultAnimationType.heroDefaultAnimationTypeForDismissing)
     }
     
     
@@ -104,8 +102,9 @@ open class SDOSHeroNavigationController: UINavigationController, UIGestureRecogn
     /// - Parameters:
     ///   - viewController: The view controller to push onto the stack. This object cannot be a tab bar controller. If the view controller is already on the navigation stack, this method throws an exception.
     ///   - pushAnimation: The animation type for the push transition.
-    @objc public func pushViewController(_ viewController: UIViewController, usingAnimationForPushAndOppositeForPop pushAnimation: SDOSHeroAnimationType) {
-        pushViewController(viewController, pushHeroAnimation: pushAnimation.heroDefaultAnimationType, popHeroAnimation: pushAnimation.heroDefaultAnimationType.oppositeAnimationType)
+    public func pushViewController(_ viewController: UIViewController, usingAnimationForPushAndOppositeForPop pushAnimation: HeroDefaultAnimationType) {
+        let finalPushAnimation = pushAnimation.heroDefaultAnimationTypeForPresenting
+        pushViewController(viewController, usingPushAnimation: finalPushAnimation, popAnimation: finalPushAnimation.oppositeAnimationType)
     }
     
     
@@ -121,16 +120,10 @@ open class SDOSHeroNavigationController: UINavigationController, UIGestureRecogn
     ///   - viewController: The view controller to push onto the stack. This object cannot be a tab bar controller. If the view controller is already on the navigation stack, this method throws an exception.
     ///   - pushAnimation: The animation type for the push transition.
     ///   - popAnimation: The animation type for the corresponding pop transition.
-    @objc public func pushViewController(_ viewController: UIViewController, usingAnimation pushAnimation: SDOSHeroAnimationType, withAnimationForPop popAnimation: SDOSHeroAnimationType) {
-        pushViewController(viewController, pushHeroAnimation: pushAnimation.heroDefaultAnimationType, popHeroAnimation: popAnimation.heroDefaultAnimationType)
-    }
-    
-    
-    private func pushViewController(_ viewController: UIViewController, pushHeroAnimation: HeroDefaultAnimationType, popHeroAnimation: HeroDefaultAnimationType) {
-        heroAnimationForNextNavigationTransition = HeroDefaultAnimationType.selectBy(presenting: pushHeroAnimation, dismissing: popHeroAnimation)
+    public func pushViewController(_ viewController: UIViewController, usingPushAnimation pushAnimation: HeroDefaultAnimationType, popAnimation: HeroDefaultAnimationType) {
+        heroAnimationForNextNavigationTransition = HeroDefaultAnimationType.selectBy(presenting: pushAnimation.heroDefaultAnimationTypeForPresenting, dismissing: popAnimation.heroDefaultAnimationTypeForDismissing)
         pushViewController(viewController, animated: true)
     }
-
     
     private var viewControllersHashes = [Int]()
     
@@ -202,8 +195,8 @@ open class SDOSHeroNavigationController: UINavigationController, UIGestureRecogn
     /// In other words, you cannot pop the last item on the stack.
     /// - Parameter popAnimation: The animation type for the pop transition.
     /// - Returns: The view controller that was popped from the stack.
-    @objc public func popViewControllerUsingAnimation(_ popAnimation: SDOSHeroAnimationType) -> UIViewController? {
-        heroAnimationForNextNavigationTransition = HeroDefaultAnimationType.selectBy(presenting: .auto, dismissing: popAnimation.heroDefaultAnimationType)
+    public func popViewControllerUsingAnimation(_ popAnimation: HeroDefaultAnimationType) -> UIViewController? {
+        heroAnimationForNextNavigationTransition = HeroDefaultAnimationType.selectBy(presenting: .auto, dismissing: popAnimation.heroDefaultAnimationTypeForDismissing)
         return popViewController(animated: true)
     }
     
@@ -225,8 +218,8 @@ open class SDOSHeroNavigationController: UINavigationController, UIGestureRecogn
     ///   - viewController: The view controller that you want to be at the top of the stack. This view controller must currently be on the navigation stack.
     ///   - animation: The animation type for the pop transition.
     /// - Returns: An array containing the view controllers that were popped from the stack.
-    @objc public func popToViewController(_ viewController: UIViewController, usingAnimation animation: SDOSHeroAnimationType) -> [UIViewController]? {
-        heroAnimationForNextNavigationTransition = HeroDefaultAnimationType.selectBy(presenting: .auto, dismissing: animation.heroDefaultAnimationType)
+    public func popToViewController(_ viewController: UIViewController, usingAnimation animation: HeroDefaultAnimationType) -> [UIViewController]? {
+        heroAnimationForNextNavigationTransition = HeroDefaultAnimationType.selectBy(presenting: .auto, dismissing: animation.heroDefaultAnimationTypeForDismissing)
         return popToViewController(viewController, animated: true)
     }
     
@@ -265,8 +258,8 @@ open class SDOSHeroNavigationController: UINavigationController, UIGestureRecogn
     ///
     /// - Parameter animation: The animation type for the pop transition.
     /// - Returns: An array of view controllers representing the items that were popped from the stack.
-    @objc public func popToRootViewController(usingAnimation animation: SDOSHeroAnimationType) -> [UIViewController]? {
-        heroAnimationForNextNavigationTransition = animation.heroDefaultAnimationType
+    public func popToRootViewController(usingAnimation animation: HeroDefaultAnimationType) -> [UIViewController]? {
+        heroAnimationForNextNavigationTransition = animation.heroDefaultAnimationTypeForDismissing
         return popToRootViewController(animated: true)
     }
     
@@ -296,8 +289,8 @@ open class SDOSHeroNavigationController: UINavigationController, UIGestureRecogn
     /// - Parameters:
     ///   - viewControllers: The view controllers to place in the stack. The front-to-back order of the controllers in this array represents the new bottom-to-top order of the controllers in the navigation stack. Thus, the last item added to the array becomes the top item of the navigation stack.
     ///   - animation: The animation type for the transition.
-    @objc public func setViewControllers(_ viewControllers: [UIViewController], usingAnimation animation: SDOSHeroAnimationType) {
-        hero.navigationAnimationType = animation.heroDefaultAnimationType
+    public func setViewControllers(_ viewControllers: [UIViewController], usingAnimation animation: HeroDefaultAnimationType) {
+        hero.navigationAnimationType = animation
         setViewControllers(viewControllers, animated: true)
     }
     
