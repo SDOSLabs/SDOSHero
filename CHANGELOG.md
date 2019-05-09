@@ -1,4 +1,4 @@
-## [Head]
+## [3.0.0 Eliminada fachada para Objective-C](http://git.sdos.es/ios/SDOSHero/tree/v3.0.0)
 
 - Eliminada la fachada de la librería necesaria para Objective-C
 
