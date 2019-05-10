@@ -6,8 +6,8 @@
 
 import Hero
 
-extension HeroDefaultAnimationType {
-    var oppositeAnimationType: HeroDefaultAnimationType {
+public extension HeroDefaultAnimationType {
+    public var oppositeAnimationType: HeroDefaultAnimationType {
         switch self {
         case .pageIn(direction: let direction):
             return .pageOut(direction: direction.oppositeDirection)

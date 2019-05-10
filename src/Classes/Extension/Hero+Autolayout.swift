@@ -9,8 +9,8 @@
 
 import Hero
 
-extension HeroModifier {
-    static var autolayout: HeroModifier {
+public extension HeroModifier {
+    public static var autolayout: HeroModifier {
         return HeroModifier { targetState in
             targetState[HeroAutolayoutFixPlugin.modifier] = true
         }
