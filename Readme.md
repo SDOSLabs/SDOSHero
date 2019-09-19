@@ -11,7 +11,7 @@
 
 # SDOSHero
 
-- Para consultar los últimos cambios en la librería consultar el [CHANGELOG.md](https://svrgitpub.sdos.es/iOS/SDOSHero/blob/master/CHANGELOG.md).
+- Para consultar los últimos cambios en la librería consultar el [CHANGELOG.md](https://github.com/SDOSLabs/SDOSHero/blob/master/CHANGELOG.md).
 
 - Enlace confluence: https://kc.sdos.es/x/joDn
 
@@ -268,7 +268,7 @@ func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> U
 
 ## Proyecto de ejemplo
 
-* Descargar el proyecto SDOSHero desde el siguiente enlace: https://svrgitpub.sdos.es/iOS/SDOSHero.
+* Descargar el proyecto SDOSHero desde el siguiente enlace: https://github.com/SDOSLabs/SDOSHero.
 * Ejecutarlo en el dispositivo o simulador y comprobar que, al pulsar en los distintos ítems del *tab bar* y en las distintas celdas de las tablas (cada una correspondiente a un tipo de animación), las transiciones se animan según el tipo de animación seleccionado.
 
 ## Dependencias
