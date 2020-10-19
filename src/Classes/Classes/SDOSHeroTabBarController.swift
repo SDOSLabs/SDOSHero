@@ -5,6 +5,7 @@
 //
 
 import Hero
+import UIKit
 
 open class SDOSHeroTabBarController: UITabBarController {
     
@@ -21,7 +22,7 @@ open class SDOSHeroTabBarController: UITabBarController {
     
     override open func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem) {
         if let items = tabBar.items,
-            let nextIndex = items.index(of: item) {
+           let nextIndex = items.firstIndex(of: item) {
             let currentIndex = selectedIndex
             
             guard currentIndex != nextIndex else {
