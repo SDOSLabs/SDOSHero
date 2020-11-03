@@ -1,13 +1,16 @@
 - [SDOSHero](#sdoshero)
-    - [Introducción](#introducción)
-    - [Instalación](#instalación)
-        - [Cocoapods](#cocoapods)
-    - [La librería](#la-librería)
-        - [Cómo usar SDOSHero](#cómo-usar-sdoshero)
-        - [Errores comunes a evitar](#errores-comunes-a-evitar)
-    - [Proyecto de ejemplo](#proyecto-de-ejemplo)
-    - [Dependencias](#dependencias)
-    - [Referencias](#referencias)
+  - [Introducción](#introducción)
+  - [Instalación](#instalación)
+    - [Cocoapods](#cocoapods)
+    - [Swift Package Manager](#swift-package-manager)
+      - [**En el "Project"**](#en-el-project)
+      - [**En un Package.swift**](#en-un-packageswift)
+  - [La librería](#la-librería)
+    - [Cómo usar SDOSHero](#cómo-usar-sdoshero)
+    - [Errores comunes a evitar](#errores-comunes-a-evitar)
+  - [Proyecto de ejemplo](#proyecto-de-ejemplo)
+  - [Dependencias](#dependencias)
+  - [Referencias](#referencias)
 
 # SDOSHero
 
@@ -34,7 +37,44 @@ Usamos [Hero](https://github.com/lkzhao/Hero) para personalizar las animaciones 
 Usaremos [CocoaPods](https://cocoapods.org). Hay que añadir la dependencia al `Podfile`:
 
 ```ruby
-pod 'SDOSHero', '~>3.0.0' 
+pod 'SDOSHero', '~>3.1.0' 
+```
+
+### Swift Package Manager
+
+A partir de Xcode 12 podemos incluir esta librería a través de Swift package Manager. Existen 2 formas de añadirla a un proyecto:
+
+#### **En el "Project"**
+
+Debemos abrir nuestro proyecto en Xcode y seleccionar el proyecto para abrir su configuración. Una vez aquí seleccionar la pestaña "Swift Packages" y añadir el siguiente repositorio
+
+```
+https://github.com/SDOSLabs/SDOSHero.git
+```
+
+En el siguiente paso deberemos seleccionar la versión que queremos instalar. Recomentamos indicar "Up to Next Major" `3.1.0`.
+
+Por último deberemos indicar el o los targets donde se deberá incluir la librería
+
+#### **En un Package.swift**
+
+Incluir la dependencia en el bloque `dependencies`:
+
+``` swift
+dependencies: [
+    .package(url: "https://github.com/SDOSLabs/SDOSHero.git", .upToNextMajor(from: "3.1.0"))
+]
+```
+
+Incluir la librería en el o los targets desados:
+
+```js
+.target(
+    name: "YourDependency",
+    dependencies: [
+        "SDOSHero"
+    ]
+)
 ```
 
 ## La librería
@@ -273,7 +313,7 @@ func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> U
 
 ## Dependencias
 
-* [Hero](https://github.com/lkzhao/Hero) 1.4.0
+* [Hero](https://github.com/lkzhao/Hero) 1.5.0
 
 ## Referencias
 

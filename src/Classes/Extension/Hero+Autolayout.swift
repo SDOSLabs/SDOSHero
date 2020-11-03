@@ -8,9 +8,10 @@
 // https://github.com/lkzhao/Hero/issues/305
 
 import Hero
+import UIKit
 
 public extension HeroModifier {
-    public static var autolayout: HeroModifier {
+    static var autolayout: HeroModifier {
         return HeroModifier { targetState in
             targetState[HeroAutolayoutFixPlugin.modifier] = true
         }

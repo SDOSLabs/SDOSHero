@@ -1,3 +1,7 @@
+## [HEAD]
+
+- Add support for Swift Package Manager
+
 ## [3.0.0 Eliminada fachada para Objective-C](https://github.com/SDOSLabs/SDOSHero/tree/v3.0.0)
 
 - Eliminada la fachada de la librería necesaria para Objective-C

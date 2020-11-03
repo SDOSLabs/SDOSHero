@@ -226,7 +226,7 @@ open class SDOSHeroNavigationController: UINavigationController, UIGestureRecogn
     
     open override func popToViewController(_ viewController: UIViewController, animated: Bool) -> [UIViewController]? {
         
-        if let index = viewControllers.index(of: viewController) {
+        if let index = viewControllers.firstIndex(of: viewController) {
             
             var animationTypeInHistory: HeroDefaultAnimationType? = nil
             
@@ -307,7 +307,7 @@ open class SDOSHeroNavigationController: UINavigationController, UIGestureRecogn
     //MARK: - Helper
     
     private func cleanTrackOf(viewController: UIViewController?) {
-        if let hash = viewController?.hash, let index = viewControllersHashes.index(of: hash) {
+        if let hash = viewController?.hash, let index = viewControllersHashes.firstIndex(of: hash) {
             viewControllersHashes.remove(at: index)
         }
     }
@@ -332,8 +332,8 @@ open class SDOSHeroNavigationController: UINavigationController, UIGestureRecogn
             return true
         }
         
-        if super.responds(to: #selector(gestureRecognizerShouldBegin(_:))) {
-            return super.perform(#selector(gestureRecognizerShouldBegin(_:)), with:gestureRecognizer) as! Bool
+        if super.responds(to: #selector(gestureRecognizerShouldBegin(_:))), let result = super.perform(#selector(gestureRecognizerShouldBegin(_:)), with:gestureRecognizer)?.takeRetainedValue() as? Bool {
+            return result
         }
         return false
     }
@@ -404,7 +404,7 @@ open class SDOSHeroNavigationController: UINavigationController, UIGestureRecogn
             
             // begin the transition as normal
             heroTransition.start()
-            popViewController(animated: true)
+            _ = popViewController(animated: true)
             if let _ = self.delegate as? HeroTransition {
                 heroTransition.update(progress)
             }
@@ -502,7 +502,7 @@ fileprivate extension HeroDefaultAnimationType {
             case .down:
                 return .bottom
             }
-        case .selectBy(presenting: let presenting, dismissing: let _):
+        case .selectBy(presenting: let presenting, dismissing: _):
             return presenting.edgeForPanGesture
         default:
             return .left
