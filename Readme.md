@@ -36,6 +36,13 @@ Usamos [Hero](https://github.com/lkzhao/Hero) para personalizar las animaciones 
 
 Usaremos [CocoaPods](https://cocoapods.org). Hay que añadir la dependencia al `Podfile`:
 
+Añadir el "source" privado de SDOSLabs al `Podfile`. Añadir también el "source" público de cocoapods para poder seguir instalando dependencias desde éste:
+```ruby
+source 'https://github.com/SDOSLabs/cocoapods-specs.git' #SDOSLabs source
+source 'https://github.com/CocoaPods/Specs.git' #Cocoapods source
+```
+
+Añadir la dependencia al `Podfile`:
 ```ruby
 pod 'SDOSHero', '~>3.1.0' 
 ```
