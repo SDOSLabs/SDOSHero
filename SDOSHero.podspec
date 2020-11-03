@@ -16,6 +16,6 @@ Pod::Spec.new do |spec|
       s1.source_files = ['src/Classes/*{*.m,*.h,*.swift}', 'src/Classes/**/*{*.m,*.h,*.swift}']
   end
 
-  spec.dependency 'Hero', '>= 1.4'
+  spec.dependency 'Hero', '>= 1.5'
 
 end
