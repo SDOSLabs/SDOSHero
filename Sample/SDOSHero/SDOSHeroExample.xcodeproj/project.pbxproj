@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 46;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXAggregateTarget section */
@@ -46,6 +46,31 @@
 		298FD6721C0701E500BA707E /* Design+Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 298FD6391C0701E500BA707E /* Design+Extensions.m */; };
 		298FD6731C0701E500BA707E /* default.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 298FD63C1C0701E500BA707E /* default.bundle */; };
 		298FD6741C0701E500BA707E /* Util.m in Sources */ = {isa = PBXBuildFile; fileRef = 298FD6401C0701E500BA707E /* Util.m */; };
+		2992E9A62538646900322094 /* SDOSHeroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C75A9B8227AC4E00067271E /* SDOSHeroViewController.swift */; };
+		2992E9A72538646900322094 /* Design+Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 298FD6391C0701E500BA707E /* Design+Extensions.m */; };
+		2992E9A82538646900322094 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C75A9B6227AC27C0067271E /* AppDelegate.swift */; };
+		2992E9A92538646900322094 /* StoryboardConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 298FD62C1C0701E500BA707E /* StoryboardConstants.m */; };
+		2992E9AA2538646900322094 /* SDOSHeroAnimationTypeUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C6406FA1FBACF54005A14CB /* SDOSHeroAnimationTypeUtil.swift */; };
+		2992E9AB2538646900322094 /* InitialViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C57D98C1FB9D69600357C0B /* InitialViewController.m */; };
+		2992E9AC2538646900322094 /* SDOSHeroDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C75A9BA227ADC5C0067271E /* SDOSHeroDetailViewController.swift */; };
+		2992E9AD2538646900322094 /* ExampleTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C57D9971FB9D7CE00357C0B /* ExampleTableViewCell.m */; };
+		2992E9AE2538646900322094 /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 298FD5A51C0701E500BA707E /* BaseViewController.m */; };
+		2992E9AF2538646900322094 /* Util.m in Sources */ = {isa = PBXBuildFile; fileRef = 298FD6401C0701E500BA707E /* Util.m */; };
+		2992E9B32538646900322094 /* PantallasAnalytics.plist in Resources */ = {isa = PBXBuildFile; fileRef = 298FD5C41C0701E500BA707E /* PantallasAnalytics.plist */; };
+		2992E9B42538646900322094 /* ExampleTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5C57D9981FB9D7CE00357C0B /* ExampleTableViewCell.xib */; };
+		2992E9B52538646900322094 /* AppIcon.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 298FD5B71C0701E500BA707E /* AppIcon.xcassets */; };
+		2992E9B62538646900322094 /* default.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 298FD63C1C0701E500BA707E /* default.bundle */; };
+		2992E9B72538646900322094 /* Launcher.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 298FD5BA1C0701E500BA707E /* Launcher.xcassets */; };
+		2992E9B82538646900322094 /* App.debug.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 298FD5BD1C0701E500BA707E /* App.debug.xcconfig */; };
+		2992E9B92538646900322094 /* ExampleSDOSHero.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5C57D9881FB9D5B800357C0B /* ExampleSDOSHero.storyboard */; };
+		2992E9BA2538646900322094 /* Shared.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 298FD5C01C0701E500BA707E /* Shared.xcconfig */; };
+		2992E9BB2538646900322094 /* KZBEnvironments.plist in Resources */ = {isa = PBXBuildFile; fileRef = 298FD5C21C0701E500BA707E /* KZBEnvironments.plist */; };
+		2992E9BC2538646900322094 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 298FD6341C0701E500BA707E /* Localizable.strings */; };
+		2992E9BD2538646900322094 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5C57D9891FB9D5B800357C0B /* LaunchScreen.storyboard */; };
+		2992E9BE2538646900322094 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 298FD5C51C0701E500BA707E /* Settings.bundle */; };
+		2992E9BF2538646900322094 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5C6407091FBAEC5C005A14CB /* Assets.xcassets */; };
+		2992E9C02538646900322094 /* Octopush.plist in Resources */ = {isa = PBXBuildFile; fileRef = 298FD5C31C0701E500BA707E /* Octopush.plist */; };
+		29DD29352553D609001987B5 /* SDOSHero in Frameworks */ = {isa = PBXBuildFile; productRef = 29DD29342553D609001987B5 /* SDOSHero */; };
 		5C57D98A1FB9D5B800357C0B /* ExampleSDOSHero.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5C57D9881FB9D5B800357C0B /* ExampleSDOSHero.storyboard */; };
 		5C57D98B1FB9D5B800357C0B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5C57D9891FB9D5B800357C0B /* LaunchScreen.storyboard */; };
 		5C57D98E1FB9D69600357C0B /* InitialViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C57D98C1FB9D69600357C0B /* InitialViewController.m */; };
@@ -56,10 +81,20 @@
 		5C75A9B7227AC27C0067271E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C75A9B6227AC27C0067271E /* AppDelegate.swift */; };
 		5C75A9B9227AC4E00067271E /* SDOSHeroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C75A9B8227AC4E00067271E /* SDOSHeroViewController.swift */; };
 		5C75A9BB227ADC5C0067271E /* SDOSHeroDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C75A9BA227ADC5C0067271E /* SDOSHeroDetailViewController.swift */; };
-		C41F1E5694D23ADA105D6D6C /* libPods-SDOSHeroExample.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F888923A01FBFE69E58F8D0 /* libPods-SDOSHeroExample.a */; };
+		B58D6127EAF1B79E6D9715ED /* libPods-SDOSHeroExample.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2118D22146792C8F712CDAD4 /* libPods-SDOSHeroExample.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
+		2992E9C22538646900322094 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		B197B9361E4486AE009A0A74 /* Embed App Extensions */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -73,7 +108,9 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		03C3D2AD6A30CE3E1475ED7F /* Pods-SDOSHeroExample.production.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SDOSHeroExample.production.xcconfig"; path = "Target Support Files/Pods-SDOSHeroExample/Pods-SDOSHeroExample.production.xcconfig"; sourceTree = "<group>"; };
 		17EFE1856AE679994C7C312D /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2118D22146792C8F712CDAD4 /* libPods-SDOSHeroExample.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SDOSHeroExample.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2970AD751BFA153F007CFBD9 /* SDOSHeroExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SDOSHeroExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		298FD5A41C0701E500BA707E /* BaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseViewController.h; sourceTree = "<group>"; };
 		298FD5A51C0701E500BA707E /* BaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseViewController.m; sourceTree = "<group>"; };
@@ -104,8 +141,9 @@
 		298FD63F1C0701E500BA707E /* Util.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Util.h; sourceTree = "<group>"; };
 		298FD6401C0701E500BA707E /* Util.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Util.m; sourceTree = "<group>"; };
 		298FD6751C0706D400BA707E /* ImagesConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImagesConstants.h; sourceTree = "<group>"; };
-		3D8D6D080C4E62D3E74E1C87 /* Pods-SDOSHeroExample.preproduction.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SDOSHeroExample.preproduction.xcconfig"; path = "Pods/Target Support Files/Pods-SDOSHeroExample/Pods-SDOSHeroExample.preproduction.xcconfig"; sourceTree = "<group>"; };
-		422C009CD9E3D72A651ACADA /* Pods-SDOSHeroExample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SDOSHeroExample.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SDOSHeroExample/Pods-SDOSHeroExample.debug.xcconfig"; sourceTree = "<group>"; };
+		2992E9C72538646900322094 /* SDOSHeroExample-SPM.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "SDOSHeroExample-SPM.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		3997C3C79E3486A9F40CE385 /* Pods-SDOSHeroExample.preproduction.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SDOSHeroExample.preproduction.xcconfig"; path = "Target Support Files/Pods-SDOSHeroExample/Pods-SDOSHeroExample.preproduction.xcconfig"; sourceTree = "<group>"; };
+		4D68624FDE573DDE1D51A891 /* Pods-SDOSHeroExample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SDOSHeroExample.debug.xcconfig"; path = "Target Support Files/Pods-SDOSHeroExample/Pods-SDOSHeroExample.debug.xcconfig"; sourceTree = "<group>"; };
 		5C57D9881FB9D5B800357C0B /* ExampleSDOSHero.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ExampleSDOSHero.storyboard; sourceTree = "<group>"; };
 		5C57D9891FB9D5B800357C0B /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5C57D98C1FB9D69600357C0B /* InitialViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InitialViewController.m; sourceTree = "<group>"; };
@@ -119,8 +157,6 @@
 		5C75A9B6227AC27C0067271E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5C75A9B8227AC4E00067271E /* SDOSHeroViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDOSHeroViewController.swift; sourceTree = "<group>"; };
 		5C75A9BA227ADC5C0067271E /* SDOSHeroDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDOSHeroDetailViewController.swift; sourceTree = "<group>"; };
-		7F888923A01FBFE69E58F8D0 /* libPods-SDOSHeroExample.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SDOSHeroExample.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		8F259F8463884433891D8A3E /* Pods-SDOSHeroExample.production.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SDOSHeroExample.production.xcconfig"; path = "Pods/Target Support Files/Pods-SDOSHeroExample/Pods-SDOSHeroExample.production.xcconfig"; sourceTree = "<group>"; };
 		B1193FE31DBCE77C00717955 /* Octopush+Base.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Octopush+Base.h"; sourceTree = "<group>"; };
 		B17C8CA51E9691AF00BBE3D6 /* LocalizableConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocalizableConstants.h; sourceTree = "<group>"; };
 		B197B9231E44840E009A0A74 /* NotificationsDebug.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = NotificationsDebug.entitlements; sourceTree = "<group>"; };
@@ -132,7 +168,15 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C41F1E5694D23ADA105D6D6C /* libPods-SDOSHeroExample.a in Frameworks */,
+				B58D6127EAF1B79E6D9715ED /* libPods-SDOSHeroExample.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2992E9B02538646900322094 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				29DD29352553D609001987B5 /* SDOSHero in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -143,7 +187,7 @@
 			isa = PBXGroup;
 			children = (
 				17EFE1856AE679994C7C312D /* Pods.framework */,
-				7F888923A01FBFE69E58F8D0 /* libPods-SDOSHeroExample.a */,
+				2118D22146792C8F712CDAD4 /* libPods-SDOSHeroExample.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -167,7 +211,7 @@
 				290A16A21BFB3146002361EF /* App */,
 				2970AD761BFA153F007CFBD9 /* Products */,
 				1A3F2B7365F64DEDC650C528 /* Frameworks */,
-				62A5D50DC6E48881EB22DAEE /* Pods */,
+				5EDAABFFA8F6C31491A7FEE7 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -175,6 +219,7 @@
 			isa = PBXGroup;
 			children = (
 				2970AD751BFA153F007CFBD9 /* SDOSHeroExample.app */,
+				2992E9C72538646900322094 /* SDOSHeroExample-SPM.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -485,14 +530,14 @@
 			path = Example;
 			sourceTree = "<group>";
 		};
-		62A5D50DC6E48881EB22DAEE /* Pods */ = {
+		5EDAABFFA8F6C31491A7FEE7 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				422C009CD9E3D72A651ACADA /* Pods-SDOSHeroExample.debug.xcconfig */,
-				3D8D6D080C4E62D3E74E1C87 /* Pods-SDOSHeroExample.preproduction.xcconfig */,
-				8F259F8463884433891D8A3E /* Pods-SDOSHeroExample.production.xcconfig */,
+				4D68624FDE573DDE1D51A891 /* Pods-SDOSHeroExample.debug.xcconfig */,
+				3997C3C79E3486A9F40CE385 /* Pods-SDOSHeroExample.preproduction.xcconfig */,
+				03C3D2AD6A30CE3E1475ED7F /* Pods-SDOSHeroExample.production.xcconfig */,
 			);
-			name = Pods;
+			path = Pods;
 			sourceTree = "<group>";
 		};
 		B1193FE11DBCE77C00717955 /* Octopush */ = {
@@ -604,7 +649,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2970AD8F1BFA153F007CFBD9 /* Build configuration list for PBXNativeTarget "SDOSHeroExample" */;
 			buildPhases = (
-				CB1D7BBDBDF5C8D966A1F3A0 /* [CP] Check Pods Manifest.lock */,
+				9AD8826C29CFBB25F07E2466 /* [CP] Check Pods Manifest.lock */,
 				5C8037D91E51C05F009289F3 /* Xcode Version */,
 				2970AD711BFA153F007CFBD9 /* Sources */,
 				2970AD721BFA153F007CFBD9 /* Frameworks */,
@@ -619,6 +664,29 @@
 			name = SDOSHeroExample;
 			productName = BaseProject;
 			productReference = 2970AD751BFA153F007CFBD9 /* SDOSHeroExample.app */;
+			productType = "com.apple.product-type.application";
+		};
+		2992E9A22538646900322094 /* SDOSHeroExample-SPM */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2992E9C32538646900322094 /* Build configuration list for PBXNativeTarget "SDOSHeroExample-SPM" */;
+			buildPhases = (
+				2992E9A42538646900322094 /* Xcode Version */,
+				2992E9A52538646900322094 /* Sources */,
+				2992E9B02538646900322094 /* Frameworks */,
+				2992E9B22538646900322094 /* Resources */,
+				2992E9C12538646900322094 /* Warnings */,
+				2992E9C22538646900322094 /* Embed App Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "SDOSHeroExample-SPM";
+			packageProductDependencies = (
+				29DD29342553D609001987B5 /* SDOSHero */,
+			);
+			productName = BaseProject;
+			productReference = 2992E9C72538646900322094 /* SDOSHeroExample-SPM.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -643,6 +711,10 @@
 								enabled = 0;
 							};
 						};
+					};
+					2992E9A22538646900322094 = {
+						DevelopmentTeam = Y5G9RYLF8Y;
+						ProvisioningStyle = Manual;
 					};
 					29AFB1FF1C04BFE7004AB1B6 = {
 						CreatedOnToolsVersion = 7.1.1;
@@ -670,6 +742,7 @@
 				2970AD741BFA153F007CFBD9 /* SDOSHeroExample */,
 				29AFB1FF1C04BFE7004AB1B6 /* Mogenerator */,
 				29AFB2171C04C3C4004AB1B6 /* AutoGenerate */,
+				2992E9A22538646900322094 /* SDOSHeroExample-SPM */,
 			);
 		};
 /* End PBXProject section */
@@ -696,9 +769,58 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		2992E9B22538646900322094 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2992E9B32538646900322094 /* PantallasAnalytics.plist in Resources */,
+				2992E9B42538646900322094 /* ExampleTableViewCell.xib in Resources */,
+				2992E9B52538646900322094 /* AppIcon.xcassets in Resources */,
+				2992E9B62538646900322094 /* default.bundle in Resources */,
+				2992E9B72538646900322094 /* Launcher.xcassets in Resources */,
+				2992E9B82538646900322094 /* App.debug.xcconfig in Resources */,
+				2992E9B92538646900322094 /* ExampleSDOSHero.storyboard in Resources */,
+				2992E9BA2538646900322094 /* Shared.xcconfig in Resources */,
+				2992E9BB2538646900322094 /* KZBEnvironments.plist in Resources */,
+				2992E9BC2538646900322094 /* Localizable.strings in Resources */,
+				2992E9BD2538646900322094 /* LaunchScreen.storyboard in Resources */,
+				2992E9BE2538646900322094 /* Settings.bundle in Resources */,
+				2992E9BF2538646900322094 /* Assets.xcassets in Resources */,
+				2992E9C02538646900322094 /* Octopush.plist in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		2992E9A42538646900322094 /* Xcode Version */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Xcode Version";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "file=\"$SRCROOT/XcodeVersion.properties\"\n\n# create file if it does not exist\ntouch \"${file}\"\n\n# if file does not exist or it is not readable -> error\nif [ ! -r \"${file}\" ]\nthen\necho \"error: Could not create file: ${file} (see the Xcode Version script in Build Phases)\"\nerror -1\nfi\n# read the keys and values in the file\nwhile IFS='=' read -r key value\ndo\neval \"${key}='${value}'\"\ndone < \"${file}\"\n\n# if not defined the keys: XCODE_VERSION_MAJOR_REQUIRED, XCODE_VERSION_MINOR_REQUIRED, XCODE_VERSION_ACTUAL_REQUIRED\nif ([ -z ${XCODE_VERSION_MAJOR_REQUIRED:+\"1\"} ] || [ -z ${XCODE_VERSION_MINOR_REQUIRED:+\"1\"} ] || [ -z ${XCODE_VERSION_ACTUAL_REQUIRED:+\"1\"} ])\nthen\necho \"XCODE_VERSION_MAJOR_REQUIRED=${XCODE_VERSION_MAJOR}\" > \"${file}\"\necho \"XCODE_VERSION_MINOR_REQUIRED=${XCODE_VERSION_MINOR}\" >> \"${file}\"\necho \"XCODE_VERSION_ACTUAL_REQUIRED=${XCODE_VERSION_ACTUAL}\" >> \"${file}\"\n\necho \"warning: Required Xcode version set to ${XCODE_VERSION_ACTUAL} in this project. If you want to build this project with a different version of Xcode, please remove XcodeVersion.properties file\"\nelif [ ${XCODE_VERSION_MAJOR_REQUIRED} != ${XCODE_VERSION_MAJOR} ]\nthen\necho \"error: The required version of Xcode to run this project is ${XCODE_VERSION_MAJOR_REQUIRED} and the current version of Xcode is ${XCODE_VERSION_MAJOR}. If you want to build this project with a different version of Xcode, please remove XcodeVersion.properties file\"\nerror 0\nelif ([ ${XCODE_VERSION_MINOR_REQUIRED} != ${XCODE_VERSION_MINOR} ] || [ ${XCODE_VERSION_ACTUAL_REQUIRED} != ${XCODE_VERSION_ACTUAL} ])\nthen\necho \"warning: XCODE VERSION CONFLICT: The required version of Xcode to run this project is ${XCODE_VERSION_ACTUAL_REQUIRED} and the current version of Xcode is ${XCODE_VERSION_ACTUAL}. This might cause some problems at runtime.\"\nfi";
+		};
+		2992E9C12538646900322094 /* Warnings */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = Warnings;
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "KEYWORDS=\"TODO:|FIXME:|\\?\\?\\?:|\\!\\!\\!:\"\nfind \"${SRCROOT}/App\" \\( -name \"*.h\" -or -name \"*.m\" \\) -print0 | xargs -0 egrep --with-filename --line-number --only-matching \"($KEYWORDS).*\\$\" | perl -p -e \"s/($KEYWORDS)/ warning: \\$1/\"\n";
+		};
 		29AFB2041C04BFEE004AB1B6 /* Mogenerator */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -755,16 +877,20 @@
 			shellPath = /bin/sh;
 			shellScript = "file=\"$SRCROOT/XcodeVersion.properties\"\n\n# create file if it does not exist\ntouch \"${file}\"\n\n# if file does not exist or it is not readable -> error\nif [ ! -r \"${file}\" ]\nthen\necho \"error: Could not create file: ${file} (see the Xcode Version script in Build Phases)\"\nerror -1\nfi\n# read the keys and values in the file\nwhile IFS='=' read -r key value\ndo\neval \"${key}='${value}'\"\ndone < \"${file}\"\n\n# if not defined the keys: XCODE_VERSION_MAJOR_REQUIRED, XCODE_VERSION_MINOR_REQUIRED, XCODE_VERSION_ACTUAL_REQUIRED\nif ([ -z ${XCODE_VERSION_MAJOR_REQUIRED:+\"1\"} ] || [ -z ${XCODE_VERSION_MINOR_REQUIRED:+\"1\"} ] || [ -z ${XCODE_VERSION_ACTUAL_REQUIRED:+\"1\"} ])\nthen\necho \"XCODE_VERSION_MAJOR_REQUIRED=${XCODE_VERSION_MAJOR}\" > \"${file}\"\necho \"XCODE_VERSION_MINOR_REQUIRED=${XCODE_VERSION_MINOR}\" >> \"${file}\"\necho \"XCODE_VERSION_ACTUAL_REQUIRED=${XCODE_VERSION_ACTUAL}\" >> \"${file}\"\n\necho \"warning: Required Xcode version set to ${XCODE_VERSION_ACTUAL} in this project. If you want to build this project with a different version of Xcode, please remove XcodeVersion.properties file\"\nelif [ ${XCODE_VERSION_MAJOR_REQUIRED} != ${XCODE_VERSION_MAJOR} ]\nthen\necho \"error: The required version of Xcode to run this project is ${XCODE_VERSION_MAJOR_REQUIRED} and the current version of Xcode is ${XCODE_VERSION_MAJOR}. If you want to build this project with a different version of Xcode, please remove XcodeVersion.properties file\"\nerror 0\nelif ([ ${XCODE_VERSION_MINOR_REQUIRED} != ${XCODE_VERSION_MINOR} ] || [ ${XCODE_VERSION_ACTUAL_REQUIRED} != ${XCODE_VERSION_ACTUAL} ])\nthen\necho \"warning: XCODE VERSION CONFLICT: The required version of Xcode to run this project is ${XCODE_VERSION_ACTUAL_REQUIRED} and the current version of Xcode is ${XCODE_VERSION_ACTUAL}. This might cause some problems at runtime.\"\nfi";
 		};
-		CB1D7BBDBDF5C8D966A1F3A0 /* [CP] Check Pods Manifest.lock */ = {
+		9AD8826C29CFBB25F07E2466 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			inputFileListPaths = (
 			);
 			inputPaths = (
 				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
 				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
 			outputPaths = (
 				"$(DERIVED_FILE_DIR)/Pods-SDOSHeroExample-checkManifestLockResult.txt",
 			);
@@ -790,6 +916,23 @@
 				5C57D9991FB9D7CE00357C0B /* ExampleTableViewCell.m in Sources */,
 				298FD6411C0701E500BA707E /* BaseViewController.m in Sources */,
 				298FD6741C0701E500BA707E /* Util.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2992E9A52538646900322094 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2992E9A62538646900322094 /* SDOSHeroViewController.swift in Sources */,
+				2992E9A72538646900322094 /* Design+Extensions.m in Sources */,
+				2992E9A82538646900322094 /* AppDelegate.swift in Sources */,
+				2992E9A92538646900322094 /* StoryboardConstants.m in Sources */,
+				2992E9AA2538646900322094 /* SDOSHeroAnimationTypeUtil.swift in Sources */,
+				2992E9AB2538646900322094 /* InitialViewController.m in Sources */,
+				2992E9AC2538646900322094 /* SDOSHeroDetailViewController.swift in Sources */,
+				2992E9AD2538646900322094 /* ExampleTableViewCell.m in Sources */,
+				2992E9AE2538646900322094 /* BaseViewController.m in Sources */,
+				2992E9AF2538646900322094 /* Util.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -903,7 +1046,7 @@
 		};
 		2970AD901BFA153F007CFBD9 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 422C009CD9E3D72A651ACADA /* Pods-SDOSHeroExample.debug.xcconfig */;
+			baseConfigurationReference = 4D68624FDE573DDE1D51A891 /* Pods-SDOSHeroExample.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "$(APP_ICON_ASSETS)";
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "$(LAUNCHER_ASSETS)";
@@ -914,7 +1057,11 @@
 				GCC_PREFIX_HEADER = "App/Configuration/SDOSHeroExample-Prefix.pch";
 				INFOPLIST_FILE = App/Configuration/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 3.1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "$(PRODUCT_PACKAGE_NAME)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "2b021e9d-1f46-439e-adf6-313bdfd0bc0b";
@@ -927,7 +1074,7 @@
 		};
 		2970AD911BFA153F007CFBD9 /* Preproduction */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 3D8D6D080C4E62D3E74E1C87 /* Pods-SDOSHeroExample.preproduction.xcconfig */;
+			baseConfigurationReference = 3997C3C79E3486A9F40CE385 /* Pods-SDOSHeroExample.preproduction.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "$(APP_ICON_ASSETS)";
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "$(LAUNCHER_ASSETS)";
@@ -938,7 +1085,11 @@
 				GCC_PREFIX_HEADER = "App/Configuration/SDOSHeroExample-Prefix.pch";
 				INFOPLIST_FILE = App/Configuration/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 3.1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "$(PRODUCT_PACKAGE_NAME)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -946,6 +1097,83 @@
 				SWIFT_VERSION = 5.0;
 			};
 			name = Preproduction;
+		};
+		2992E9C42538646900322094 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = "$(APP_ICON_ASSETS)";
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "$(LAUNCHER_ASSETS)";
+				CLANG_ENABLE_MODULES = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = Y5G9RYLF8Y;
+				GCC_PREFIX_HEADER = "App/Configuration/SDOSHeroExample-Prefix.pch";
+				INFOPLIST_FILE = App/Configuration/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 3.1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "$(PRODUCT_PACKAGE_NAME)";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "2b021e9d-1f46-439e-adf6-313bdfd0bc0b";
+				PROVISIONING_PROFILE_SPECIFIER = "DEV Generic";
+				SWIFT_OBJC_BRIDGING_HEADER = "App/Configuration/SDOSHeroExample-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		2992E9C52538646900322094 /* Preproduction */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = "$(APP_ICON_ASSETS)";
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "$(LAUNCHER_ASSETS)";
+				CLANG_ENABLE_MODULES = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = "";
+				GCC_PREFIX_HEADER = "App/Configuration/SDOSHeroExample-Prefix.pch";
+				INFOPLIST_FILE = App/Configuration/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 3.1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "$(PRODUCT_PACKAGE_NAME)";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "App/Configuration/SDOSHeroExample-Bridging-Header.h";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Preproduction;
+		};
+		2992E9C62538646900322094 /* Production */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = "$(APP_ICON_ASSETS)";
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "$(LAUNCHER_ASSETS)";
+				CLANG_ENABLE_MODULES = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = "";
+				GCC_PREFIX_HEADER = "App/Configuration/SDOSHeroExample-Prefix.pch";
+				INFOPLIST_FILE = App/Configuration/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 3.1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "$(PRODUCT_PACKAGE_NAME)";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "App/Configuration/SDOSHeroExample-Bridging-Header.h";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Production;
 		};
 		29AFB1E61C04A0F8004AB1B6 /* Production */ = {
 			isa = XCBuildConfiguration;
@@ -996,7 +1224,7 @@
 		};
 		29AFB1E71C04A0F8004AB1B6 /* Production */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 8F259F8463884433891D8A3E /* Pods-SDOSHeroExample.production.xcconfig */;
+			baseConfigurationReference = 03C3D2AD6A30CE3E1475ED7F /* Pods-SDOSHeroExample.production.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "$(APP_ICON_ASSETS)";
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "$(LAUNCHER_ASSETS)";
@@ -1007,7 +1235,11 @@
 				GCC_PREFIX_HEADER = "App/Configuration/SDOSHeroExample-Prefix.pch";
 				INFOPLIST_FILE = App/Configuration/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 3.1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "$(PRODUCT_PACKAGE_NAME)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -1081,6 +1313,16 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Preproduction;
 		};
+		2992E9C32538646900322094 /* Build configuration list for PBXNativeTarget "SDOSHeroExample-SPM" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2992E9C42538646900322094 /* Debug */,
+				2992E9C52538646900322094 /* Preproduction */,
+				2992E9C62538646900322094 /* Production */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Preproduction;
+		};
 		29AFB2031C04BFE7004AB1B6 /* Build configuration list for PBXAggregateTarget "Mogenerator" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -1102,6 +1344,13 @@
 			defaultConfigurationName = Preproduction;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		29DD29342553D609001987B5 /* SDOSHero */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = SDOSHero;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 2970AD6D1BFA153F007CFBD9 /* Project object */;
 }

@@ -1,0 +1,26 @@
+PODS:
+  - Hero (1.5.0)
+  - SDOSHero (3.0.0):
+    - Hero (~> 1.5)
+    - SDOSHero/Hero (= 3.0.0)
+  - SDOSHero/Hero (3.0.0):
+    - Hero (~> 1.5)
+
+DEPENDENCIES:
+  - SDOSHero (from `../../`)
+
+SPEC REPOS:
+  https://github.com/CocoaPods/Specs.git:
+    - Hero
+
+EXTERNAL SOURCES:
+  SDOSHero:
+    :path: "../../"
+
+SPEC CHECKSUMS:
+  Hero: b7385b75e7259da62f4f85462f59a5082d66b058
+  SDOSHero: 998139a513017f479b0d311bc95b76a5054bec54
+
+PODFILE CHECKSUM: 236bdcf79c933c70a0e88b088ac345f65331ccc5
+
+COCOAPODS: 1.9.3
