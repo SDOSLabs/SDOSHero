@@ -7,7 +7,7 @@ Pod::Spec.new do |spec|
   spec.license      = { :type => 'MIT' }
   spec.homepage     = 'https://github.com/SDOSLabs/SDOSHero'
   spec.summary      = 'Librería que se encarga de proporcionar una capa intermedia con Hero para poder acceder a todos los tipos de transiciones entre controladores en Objctive-C.'
-  spec.source       = { :git => "https://github.com/SDOSLabs/SDOSHero.git", :tag => "v#{spec.version}" }
+  spec.source       = { :git => "https://github.com/SDOSLabs/SDOSHero.git", :tag => "#{spec.version}" }
   spec.framework    = ['Foundation']
   spec.requires_arc = true
 
