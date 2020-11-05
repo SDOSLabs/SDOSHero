@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 46;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXAggregateTarget section */
@@ -70,6 +70,7 @@
 		2992E9BE2538646900322094 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 298FD5C51C0701E500BA707E /* Settings.bundle */; };
 		2992E9BF2538646900322094 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5C6407091FBAEC5C005A14CB /* Assets.xcassets */; };
 		2992E9C02538646900322094 /* Octopush.plist in Resources */ = {isa = PBXBuildFile; fileRef = 298FD5C31C0701E500BA707E /* Octopush.plist */; };
+		29DD29352553D609001987B5 /* SDOSHero in Frameworks */ = {isa = PBXBuildFile; productRef = 29DD29342553D609001987B5 /* SDOSHero */; };
 		5C57D98A1FB9D5B800357C0B /* ExampleSDOSHero.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5C57D9881FB9D5B800357C0B /* ExampleSDOSHero.storyboard */; };
 		5C57D98B1FB9D5B800357C0B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5C57D9891FB9D5B800357C0B /* LaunchScreen.storyboard */; };
 		5C57D98E1FB9D69600357C0B /* InitialViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C57D98C1FB9D69600357C0B /* InitialViewController.m */; };
@@ -175,6 +176,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				29DD29352553D609001987B5 /* SDOSHero in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -535,7 +537,6 @@
 				3997C3C79E3486A9F40CE385 /* Pods-SDOSHeroExample.preproduction.xcconfig */,
 				03C3D2AD6A30CE3E1475ED7F /* Pods-SDOSHeroExample.production.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -681,6 +682,9 @@
 			dependencies = (
 			);
 			name = "SDOSHeroExample-SPM";
+			packageProductDependencies = (
+				29DD29342553D609001987B5 /* SDOSHero */,
+			);
 			productName = BaseProject;
 			productReference = 2992E9C72538646900322094 /* SDOSHeroExample-SPM.app */;
 			productType = "com.apple.product-type.application";
@@ -1053,7 +1057,11 @@
 				GCC_PREFIX_HEADER = "App/Configuration/SDOSHeroExample-Prefix.pch";
 				INFOPLIST_FILE = App/Configuration/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 3.1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "$(PRODUCT_PACKAGE_NAME)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "2b021e9d-1f46-439e-adf6-313bdfd0bc0b";
@@ -1077,7 +1085,11 @@
 				GCC_PREFIX_HEADER = "App/Configuration/SDOSHeroExample-Prefix.pch";
 				INFOPLIST_FILE = App/Configuration/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 3.1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "$(PRODUCT_PACKAGE_NAME)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -1098,7 +1110,11 @@
 				GCC_PREFIX_HEADER = "App/Configuration/SDOSHeroExample-Prefix.pch";
 				INFOPLIST_FILE = App/Configuration/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 3.1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "$(PRODUCT_PACKAGE_NAME)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "2b021e9d-1f46-439e-adf6-313bdfd0bc0b";
@@ -1121,7 +1137,11 @@
 				GCC_PREFIX_HEADER = "App/Configuration/SDOSHeroExample-Prefix.pch";
 				INFOPLIST_FILE = App/Configuration/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 3.1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "$(PRODUCT_PACKAGE_NAME)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -1142,7 +1162,11 @@
 				GCC_PREFIX_HEADER = "App/Configuration/SDOSHeroExample-Prefix.pch";
 				INFOPLIST_FILE = App/Configuration/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 3.1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "$(PRODUCT_PACKAGE_NAME)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -1211,7 +1235,11 @@
 				GCC_PREFIX_HEADER = "App/Configuration/SDOSHeroExample-Prefix.pch";
 				INFOPLIST_FILE = App/Configuration/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 3.1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "$(PRODUCT_PACKAGE_NAME)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -1316,6 +1344,13 @@
 			defaultConfigurationName = Preproduction;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		29DD29342553D609001987B5 /* SDOSHero */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = SDOSHero;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 2970AD6D1BFA153F007CFBD9 /* Project object */;
 }

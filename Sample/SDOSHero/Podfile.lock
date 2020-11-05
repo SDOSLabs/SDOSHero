@@ -1,10 +1,10 @@
 PODS:
   - Hero (1.5.0)
   - SDOSHero (3.0.0):
-    - Hero (>= 1.4)
+    - Hero (~> 1.5)
     - SDOSHero/Hero (= 3.0.0)
   - SDOSHero/Hero (3.0.0):
-    - Hero (>= 1.4)
+    - Hero (~> 1.5)
 
 DEPENDENCIES:
   - SDOSHero (from `../../`)
@@ -19,7 +19,7 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   Hero: b7385b75e7259da62f4f85462f59a5082d66b058
-  SDOSHero: e8e3acf0b876524a35af20c17ed51220a52f75e4
+  SDOSHero: 998139a513017f479b0d311bc95b76a5054bec54
 
 PODFILE CHECKSUM: 236bdcf79c933c70a0e88b088ac345f65331ccc5
 
