@@ -10,7 +10,6 @@
     - [Errores comunes a evitar](#errores-comunes-a-evitar)
   - [Proyecto de ejemplo](#proyecto-de-ejemplo)
   - [Dependencias](#dependencias)
-  - [Referencias](#referencias)
 
 # SDOSHero
 
@@ -20,15 +19,15 @@
 
 ## Introducción
 
-SDOSHero ofrece una capa de integración con la librería [Hero](https://github.com/lkzhao/Hero) para:
+SDOSHero ofrece una capa de integración con la librería [Hero](https://github.com/HeroTransitions/Hero) para:
 
-- Proporcionar acceso desde Objective-C a funciones de la librería [Hero](https://github.com/lkzhao/Hero) que solo pueden usarse con Swift.
+- Proporcionar acceso desde Objective-C a funciones de la librería [Hero](https://github.com/HeroTransitions/Hero) que solo pueden usarse con Swift.
 - Evitar el hardcodeo de constantes de tipo String para las posibles animaciones entre las vistas.
-- Facilitar el uso de [Hero](https://github.com/lkzhao/Hero) para animar las transiciones entre View Controllers.
+- Facilitar el uso de [Hero](https://github.com/HeroTransitions/Hero) para animar las transiciones entre View Controllers.
 
-Usamos [Hero](https://github.com/lkzhao/Hero) para personalizar las animaciones de las transiciones en nuestras aplicaciones.
+Usamos [Hero](https://github.com/HeroTransitions/Hero) para personalizar las animaciones de las transiciones en nuestras aplicaciones.
 
-**Importante**. Es recomendable consultar la documentación de la librería [Hero](https://github.com/lkzhao/Hero) para entender de forma más completa el funcionamiento y el uso de la librería.
+**Importante**. Es recomendable consultar la documentación de la librería [Hero](https://github.com/HeroTransitions/Hero) para entender de forma más completa el funcionamiento y el uso de la librería.
 
 ## Instalación
 
@@ -320,8 +319,5 @@ func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> U
 
 ## Dependencias
 
-* [Hero](https://github.com/lkzhao/Hero) 1.5.0
+* [Hero](https://github.com/HeroTransitions/Hero) - ~> 1.5.0
 
-## Referencias
-
-* [Hero](https://github.com/lkzhao/Hero)

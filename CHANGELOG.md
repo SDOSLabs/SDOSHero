@@ -1,4 +1,4 @@
-## [HEAD]
+## [3.1.0 Support Swift Package Manager](https://github.com/SDOSLabs/SDOSHero/tree/v3.1.0)
 
 - Add support for Swift Package Manager
 
