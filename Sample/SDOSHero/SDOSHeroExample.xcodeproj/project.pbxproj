@@ -81,6 +81,8 @@
 		5C75A9B7227AC27C0067271E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C75A9B6227AC27C0067271E /* AppDelegate.swift */; };
 		5C75A9B9227AC4E00067271E /* SDOSHeroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C75A9B8227AC4E00067271E /* SDOSHeroViewController.swift */; };
 		5C75A9BB227ADC5C0067271E /* SDOSHeroDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C75A9BA227ADC5C0067271E /* SDOSHeroDetailViewController.swift */; };
+		B17CCB7C268D9BEF00221087 /* CHANGELOG.md in Resources */ = {isa = PBXBuildFile; fileRef = B17CCB7A268D9BEF00221087 /* CHANGELOG.md */; };
+		B17CCB7D268D9BEF00221087 /* Readme.md in Resources */ = {isa = PBXBuildFile; fileRef = B17CCB7B268D9BEF00221087 /* Readme.md */; };
 		B58D6127EAF1B79E6D9715ED /* libPods-SDOSHeroExample.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2118D22146792C8F712CDAD4 /* libPods-SDOSHeroExample.a */; };
 /* End PBXBuildFile section */
 
@@ -159,6 +161,8 @@
 		5C75A9BA227ADC5C0067271E /* SDOSHeroDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDOSHeroDetailViewController.swift; sourceTree = "<group>"; };
 		B1193FE31DBCE77C00717955 /* Octopush+Base.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Octopush+Base.h"; sourceTree = "<group>"; };
 		B17C8CA51E9691AF00BBE3D6 /* LocalizableConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocalizableConstants.h; sourceTree = "<group>"; };
+		B17CCB7A268D9BEF00221087 /* CHANGELOG.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; name = CHANGELOG.md; path = ../../CHANGELOG.md; sourceTree = "<group>"; };
+		B17CCB7B268D9BEF00221087 /* Readme.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; name = Readme.md; path = ../../Readme.md; sourceTree = "<group>"; };
 		B197B9231E44840E009A0A74 /* NotificationsDebug.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = NotificationsDebug.entitlements; sourceTree = "<group>"; };
 		B197B9241E44840E009A0A74 /* NotificationsProduction.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = NotificationsProduction.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -208,6 +212,8 @@
 		2970AD6C1BFA153F007CFBD9 = {
 			isa = PBXGroup;
 			children = (
+				B17CCB7A268D9BEF00221087 /* CHANGELOG.md */,
+				B17CCB7B268D9BEF00221087 /* Readme.md */,
 				290A16A21BFB3146002361EF /* App */,
 				2970AD761BFA153F007CFBD9 /* Products */,
 				1A3F2B7365F64DEDC650C528 /* Frameworks */,
@@ -753,10 +759,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				298FD6511C0701E500BA707E /* PantallasAnalytics.plist in Resources */,
+				B17CCB7C268D9BEF00221087 /* CHANGELOG.md in Resources */,
 				5C57D99A1FB9D7CE00357C0B /* ExampleTableViewCell.xib in Resources */,
 				298FD6471C0701E500BA707E /* AppIcon.xcassets in Resources */,
 				298FD6731C0701E500BA707E /* default.bundle in Resources */,
 				298FD6491C0701E500BA707E /* Launcher.xcassets in Resources */,
+				B17CCB7D268D9BEF00221087 /* Readme.md in Resources */,
 				298FD64B1C0701E500BA707E /* App.debug.xcconfig in Resources */,
 				5C57D98A1FB9D5B800357C0B /* ExampleSDOSHero.storyboard in Resources */,
 				298FD64E1C0701E500BA707E /* Shared.xcconfig in Resources */,
@@ -990,7 +998,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -1036,7 +1044,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_VERSION = "";
@@ -1056,12 +1064,12 @@
 				DEVELOPMENT_TEAM = Y5G9RYLF8Y;
 				GCC_PREFIX_HEADER = "App/Configuration/SDOSHeroExample-Prefix.pch";
 				INFOPLIST_FILE = App/Configuration/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 3.1.0;
+				MARKETING_VERSION = 3.1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = "$(PRODUCT_PACKAGE_NAME)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "2b021e9d-1f46-439e-adf6-313bdfd0bc0b";
@@ -1084,12 +1092,12 @@
 				DEVELOPMENT_TEAM = "";
 				GCC_PREFIX_HEADER = "App/Configuration/SDOSHeroExample-Prefix.pch";
 				INFOPLIST_FILE = App/Configuration/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 3.1.0;
+				MARKETING_VERSION = 3.1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = "$(PRODUCT_PACKAGE_NAME)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -1109,12 +1117,12 @@
 				DEVELOPMENT_TEAM = Y5G9RYLF8Y;
 				GCC_PREFIX_HEADER = "App/Configuration/SDOSHeroExample-Prefix.pch";
 				INFOPLIST_FILE = App/Configuration/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 3.1.0;
+				MARKETING_VERSION = 3.1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = "$(PRODUCT_PACKAGE_NAME)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "2b021e9d-1f46-439e-adf6-313bdfd0bc0b";
@@ -1136,12 +1144,12 @@
 				DEVELOPMENT_TEAM = "";
 				GCC_PREFIX_HEADER = "App/Configuration/SDOSHeroExample-Prefix.pch";
 				INFOPLIST_FILE = App/Configuration/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 3.1.0;
+				MARKETING_VERSION = 3.1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = "$(PRODUCT_PACKAGE_NAME)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -1161,12 +1169,12 @@
 				DEVELOPMENT_TEAM = "";
 				GCC_PREFIX_HEADER = "App/Configuration/SDOSHeroExample-Prefix.pch";
 				INFOPLIST_FILE = App/Configuration/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 3.1.0;
+				MARKETING_VERSION = 3.1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = "$(PRODUCT_PACKAGE_NAME)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -1214,7 +1222,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_VERSION = "";
@@ -1234,12 +1242,12 @@
 				DEVELOPMENT_TEAM = "";
 				GCC_PREFIX_HEADER = "App/Configuration/SDOSHeroExample-Prefix.pch";
 				INFOPLIST_FILE = App/Configuration/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 3.1.0;
+				MARKETING_VERSION = 3.1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = "$(PRODUCT_PACKAGE_NAME)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";

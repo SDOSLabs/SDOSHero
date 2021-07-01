@@ -43,7 +43,7 @@ source 'https://github.com/CocoaPods/Specs.git' #Cocoapods source
 
 Añadir la dependencia al `Podfile`:
 ```ruby
-pod 'SDOSHero', '~>3.1.0' 
+pod 'SDOSHero', '~>3.1.1' 
 ```
 
 ### Swift Package Manager
@@ -58,7 +58,7 @@ Debemos abrir nuestro proyecto en Xcode y seleccionar el proyecto para abrir su 
 https://github.com/SDOSLabs/SDOSHero.git
 ```
 
-En el siguiente paso deberemos seleccionar la versión que queremos instalar. Recomentamos indicar "Up to Next Major" `3.1.0`.
+En el siguiente paso deberemos seleccionar la versión que queremos instalar. Recomentamos indicar "Up to Next Major" `3.1.1`.
 
 Por último deberemos indicar el o los targets donde se deberá incluir la librería
 
@@ -68,7 +68,7 @@ Incluir la dependencia en el bloque `dependencies`:
 
 ``` swift
 dependencies: [
-    .package(url: "https://github.com/SDOSLabs/SDOSHero.git", .upToNextMajor(from: "3.1.0"))
+    .package(url: "https://github.com/SDOSLabs/SDOSHero.git", .upToNextMajor(from: "3.1.1"))
 ]
 ```
 
