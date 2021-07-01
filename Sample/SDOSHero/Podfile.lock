@@ -1,9 +1,9 @@
 PODS:
-  - Hero (1.5.0)
-  - SDOSHero (3.0.0):
+  - Hero (1.6.1)
+  - SDOSHero (3.1.1):
     - Hero (~> 1.5)
-    - SDOSHero/Hero (= 3.0.0)
-  - SDOSHero/Hero (3.0.0):
+    - SDOSHero/Hero (= 3.1.1)
+  - SDOSHero/Hero (3.1.1):
     - Hero (~> 1.5)
 
 DEPENDENCIES:
@@ -18,9 +18,9 @@ EXTERNAL SOURCES:
     :path: "../../"
 
 SPEC CHECKSUMS:
-  Hero: b7385b75e7259da62f4f85462f59a5082d66b058
-  SDOSHero: 998139a513017f479b0d311bc95b76a5054bec54
+  Hero: 215865ba3ae41dd9bb08cd6c60a645529c6fc94b
+  SDOSHero: dbf2d44ef31b0722e64a94dab518fe5347de0022
 
-PODFILE CHECKSUM: 236bdcf79c933c70a0e88b088ac345f65331ccc5
+PODFILE CHECKSUM: 84796c38d0caded0591f98047de225fc89b11d6f
 
-COCOAPODS: 1.9.3
+COCOAPODS: 1.10.1

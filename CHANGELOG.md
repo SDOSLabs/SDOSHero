@@ -1,4 +1,8 @@
-## [3.1.0 Support Swift Package Manager](https://github.com/SDOSLabs/SDOSHero/tree/v3.1.0)
+## [3.1.1 FIX  'Hero' requires minimum platform version 10.0](https://github.com/SDOSLabs/SDOSHero/tree/v3.1.1)
+
+- Fix: The package product 'Hero' requires minimum platform version 10.0 for the iOS platform, but this target supports 9.0
+
+## [3.1.1 Support Swift Package Manager](https://github.com/SDOSLabs/SDOSHero/tree/v3.1.1)
 
 - Add support for Swift Package Manager
 

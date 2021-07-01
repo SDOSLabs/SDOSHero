@@ -1,6 +1,6 @@
-@version = "3.1.0"
+@version = "3.1.1"
 Pod::Spec.new do |spec|
-  spec.platform     = :ios, '8.0'
+  spec.platform     = :ios, '10.0'
   spec.name         = 'SDOSHero'
   spec.authors      = 'SDOS'
   spec.version      = @version
