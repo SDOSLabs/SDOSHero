@@ -1,4 +1,4 @@
-@version = "3.1.1"
+@version = "3.1.2"
 Pod::Spec.new do |spec|
   spec.platform     = :ios, '10.0'
   spec.name         = 'SDOSHero'
@@ -16,6 +16,6 @@ Pod::Spec.new do |spec|
       s1.source_files = ['src/Classes/*{*.m,*.h,*.swift}', 'src/Classes/**/*{*.m,*.h,*.swift}']
   end
 
-  spec.dependency 'Hero', '~> 1.5'
+  spec.dependency 'Hero', '~> 1.6'
 
 end
