@@ -1,4 +1,4 @@
-## [3.1.2 FIX  'Hero' library dependency](https://github.com/SDOSLabs/SDOSHero/tree/v3.1.1)
+## [3.1.2 FIX  'Hero' library dependency](https://github.com/SDOSLabs/SDOSHero/tree/v3.1.2)
 
 - Fix: Hero library update for compatibility with new Xcode
 
