@@ -1,10 +1,10 @@
 PODS:
-  - Hero (1.6.1)
-  - SDOSHero (3.1.1):
-    - Hero (~> 1.5)
-    - SDOSHero/Hero (= 3.1.1)
-  - SDOSHero/Hero (3.1.1):
-    - Hero (~> 1.5)
+  - Hero (1.6.4)
+  - SDOSHero (3.1.2):
+    - Hero (~> 1.6)
+    - SDOSHero/Hero (= 3.1.2)
+  - SDOSHero/Hero (3.1.2):
+    - Hero (~> 1.6)
 
 DEPENDENCIES:
   - SDOSHero (from `../../`)
@@ -18,9 +18,9 @@ EXTERNAL SOURCES:
     :path: "../../"
 
 SPEC CHECKSUMS:
-  Hero: 215865ba3ae41dd9bb08cd6c60a645529c6fc94b
-  SDOSHero: dbf2d44ef31b0722e64a94dab518fe5347de0022
+  Hero: 473a0143017e1371d050fcbedb67d317925097f2
+  SDOSHero: 501c459cf273df8516d0cc967850f528cfb1f176
 
 PODFILE CHECKSUM: 84796c38d0caded0591f98047de225fc89b11d6f
 
-COCOAPODS: 1.10.1
+COCOAPODS: 1.16.2

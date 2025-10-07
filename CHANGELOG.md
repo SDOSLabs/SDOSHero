@@ -1,3 +1,7 @@
+## [3.1.2 FIX  'Hero' library dependency](https://github.com/SDOSLabs/SDOSHero/tree/v3.1.2)
+
+- Fix: Hero library update for compatibility with new Xcode
+
 ## [3.1.1 FIX  'Hero' requires minimum platform version 10.0](https://github.com/SDOSLabs/SDOSHero/tree/v3.1.1)
 
 - Fix: The package product 'Hero' requires minimum platform version 10.0 for the iOS platform, but this target supports 9.0
